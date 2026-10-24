@@ -4,15 +4,17 @@
 
 ![MundoCraft for PS4: illustrated voxel landscape](assets/banner.svg)
 
-![Experimental alpha](assets/alpha-badge.svg) ![PS4 homebrew](assets/platform-badge.svg) ![Luanti 5.17.0](assets/engine-badge.svg) ![Component licenses](assets/license-badge.svg)
+![Beta release](assets/beta-badge.svg) ![PS4 homebrew](assets/platform-badge.svg) ![Luanti 5.17.0](assets/engine-badge.svg) ![Component licenses](assets/license-badge.svg)
 
-**v0.3.19-alpha1** · **APP_VER 01.19**
+**Beta v0.3.20-beta1** · **APP_VER 01.20**
 
 MundoCraft brings the [Luanti](https://www.luanti.org/) voxel game engine to
-PlayStation 4. This is an experimental, unofficial, modified port. The release
-PKG has been cross-compiled and validated locally; **this exact package still
-needs its own PS4 hardware test**. Earlier testing of engine build 01.19 does
-not substitute for that test.
+PlayStation 4. This is an experimental, unofficial, modified port. This release
+adds sound, inventory search confirmation and controller stack splitting.
+**The beta distributes the exact 0.3.20 PKG tested on PS4 in LAN and on a public
+Mineclonia server. The maintainer also reports successful stability testing.**
+This is a release-stage promotion with no binary changes: internal alpha labels
+remain in the tested build. See [the build record](docs/BUILD_REPORT_0320.md).
 
 Luanti is free software developed by its community under LGPL-2.1-or-later.
 Corresponding modified source, third-party notices and build instructions
@@ -22,7 +24,7 @@ accompany this release.
 
 ## Play and build
 
-- [Download the latest release](https://github.com/giruai/mundocraft-ps4/releases/tag/v0.3.19-alpha1)
+- [Download v0.3.20-beta1](https://github.com/giruai/mundocraft-ps4/releases/tag/v0.3.20-beta1)
 - [Install the PKG](docs/INSTALLING.md)
 - [Controls, accounts and saved progress](docs/USAGE.md)
 - [Build from source](docs/BUILDING.md)
@@ -46,16 +48,29 @@ servers, worlds or accounts. It is not affiliated with Mojang or Microsoft.
 
 ## Current status
 
-An earlier private PS4 build of engine 01.19 was tested with Mineclonia 0.124.1
-in a creative LAN world: account registration, rejection of an incorrect
-password, and rejoining after a server restart worked. Movement, looking,
-inventory, digging, placing blocks, pause and normal exit to the PS4 menu were
-checked; position and inventory persisted.
+The previous 0.3.19-alpha1 package was tested with Mineclonia 0.124.1 in a
+creative LAN world on 2026-10-24. A continuous observation lasted 60 minutes
+18 seconds without a detected crash or disconnect. Whole-stack movement, armor,
+placing/digging blocks and one simple crafting recipe worked. Position,
+orientation and inventory matched after a server restart and password login.
+The internal smoothed FPS display ranged from 47 to 58, usually 58, with jitter
+spikes; this is not a guarantee of stable 60 FPS or survival-game performance.
 
-Those tests used different PKG bytes. Public server listing and geolocation
-worked in earlier tests, but a selected public game never finished loading.
-Long survival sessions, crafting and combat remain unvalidated. Audio is
-disabled. See [TESTING](docs/TESTING.md) and the [build report](docs/BUILD_REPORT.md).
+The 0.3.20 beta enables the audio chain and adds Done-to-submit and Square
+secondary click in inventory. Local tests exercise the actual input adapter and
+an Ogg/Vorbis/OpenAL loopback pipeline. Its exact PKG also passed PS4 checks for
+audible sound, mute/unmute, inventory search, half-stack/single-item operations,
+two-cell crafting, persistence after server restart and normal Home exit.
+The session covered about 17 minutes of application runtime; it was not a long
+stability or FPS benchmark. A subsequent functional session also rendered a
+public Mineclonia world and exercised inventory/crafting and password rejoining
+with visually preserved items. Exact public stack counts were not independently
+readable in Remote Play captures. Long survival/combat
+and offline local-world startup remain unvalidated by the recorded functional tests.
+The maintainer subsequently confirmed successful stability testing; its duration
+and detailed measurements were not supplied. The separate double-password
+registration dialog still needs work; see the [account workaround](docs/USAGE.md#servers-and-progress). Mineclonia is not bundled;
+the engine retains embedded-server code. See [TESTING](docs/TESTING.md).
 
 ## Source and privacy
 

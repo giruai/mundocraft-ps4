@@ -1,5 +1,7 @@
 # Build report: v0.3.19-alpha1
 
+Historical build record for the published 0.3.19 artifact. Its later exact-package PS4 test completed on 2026-10-24; see [TESTING.md](TESTING.md). The 0.3.20 development candidate has separate build and hardware status.
+
 First private MundoCraft distribution. Cross-build from Linux x86_64 to PS4,
 completed on October 24, 2026. No PS4 was accessed to prepare this release.
 
@@ -13,7 +15,7 @@ completed on October 24, 2026. No PS4 was accessed to prepare this release.
 | PKG SHA-256 | `ba9791c4630d652f6ca38832f59cc45326901fa76d2e44882f1b8522d586fd63` |
 | Linked ELF SHA-256 | `59db0c2fd7d670bf3a2050a443650c2132995d833200b481104fa35106dd384b` |
 | Eboot SHA-256 | `2c00b7743f31419ed6e434aea1cc3235662e567ed4787a63f27f6cdcf86db6a1` |
-| Exact PKG hardware test | **Pending** |
+| Exact PKG hardware test | Completed on 2026-10-24; one-hour LAN Mineclonia session, inventory/crafting, persisted account/world state after server restart and normal Home exit. See [TESTING.md](TESTING.md). |
 
 ## Local checks
 
@@ -40,8 +42,8 @@ were rebuilt from pinned sources.
 ## Scope
 
 Hashes identify this build. Bit-for-bit reproducibility across machines and
-long-session stability are not promised. Distribution changes, including
-the rebuilt module CRT, need a new hardware test. See [TESTING.md](TESTING.md)
+long-session stability beyond the recorded test are not promised. The later
+hardware test covered this exact PKG and its rebuilt module CRT. See [TESTING.md](TESTING.md)
 and [DISTRIBUTION_CHANGES.md](DISTRIBUTION_CHANGES.md).
 
 Release manifests relate the repository revision, binary and corresponding

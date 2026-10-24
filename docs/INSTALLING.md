@@ -4,11 +4,13 @@ This guide covers installing the PKG with a package installer you already have. 
 
 ## Before installing
 
-1. Download the `MundoCraft-PS4-v0.3.19-alpha1` PKG from this repository's Releases page.
+1. Download the `MundoCraft-PS4-v0.3.20-beta1` PKG from this repository's Releases page.
 2. Download `SHA256SUMS` and compare the PKG's SHA-256 hash. On Linux, use `sha256sum file.pkg`; on macOS, use `shasum -a 256 file.pkg`. The result must exactly match the PKG's entry in `SHA256SUMS`.
 3. Use your existing package installer to open and install the PKG. Follow that installer's own instructions.
 
-The title is **MundoCraft - Luanti**, with Title ID **LUNT00001** and application version **01.19**. When updating the same application, install over the existing title to keep its data. Do not uninstall the title if you want to keep local worlds or settings.
+The title is **MundoCraft - Luanti**, with Title ID **LUNT00001** and application version **01.20**. When updating the same application, install over the existing title to keep its data. Do not uninstall the title if you want to keep local worlds or settings.
+
+The beta uses `APP_VER` `01.20` and title ID `LUNT00001`. It is the exact tested 0.3.20-alpha1 package, renamed for beta distribution without changing its bytes. Internal alpha labels may still appear. If you already installed that tested candidate, this release contains the same application; reinstalling is unnecessary. See [TESTING.md](TESTING.md).
 
 ## First launch
 

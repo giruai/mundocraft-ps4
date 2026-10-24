@@ -1,0 +1,25 @@
+--- a/alc/context.h
++++ b/alc/context.h
+@@ -172,7 +172,10 @@
+      * object. Add a wrapper function for it that only accesses it where it's
+      * defined.
+      */
+-#ifdef __MINGW32__
++    /* PS4 SELF imports cannot represent an undefined weak TLS initializer for
++     * the constant-initialized pointer. Access it in its definition unit, where
++     * Clang can see that no dynamic initialization is needed. */
++#if defined(__MINGW32__) || defined(__ORBIS__)
+     static ALCcontext *getThreadContext() noexcept;
+     static void setThreadContext(ALCcontext *context) noexcept;
+ #else
+--- a/alc/context.cpp
++++ b/alc/context.cpp
+@@ -105,7 +105,7 @@
+ ALeffect ALCcontext::sDefaultEffect;
+ 
+ 
+-#ifdef __MINGW32__
++#if defined(__MINGW32__) || defined(__ORBIS__)
+ ALCcontext *ALCcontext::getThreadContext() noexcept
+ { return sLocalContext; }
+ void ALCcontext::setThreadContext(ALCcontext *context) noexcept

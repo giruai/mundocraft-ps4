@@ -1,6 +1,6 @@
 # Build MundoCraft for PS4
 
-This guide builds the source code and creates a local PKG. A cross-build does not prove that the package works on a console. The exact package for this version has passed local build and package checks; it still needs a PS4 hardware test. See [TESTING.md](TESTING.md).
+This guide builds the source code and creates a local PKG. A cross-build does not prove that the package works on a console. The recorded exact 0.3.20 build passed local checks and a bounded PS4 LAN test. A newly rebuilt binary needs its own validation. See [TESTING.md](TESTING.md).
 
 ## Requirements
 
@@ -38,17 +38,29 @@ If you already have a compatible environment, `ORBIS_SDK_BUNDLE_DIR`, `HOST_PYTH
 
 ![Build stages](../assets/build-flow.svg)
 
-The recipe builds Mesa and SDL2; JPEG and PNG; SQLite, zstd, and FreeType; curl and mbedTLS; then the Luanti client and package. Inputs for each stage are pinned in the root, `voxel/`, and `client/` `dependencies.lock.json` files, as well as `client/tls-dependencies.lock.json`. PS4 engine changes are recorded in `client/patches/`, including this distribution's attribution change.
+The recipe builds Mesa and SDL2 with Orbis audio; JPEG and PNG; SQLite, zstd, and FreeType; curl and mbedTLS; static OpenAL Soft, Ogg and Vorbis; then the Luanti client and package. Inputs for each stage are pinned in the root, `voxel/`, and `client/` `dependencies.lock.json` files, as well as `client/tls-dependencies.lock.json` and `client/audio-dependencies.lock.json`. PS4 engine changes are recorded in `client/patches/`.
+
+The audio stage uses only the port's SDL2 static archive through an explicit CMake package, with dynamic library loading and non-PS4 device backends disabled. It does not link the build machine's audio libraries. `client/assets/alsoft.ini` selects 48 kHz stereo S16 playback and the SDL2 backend. The final client imports the system AudioOut API; no proprietary module binary is bundled.
 
 Packaging rebuilds the PRX modules and their CRT from the pinned source; it does not modify a shared SDK.
 
 By default, the PKG is saved in `.build/ps4/client-package/`. Logs and verification manifests are saved under `.build/ps4/logs/`. These directories are excluded from Git. Review logs and artifacts from a machine before publishing them.
 
-The product version is `0.3.19-alpha1`; the PS4 `APP_VER` is `01.19`. They are separate identifiers. The recipe sets `SOURCE_DATE_EPOCH` and uses prefix maps to replace known local paths in build metadata. This supports reproducibility and reduces machine-specific paths, but does not guarantee byte-for-byte matches across machines.
+The distribution version is `0.3.20-beta1`; the PS4 `APP_VER` is `01.20`. They are separate identifiers. The beta promotes the previously tested binary without rebuilding it, so internal alpha build labels remain intentionally unchanged in the corresponding sources. The recipe sets `SOURCE_DATE_EPOCH` and uses prefix maps to replace known local paths in build metadata. This supports reproducibility and reduces machine-specific paths, but does not guarantee byte-for-byte matches across machines.
+
+Local input and sound checks can run without a console. The input harness compiles the actual adapter against modeled GUI APIs under AddressSanitizer/UndefinedBehaviorSanitizer. The Linux audio smoke test verifies locked sources, generates/decodes its own Ogg/Vorbis tone and renders it using OpenAL loopback:
+
+```sh
+./scripts/test-input-host.sh
+bash ./scripts/test-audio-semaphore-host.sh
+bash ./scripts/test-audio-host.sh
+```
+
+The sound tests need the locked archives already downloaded. The semaphore test compiles the patched OpenAL implementation against the production PS4 adapter and modeled kernel calls with ASan/UBSan in C++14 and C++17. The Linux loopback test uses one build job and writes a bounded temporary prefix. These tests do not prove physical PS4 audio, rendering, controller behavior or Mineclonia acceptance on hardware.
 
 ## Third-party sources and SDK
 
-Sources and patches needed to correspond to the binary are distributed in `MundoCraft-PS4-v0.3.19-alpha1-sources.tar.gz`, together with manifests and hashes. To verify downloads, compare file SHA-256 values against the manifests and `SHA256SUMS`.
+Each published release supplies its corresponding `MundoCraft-PS4-vVERSION-sources.tar.gz`, manifests and hashes. The beta includes the exact modified engine and locked audio dependency sources used for the tested 0.3.20 binary. To verify published downloads, compare file SHA-256 values against that release's manifests and `SHA256SUMS`.
 
 The archive also includes `vendor/patched-luanti/`, a snapshot of the modified engine, and `SOURCE_MANIFEST.json`, which records hashes of its inputs. Bootstrap reuses files from `vendor/archives/`; engine sources are reconstructed from upstream and the patches to verify correspondence. Do not edit only the snapshot: record changes as an additional patch in `client/patches/`. To replace or modify LGPL libraries, apply the relevant changes there, then rebuild and relink with `./build.sh`.
 

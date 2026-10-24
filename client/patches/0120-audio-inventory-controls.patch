@@ -1,0 +1,22 @@
+--- a/src/client/game_formspec.cpp
++++ b/src/client/game_formspec.cpp
+@@ -382,7 +382,7 @@
+ 		"Options: pause / resume\nTriangle: inventory\n"
+ 		"R2: dig / attack\nL2: place / use\n"
+ 		"L1 / R1: hotbar\nSquare: auxiliary\n"
+-		"Menu: left stick moves cursor\n"
++		"Menu: stick + X select\nSquare: split / place one\n"
+ 		"Exit to OS: return to Home\n"
+ 		"Online world keeps running.";
+ #endif
+--- a/builtin/mainmenu/tab_about.lua
++++ b/builtin/mainmenu/tab_about.lua
+@@ -59,7 +59,7 @@
+ 			"Unofficial modified PS4 port, powered by the Luanti engine.\n",
+ 			"Luanti is free software under LGPL-2.1-or-later.\n",
+ 			"Modified sources and full notices:\n",
+-			"github.com/giruai/mundocraft-ps4/releases/tag/v0.3.19-alpha1\n",
++			"github.com/giruai/mundocraft-ps4/releases\n",
+ 			"Bundled license texts: /app0/luanti/share/licenses/\n\n",
+ 		})
+ 

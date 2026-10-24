@@ -3,6 +3,7 @@
 
 #include "ps4_input.h"
 #include "ps4_menu_buttons.h"
+#include "ps4_pointer_buttons.h"
 #include "ps4_cursor_geometry.h"
 
 #include "gui/mainmenumanager.h"
@@ -41,8 +42,7 @@ struct MenuInputState {
 	uint32_t active_gamepad = UINT32_MAX;
 	int axis_x = 0;
 	int axis_y = 0;
-	bool cross = false;
-	std::vector<bool> cross_edges;
+	PointerButtons pointer;
 	BackButtons back;
 	std::vector<bool> circle_edges;
 	bool triangle = false;
@@ -74,40 +74,73 @@ bool is_attached(gui::IGUIElement *element, gui::IGUIElement *root)
 	return false;
 }
 
-void notify_edit_changed(gui::IGUIEditBox *edit)
+void notify_edit(gui::IGUIEditBox *edit, gui::EGUI_EVENT_TYPE kind)
 {
+	// Both the form and its edit box may be removed synchronously by OnEvent.
+	// Keep the receiver and Caller alive until dispatch has returned.
 	if (auto *parent = edit->getParent()) {
-		SEvent changed;
-		changed.EventType = EET_GUI_EVENT;
-		changed.GUIEvent.Caller = edit;
-		changed.GUIEvent.Element = nullptr;
-		changed.GUIEvent.EventType = gui::EGET_EDITBOX_CHANGED;
-		parent->OnEvent(changed);
+		edit->grab();
+		parent->grab();
+		SEvent event;
+		event.EventType = EET_GUI_EVENT;
+		event.GUIEvent.Caller = edit;
+		event.GUIEvent.Element = nullptr;
+		event.GUIEvent.EventType = kind;
+		parent->OnEvent(event);
+		parent->drop();
+		edit->drop();
 	}
 }
 
-void close_keyboard(gui::IGUIEnvironment *env, bool commit)
+void close_keyboard(gui::IGUIEnvironment *env, bool commit, bool submit = false)
 {
 	if (!s.keyboard)
 		return;
 
-	if (s.target) {
-		if (!commit && env && is_attached(s.target, env->getRootGUIElement())) {
-			s.target->setText(s.original_text.c_str());
-			notify_edit_changed(s.target);
-		}
-		s.target->drop();
-		s.target = nullptr;
-	}
-	std::fill(s.original_text.begin(), s.original_text.end(), L'\0');
-	s.original_text.clear();
-	s.keys.clear();
-	if (s.keyboard->getParent())
-		s.keyboard->remove();
-	s.keyboard->drop();
+	// Retain the grabbed objects locally, and finish detaching the overlay and
+	// clearing global state before any callback can replace the form or reenter.
+	auto *keyboard = s.keyboard;
+	auto *target = s.target;
+	std::wstring original;
+	original.swap(s.original_text);
 	s.keyboard = nullptr;
+	s.target = nullptr;
+	s.keys.clear();
 	s.shift = false;
 	s.key_pressed = -1;
+	s.pointer.cancel();
+	if (keyboard->getParent())
+		keyboard->remove();
+	keyboard->drop();
+
+	if (target) {
+		if (env && is_attached(target, env->getRootGUIElement())) {
+			if (!commit) {
+				target->setText(original.c_str());
+				notify_edit(target, gui::EGET_EDITBOX_CHANGED);
+			} else if (submit) {
+				// The same event used by Luanti's native edit box / mobile
+				// input completion. Formspec owns field_enter and close_on_enter.
+				notify_edit(target, gui::EGET_EDITBOX_ENTER);
+			}
+		}
+		target->drop();
+	}
+	std::fill(original.begin(), original.end(), L'\0');
+}
+
+void sync_menu(IrrlichtDevice *device)
+{
+	auto *menu = g_menumgr.tryGetTopMenu();
+	if (s.menu == menu)
+		return;
+	close_keyboard(device->getGUIEnvironment(), false);
+	s.menu = g_menumgr.tryGetTopMenu();
+	s.pointer.cancel();
+	s.back.reset();
+	s.circle_edges.clear();
+	s.open_pending = false;
+	s.pending_wheel = 0;
 }
 
 void add_key(gui::IGUIEnvironment *env, const core::rect<s32> &rect,
@@ -199,7 +232,7 @@ void activate_key(gui::IGUIEnvironment *env, int index)
 		return;
 	const auto key = s.keys[index];
 	if (key.kind == KeyKind::Done || key.kind == KeyKind::Cancel) {
-		close_keyboard(env, key.kind == KeyKind::Done);
+		close_keyboard(env, key.kind == KeyKind::Done, key.kind == KeyKind::Done);
 		return;
 	}
 	if (key.kind == KeyKind::Shift) {
@@ -234,7 +267,7 @@ void activate_key(gui::IGUIEnvironment *env, int index)
 		text.push_back(value);
 	}
 	s.target->setText(text.c_str());
-	notify_edit_changed(s.target);
+	notify_edit(s.target, gui::EGET_EDITBOX_CHANGED);
 	std::fill(text.begin(), text.end(), L'\0');
 }
 
@@ -260,9 +293,9 @@ void post_mouse(IrrlichtDevice *device, EMOUSE_INPUT_EVENT type, float wheel = 0
 	event.EventType = EET_MOUSE_INPUT_EVENT;
 	event.MouseInput.X = static_cast<s32>(s.cursor_x);
 	event.MouseInput.Y = static_cast<s32>(s.cursor_y);
-	event.MouseInput.ButtonStates = (type == EMIE_LMOUSE_PRESSED_DOWN ||
-			(type == EMIE_MOUSE_MOVED && s.cross))
-			? SDL_BUTTON_MASK(SDL_BUTTON_LEFT) : 0;
+	event.MouseInput.ButtonStates =
+			(s.pointer.delivered(PointerButtons::Left) ? SDL_BUTTON_MASK(SDL_BUTTON_LEFT) : 0) |
+			(s.pointer.delivered(PointerButtons::Right) ? SDL_BUTTON_MASK(SDL_BUTTON_RIGHT) : 0);
 	event.MouseInput.Shift = false;
 	event.MouseInput.Control = false;
 	event.MouseInput.Simulated = true;
@@ -270,7 +303,8 @@ void post_mouse(IrrlichtDevice *device, EMOUSE_INPUT_EVENT type, float wheel = 0
 	if (type == EMIE_MOUSE_WHEEL)
 		event.MouseInput.Wheel = wheel;
 	else
-		event.MouseInput.Button = SDL_BUTTON_LEFT;
+		event.MouseInput.Button = (type == EMIE_RMOUSE_PRESSED_DOWN ||
+				type == EMIE_RMOUSE_LEFT_UP) ? SDL_BUTTON_RIGHT : SDL_BUTTON_LEFT;
 	device->postEventFromUser(event);
 }
 
@@ -294,9 +328,10 @@ void clear_menu_state(IrrlichtDevice *device)
 	s.menu = nullptr;
 	s.active_gamepad = UINT32_MAX;
 	s.axis_x = s.axis_y = 0;
-	s.cross = false;
+	// Gameplay events do not pass through this adapter. Forget physical holds
+	// here, since their releases may happen before the next menu is opened.
+	s.pointer.reset();
 	s.back.reset();
-	s.cross_edges.clear();
 	s.circle_edges.clear();
 	s.triangle = false;
 	s.dpad_up = s.dpad_down = false;
@@ -312,11 +347,17 @@ bool on_menu_event(const SEvent &event)
 {
 	if (!isMenuActive())
 		return false;
+	if (auto *device = RenderingEngine::get_raw_device())
+		sync_menu(device);
+	if (!isMenuActive())
+		return true;
 	if (event.EventType == EET_GAMEPAD_AXIS_EVENT) {
 		const auto &axis = event.GamepadAxisEvent;
 		if (s.active_gamepad != axis.ID) {
 			clear_menu_state(RenderingEngine::get_raw_device());
+			s.pointer.reset();
 			s.active_gamepad = axis.ID;
+			s.menu = g_menumgr.tryGetTopMenu();
 		}
 		if (axis.Axis == GamepadAxis::LEFTX)
 			s.axis_x = axis.Value;
@@ -328,14 +369,16 @@ bool on_menu_event(const SEvent &event)
 		const auto &button = event.GamepadButtonEvent;
 		if (s.active_gamepad != button.ID) {
 			clear_menu_state(RenderingEngine::get_raw_device());
+			s.pointer.reset();
 			s.active_gamepad = button.ID;
+			s.menu = g_menumgr.tryGetTopMenu();
 		}
 		switch (button.Button) {
 		case GamepadButton::SOUTH:
-			if (s.cross != button.PressedDown) {
-				s.cross = button.PressedDown;
-				s.cross_edges.push_back(s.cross);
-			}
+			s.pointer.update(PointerButtons::Left, button.PressedDown);
+			break;
+		case GamepadButton::WEST:
+			s.pointer.update(PointerButtons::Right, button.PressedDown);
 			break;
 		case GamepadButton::EAST:
 		case GamepadButton::START: {
@@ -398,11 +441,16 @@ void frame(IrrlichtDevice *device)
 		return;
 	}
 	auto *env = device->getGUIEnvironment();
-	auto *current_menu = g_menumgr.tryGetTopMenu();
-	if (s.menu != current_menu) {
-		close_keyboard(env, false);
-		s.menu = current_menu;
+	sync_menu(device);
+	if (!isMenuActive()) {
+		clear_menu_state(device);
+		return;
 	}
+	auto *current_menu = g_menumgr.tryGetTopMenu();
+	// Keep the identity alive throughout dispatch. A replacement must not reuse
+	// its address and receive the remaining edges from this frame.
+	if (current_menu)
+		current_menu->grab();
 	if (s.keyboard && (!s.target ||
 			!is_attached(s.target, env->getRootGUIElement()) ||
 			!s.keyboard->getParent()))
@@ -434,15 +482,20 @@ void frame(IrrlichtDevice *device)
 		if (!s.keyboard)
 			post_mouse(device, EMIE_MOUSE_MOVED);
 	}
-	if (s.open_pending) {
-		s.open_pending = false;
-		open_keyboard(device);
-	}
+	// Use snapshots: callbacks may close the keyboard and clear queued state.
+	const auto pointer_edges = s.pointer.take_edges();
+	std::vector<bool> back_edges;
+	back_edges.swap(s.circle_edges);
 	if (s.keyboard) {
-		for (bool down : s.cross_edges) {
+		for (const auto &edge : pointer_edges) {
+			if (!s.keyboard || !isMenuActive() ||
+					g_menumgr.tryGetTopMenu() != current_menu)
+				break;
+			if (edge.button != PointerButtons::Left)
+				continue;
 			const int hovered = key_at(static_cast<s32>(s.cursor_x),
 					static_cast<s32>(s.cursor_y));
-			if (down)
+			if (edge.down)
 				s.key_pressed = hovered;
 			else {
 				const int pressed = s.key_pressed;
@@ -451,22 +504,29 @@ void frame(IrrlichtDevice *device)
 					activate_key(env, hovered);
 			}
 		}
-		for (bool down : s.circle_edges) {
-			if (down) {
-				close_keyboard(env, false);
-				break;
+		if (s.keyboard) {
+			for (bool down : back_edges) {
+				if (down) {
+					close_keyboard(env, false);
+					break;
+				}
 			}
 		}
 		s.pending_wheel = 0;
+		s.open_pending = false;
 	} else {
 		// A click/escape can destroy or replace the menu synchronously. Do not
 		// deliver the rest of this frame's queued input to the next screen.
-		for (bool down : s.cross_edges) {
+		for (const auto &edge : pointer_edges) {
 			if (!isMenuActive() || g_menumgr.tryGetTopMenu() != current_menu)
 				break;
-			post_mouse(device, down ? EMIE_LMOUSE_PRESSED_DOWN : EMIE_LMOUSE_LEFT_UP);
+			s.pointer.apply(edge);
+			const auto type = edge.button == PointerButtons::Left
+					? (edge.down ? EMIE_LMOUSE_PRESSED_DOWN : EMIE_LMOUSE_LEFT_UP)
+					: (edge.down ? EMIE_RMOUSE_PRESSED_DOWN : EMIE_RMOUSE_LEFT_UP);
+			post_mouse(device, type);
 		}
-		for (bool down : s.circle_edges) {
+		for (bool down : back_edges) {
 			if (!isMenuActive() || g_menumgr.tryGetTopMenu() != current_menu)
 				break;
 			post_escape(device, down);
@@ -475,10 +535,21 @@ void frame(IrrlichtDevice *device)
 			post_mouse(device, EMIE_MOUSE_WHEEL, static_cast<float>(s.pending_wheel));
 			s.pending_wheel = 0;
 		}
+		// Finish any native mouse gesture before switching to the overlay.
+		// Triangle remains pending while a button is held, so opening cannot
+		// strand a pressed Irrlicht button or turn its release into an OSK key.
+		if (s.open_pending && s.pointer.idle() && isMenuActive() &&
+				g_menumgr.tryGetTopMenu() == current_menu) {
+			s.open_pending = false;
+			open_keyboard(device);
+		}
 	}
-	s.cross_edges.clear();
-	s.circle_edges.clear();
-
+	if (!isMenuActive())
+		clear_menu_state(device);
+	else
+		sync_menu(device);
+	if (current_menu)
+		current_menu->drop();
 }
 
 void draw_cursor(IrrlichtDevice *device)

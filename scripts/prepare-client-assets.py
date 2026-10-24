@@ -78,6 +78,8 @@ try:
         pathlib.Path("luanti/default.conf"))
     add(repo_root / "client/assets/launch.ini",
         pathlib.Path("luanti/launch.ini"))
+    add(repo_root / "client/assets/alsoft.ini",
+        pathlib.Path("luanti/alsoft.ini"))
     add(task_root / "client-deps/share/luanti/client/cacert.pem",
         pathlib.Path("client/cacert.pem"), lock["ca_bundle"]["sha256"])
 

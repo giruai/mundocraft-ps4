@@ -1,0 +1,88 @@
+--- a/common/threads.h
++++ b/common/threads.h
+@@ -11,7 +11,9 @@
+ #define FORCE_ALIGN
+ #endif
+ 
+-#if defined(__APPLE__)
++#if defined(__ORBIS__)
++#include "ps4_semaphore.h"
++#elif defined(__APPLE__)
+ #include <dispatch/dispatch.h>
+ #elif !defined(_WIN32)
+ #include <semaphore.h>
+@@ -22,7 +24,9 @@
+ namespace al {
+ 
+ class semaphore {
+-#ifdef _WIN32
++#if defined(__ORBIS__)
++    using native_type = Ps4Semaphore;
++#elif defined(_WIN32)
+     using native_type = void*;
+ #elif defined(__APPLE__)
+     using native_type = dispatch_semaphore_t;
+--- a/common/threads.cpp
++++ b/common/threads.cpp
+@@ -135,7 +135,43 @@
+     std::ignore = static_cast<void(*)(setname_t4,const char*)>(&setname_caller);
+ }
+ 
+-#ifdef __APPLE__
++#if defined(__ORBIS__)
++
++#include <climits>
++
++namespace al {
++namespace {
++
++int checked_initial_count(unsigned int initial)
++{
++    // Ps4Semaphore accepts int. Reject before narrowing or creating a handle,
++    // preserving OpenAL's constructor error contract for an invalid count.
++    if(initial > static_cast<unsigned int>(INT_MAX))
++        throw std::system_error(std::make_error_code(std::errc::value_too_large));
++    return static_cast<int>(initial);
++}
++
++} // namespace
++
++semaphore::semaphore(unsigned int initial)
++    : mSem{checked_initial_count(initial)}
++{ }
++
++semaphore::~semaphore() = default;
++
++// Backend errors deliberately retain Ps4Semaphore's fail-closed behavior.
++void semaphore::post()
++{ mSem.post(); }
++
++void semaphore::wait() noexcept
++{ mSem.wait(); }
++
++bool semaphore::try_wait() noexcept
++{ return mSem.wait(0); }
++
++} // namespace al
++
++#elif defined(__APPLE__)
+ 
+ namespace al {
+ 
+@@ -160,7 +196,7 @@
+ 
+ } // namespace al
+ 
+-#else /* !__APPLE__ */
++#else /* !__ORBIS__ && !__APPLE__ */
+ 
+ #include <cerrno>
+ 
+@@ -192,6 +228,6 @@
+ 
+ } // namespace al
+ 
+-#endif /* __APPLE__ */
++#endif /* __ORBIS__ / __APPLE__ */
+ 
+ #endif /* _WIN32 */

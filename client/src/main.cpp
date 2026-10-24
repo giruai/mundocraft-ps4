@@ -61,6 +61,10 @@ int main(){
  setenv("HOME","/data/luanti",1);setenv("TMPDIR","/data/luanti/tmp",1);
  setenv("MESA_SHADER_CACHE_DIR","/data/luanti/cache",1);setenv("ORBIS_SUBMIT_DONE","1",1);
  setenv("LUANTI_USER_PATH","/data/luanti",1);setenv("CURL_CA_BUNDLE","/app0/client/cacert.pem",1);
+ // Only the SDL2 backend owns AudioOut; do not also start the kit audio service.
+ setenv("ALSOFT_DRIVERS","sdl2",1);setenv("SDL_AUDIODRIVER","orbis",1);
+ setenv("ALSOFT_CONF","/app0/luanti/alsoft.ini",1);
+ ps4port::log("PS4_AUDIO backend=OpenAL-Soft/SDL2/orbis requested=48000Hz/stereo/S16");
  copy_default("/data/luanti/minetest.conf","/app0/luanti/default.conf");
  copy_default("/data/luanti/launch.ini","/app0/luanti/launch.ini");
  KernelLog output;g_logger.addOutputMaxLevel(&output,LL_INFO);

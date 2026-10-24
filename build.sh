@@ -16,6 +16,7 @@ bash "$REPO_ROOT/scripts/build-deps-linux.sh"
 bash "$REPO_ROOT/scripts/build-voxel-deps-linux.sh"
 bash "$REPO_ROOT/scripts/build-client-deps-linux.sh"
 bash "$REPO_ROOT/client/scripts/build-tls-linux.sh"
+bash "$REPO_ROOT/scripts/build-audio-linux.sh"
 bash "$REPO_ROOT/scripts/build-client-linux.sh"
 if [[ "${PACKAGE_AFTER_BUILD:-1}" == 1 ]]; then
  bash "$REPO_ROOT/scripts/package-client-linux.sh"

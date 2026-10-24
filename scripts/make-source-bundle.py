@@ -40,13 +40,15 @@ for raw in tracked:
     register(name, path)
 
 for lock in ('dependencies.lock.json', 'voxel/dependencies.lock.json',
-             'client/dependencies.lock.json', 'client/tls-dependencies.lock.json'):
+             'client/dependencies.lock.json', 'client/tls-dependencies.lock.json',
+             'client/audio-dependencies.lock.json'):
     for key, entry in json.loads((repo / lock).read_text()).items():
         # SDK/toolchain and host executable inputs are fetched independently.
         if lock == 'dependencies.lock.json' and key not in ('mesa', 'sdl2', 'compat'):
             continue
         name = entry['archive']
-        candidates = (root / 'downloads' / name, root / '.local/client-tls/downloads' / name)
+        candidates = (root / 'downloads' / name, root / '.local/client-tls/downloads' / name,
+                      repo / '.local/downloads' / name)
         source = next((p for p in candidates if p.is_file()), None)
         assert source is not None, 'Missing source archive: ' + name
         register('vendor/archives/' + name, source, entry['sha256'])

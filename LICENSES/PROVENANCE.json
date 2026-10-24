@@ -269,6 +269,20 @@
       "collection": "verbatim upstream license text"
     },
     {
+      "file": "OpenAL-Soft-COPYING.txt",
+      "sha256": "d808ce217e5b611854da622b57ec29fe545584c48bc5352fae72a4b6e5074a15",
+      "bytes": 23330,
+      "origin": "https://github.com/kcat/openal-soft/blob/1.23.1/COPYING",
+      "collection": "verbatim upstream license text"
+    },
+    {
+      "file": "OpenAL-Soft-SOURCE-NOTICES.txt",
+      "sha256": "eb023d58b08e11e9e682bb76e806062cfde1b539e74a5e9db25a41f0c3d288a3",
+      "bytes": 76953,
+      "origin": "https://github.com/kcat/openal-soft/tree/1.23.1",
+      "collection": "source copyright and license comment extraction; see file for scope"
+    },
+    {
       "file": "SDK-Apache-2.0-Khronos.txt",
       "sha256": "7e4d3fba250d15e9e0afa380d4b611828fa2560cc8fdebe95bcf2f01a487de12",
       "bytes": 10045,
@@ -430,11 +444,25 @@
       "collection": "verbatim upstream license text"
     },
     {
+      "file": "libogg-COPYING.txt",
+      "sha256": "d2ab5758336489da61c12cc5bb757da5339c4ae9001f9bb0562b4370249af814",
+      "bytes": 1466,
+      "origin": "https://downloads.xiph.org/releases/ogg/libogg-1.3.6.tar.xz",
+      "collection": "verbatim upstream COPYING"
+    },
+    {
       "file": "libpng-LICENSE.txt",
       "sha256": "16d9daaafbf63a31a5bdc91d4600972548fef5aaa1244202393288dbd079c49a",
       "bytes": 5345,
       "origin": "https://github.com/pnggroup/libpng/blob/2b978915d82377df13fcbb1fb56660195ded868a/LICENSE",
       "collection": "verbatim upstream license text"
+    },
+    {
+      "file": "libvorbis-COPYING.txt",
+      "sha256": "ec1815db59fcd302846df949d7424876cb2e2dc5ed1606c5fb0b36787b1cf43a",
+      "bytes": 1470,
+      "origin": "https://downloads.xiph.org/releases/vorbis/libvorbis-1.3.7.tar.xz",
+      "collection": "verbatim upstream COPYING"
     },
     {
       "file": "mini-GMP-NOTICE.txt",
