@@ -1,0 +1,46 @@
+--- a/src/network/mtp/threads.cpp
++++ b/src/network/mtp/threads.cpp
+@@ -6,6 +6,8 @@
+ #include "network/mtp/threads.h"
+ #if defined(__ORBIS__)
+ #include "network/mtp/ps4_network_diagnostics.h"
++extern "C" void ps4_heap_guard_check(const char *) noexcept;
++extern "C" void ps4_heap_guard_report(const char *) noexcept;
+ #endif
+ #include "log.h"
+ #include "profiler.h"
+@@ -62,6 +64,10 @@
+ static void ps4_report_network_diagnostics(bool force)
+ {
+ 	const int saved_errno = errno;
++	if (force) {
++		ps4_heap_guard_check("network-final");
++		ps4_heap_guard_report("network-final");
++	}
+ 	auto &diag = ps4_network_diagnostics::counters;
+ 	const u64 now = porting::getTimeMs();
+ 	u64 last = diag.last_report_ms.load(std::memory_order_relaxed);
+--- a/src/client/clientlauncher.cpp
++++ b/src/client/clientlauncher.cpp
+@@ -17,6 +17,10 @@
+ #include "gui/guiEngine.h"
+ #include "fontengine.h"
+ #include "clientlauncher.h"
++#if defined(__ORBIS__)
++extern "C" void ps4_heap_guard_check(const char *) noexcept;
++extern "C" void ps4_heap_guard_report(const char *) noexcept;
++#endif
+ #include "version.h"
+ #include "renderingengine.h"
+ #include "settings.h"
+@@ -520,6 +524,10 @@
+ 
+ void ClientLauncher::main_menu(MainMenuData *menudata)
+ {
++#if defined(__ORBIS__)
++	ps4_heap_guard_check("menu-entry");
++	ps4_heap_guard_report("menu-entry");
++#endif
+ 	volatile auto       *kill   = porting::signal_handler_killstatus();
+ 	video::IVideoDriver *driver = m_rendering_engine->get_video_driver();
+ 	auto                *device = m_rendering_engine->get_raw_device();

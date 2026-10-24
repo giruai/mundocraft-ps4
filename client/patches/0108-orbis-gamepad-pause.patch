@@ -1,0 +1,50 @@
+--- a/src/client/game_formspec.cpp
++++ b/src/client/game_formspec.cpp
+@@ -374,6 +374,18 @@
+ 			" --> place single item to slot\n"
+ 			);
+ 	}
++
++#if defined(__ORBIS__)
++	control_text = "PS4 default controls:\n"
++		"Left stick: move\nRight stick: look\n"
++		"X: jump / menu select\nCircle: sneak / menu back\n"
++		"Options: pause / resume\nTriangle: inventory\n"
++		"R2: dig / attack\nL2: place / use\n"
++		"L1 / R1: hotbar\nSquare: auxiliary\n"
++		"Menu: left stick moves cursor\n"
++		"Exit to OS: return to Home\n"
++		"Online world keeps running.";
++#endif
+ 
+ 	auto simple_singleplayer_mode = m_client->m_simple_singleplayer_mode;
+ 
+--- a/irr/src/CIrrDeviceSDL.cpp
++++ b/irr/src/CIrrDeviceSDL.cpp
+@@ -1170,6 +1170,26 @@
+ #else
+ 			auto id = SDL_event.cdevice.which;
+ #endif
++#if defined(__ORBIS__)
++			// SDL stops sending motion/releases after unplug. Neutralize both
++			// native gameplay and the menu adapter before closing this pad.
++			for (int axis = 0; axis < static_cast<int>(GamepadAxis::COUNT); ++axis) {
++				SEvent released{};
++				released.EventType = EET_GAMEPAD_AXIS_EVENT;
++				released.GamepadAxisEvent.ID = id;
++				released.GamepadAxisEvent.Axis = static_cast<GamepadAxis>(axis);
++				released.GamepadAxisEvent.Value = 0;
++				postEventFromUser(released);
++			}
++			for (int button = 0; button < static_cast<int>(GamepadButton::COUNT); ++button) {
++				SEvent released{};
++				released.EventType = EET_GAMEPAD_BUTTON_EVENT;
++				released.GamepadButtonEvent.ID = id;
++				released.GamepadButtonEvent.Button = static_cast<GamepadButton>(button);
++				released.GamepadButtonEvent.PressedDown = false;
++				postEventFromUser(released);
++			}
++#endif
+ 			if (auto p = gamepads.find(id); p != gamepads.end()) {
+ 				os::Printer::log("Gamepad disconnected", SDL_GetGamepadName(p->second), ELL_INFORMATION);
+ 				SDL_CloseGamepad(p->second);

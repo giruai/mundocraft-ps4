@@ -1,0 +1,49 @@
+--- a/src/threading/semaphore.h
++++ b/src/threading/semaphore.h
+@@ -4,7 +4,9 @@
+ 
+ #pragma once
+ 
+-#if defined(_WIN32)
++#if defined(__ORBIS__)
++#include "ps4_semaphore.h"
++#elif defined(_WIN32)
+ #include <windows.h>
+ #elif defined(__MACH__) && defined(__APPLE__)
+ #include <mach/semaphore.h>
+@@ -27,7 +29,9 @@
+ 	bool wait(unsigned int time_ms);
+ 
+ private:
+-#if defined(WIN32)
++#if defined(__ORBIS__)
++	Ps4Semaphore semaphore;
++#elif defined(WIN32)
+ 	HANDLE semaphore;
+ #elif defined(__MACH__) && defined(__APPLE__)
+ 	semaphore_t semaphore;
+--- a/src/threading/semaphore.cpp
++++ b/src/threading/semaphore.cpp
+@@ -3,6 +3,16 @@
+ // Copyright (C) 2013 sapier <sapier AT gmx DOT net>
+ 
+ #include "threading/semaphore.h"
++
++#if defined(__ORBIS__)
++// Keep the other platform backends unchanged. The native backend owns its
++// opaque kernel handle and handles failures even when assertions are disabled.
++Semaphore::Semaphore(int val) : semaphore(val) {}
++Semaphore::~Semaphore() = default;
++void Semaphore::post(unsigned int num) { semaphore.post(num); }
++void Semaphore::wait() { semaphore.wait(); }
++bool Semaphore::wait(unsigned int time_ms) { return semaphore.wait(time_ms); }
++#else
+ 
+ #include <iostream>
+ #include <cstdlib>
+@@ -150,3 +160,5 @@
+ #endif
+ }
+ 
++
++#endif // __ORBIS__

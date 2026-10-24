@@ -1,0 +1,20 @@
+{
+  "sqlite": {
+    "url": "https://www.sqlite.org/2024/sqlite-amalgamation-3460100.zip",
+    "archive": "sqlite-amalgamation-3460100.zip",
+    "sha256": "77823cb110929c2bcb0f5d48e4833b5c59a8a6e40cdea3936b99e199dbbe5784",
+    "version": "3.46.1"
+  },
+  "freetype": {
+    "url": "https://github.com/freetype/freetype.git",
+    "commit": "42608f77f20749dd6ddc9e0536788eaad70ea4b5",
+    "archive": "freetype-source.tar",
+    "sha256": "98b67f6bdb1cec51bcea8c54326efac82b7373d9cc36933a556e1360dbbe9116"
+  },
+  "zstd": {
+    "url": "https://github.com/facebook/zstd.git",
+    "commit": "794ea1b0afca0f020f4e57b6732332231fb23c70",
+    "archive": "zstd-source.tar",
+    "sha256": "473a5782ac3e511d476127aa7ea100e51ee4756e8c8e984144ee3a42a7387222"
+  }
+}

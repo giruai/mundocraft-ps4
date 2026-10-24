@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="330" viewBox="0 0 1200 330" role="img" aria-labelledby="title desc">
+<!-- SPDX-License-Identifier: MIT -->
+  <title id="title">MundoCraft for PS4</title>
+  <desc id="desc">Geometric illustration of a block landscape under a night sky.</desc>
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#102c3b"/><stop offset="1" stop-color="#285b55"/></linearGradient>
+    <linearGradient id="glow" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#f4ba61"/><stop offset="1" stop-color="#e8783f"/></linearGradient>
+  </defs>
+  <rect width="1200" height="330" rx="24" fill="url(#sky)"/>
+  <circle cx="1010" cy="82" r="39" fill="#f8dd9c" opacity=".95"/>
+  <path d="M0 220 160 132l145 96 166-118 151 116 160-142 172 132 126-88 120 78v124H0z" fill="#315f54"/>
+  <path d="m0 265 167-80 151 78 166-83 177 87 145-89 166 80 131-62 97 55v79H0z" fill="#24483e"/>
+  <g fill="#86a76a"><rect x="120" y="230" width="52" height="20"/><rect x="172" y="250" width="52" height="16"/><rect x="540" y="242" width="52" height="18"/><rect x="592" y="260" width="52" height="16"/><rect x="860" y="220" width="52" height="20"/><rect x="912" y="240" width="52" height="16"/></g>
+  <g fill="#47785b"><rect x="172" y="266" width="52" height="24"/><rect x="592" y="276" width="52" height="22"/><rect x="912" y="256" width="52" height="24"/></g>
+  <g transform="translate(770 204)"><rect x="0" y="0" width="138" height="70" rx="12" fill="#172b34" stroke="#81c6b2" stroke-width="3"/><rect x="11" y="10" width="116" height="47" rx="5" fill="#9ed6a1"/><path d="m17 48 31-21 23 14 20-18 29 25z" fill="#4d986f"/><circle cx="98" cy="22" r="6" fill="#fff2a1"/><rect x="62" y="70" width="14" height="15" fill="#8cb6a2"/><rect x="40" y="85" width="58" height="7" rx="3" fill="#8cb6a2"/></g>
+  <text x="64" y="106" fill="#f4f3df" font-family="system-ui,sans-serif" font-size="44" font-weight="750">MundoCraft</text>
+  <text x="68" y="145" fill="#b9d4c4" font-family="system-ui,sans-serif" font-size="19" letter-spacing="2">LUANTI FOR PLAYSTATION 4</text>
+  <text x="68" y="294" fill="#e7c782" font-family="system-ui,sans-serif" font-size="15" font-weight="600">EXPLORE · BUILD · RETURN TO YOUR WORLD</text>
+</svg>

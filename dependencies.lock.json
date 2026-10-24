@@ -1,0 +1,33 @@
+{
+  "mesa": {
+    "url": "https://github.com/orbis-ports/mesa-ps4",
+    "commit": "1a59cc147b54e3970814b37313e2f27357672e9d",
+    "archive": "mesa-source.tar",
+    "sha256": "4b8f802cc8c85e66e37b8ce9aca4aa45798f4a89888a1861c673d69d8c76a460"
+  },
+  "sdl2": {
+    "url": "https://github.com/orbis-ports/SDL2",
+    "commit": "8967814a1e2c1a7ffd9da5c3eb8ffbeec4aed81a",
+    "archive": "sdl2-source.tar",
+    "sha256": "ecb73c4fd26508ac943700959fb1c942c5d7aafeb173e330c7c8afaa511aa8bb"
+  },
+  "compat": {
+    "url": "https://github.com/orbis-ports/orbis-compat",
+    "commit": "314078413251644820955bd09335836ad19f88bd",
+    "archive": "compat-source.tar",
+    "sha256": "bee1dab7c64525748fbe6e60f526e3b976479e6f1efc4eb803869e4e72b9ed93"
+  },
+  "sdk_bundle": {
+    "url": "https://github.com/orbis-ports/orbis-porting-kit/releases/download/orbis-sdk-v1/orbis-sdk-v1.tar.gz",
+    "sha256": "f4f079a4df334b46a76996f895283904283d6a006f97102aafaa53d4ecfc9622"
+  },
+  "openorbis_module_sources": {
+    "url": "https://github.com/OpenOrbis/OpenOrbis-PS4-Toolchain/releases/download/v0.5.4/toolchain-llvm-18.tar.gz",
+    "sha256": "3c7cd5bb593ca74fa1c13fd59f3938dc0fc07985167f7275063019e63abe4526"
+  },
+  "host_libssl": {
+    "url": "https://deb.debian.org/debian/pool/main/o/openssl/libssl1.1_1.1.1w-0+deb11u1_amd64.deb",
+    "archive": "libssl1.1.deb",
+    "sha256": "aadf8b4b197335645b230c2839b4517aa444fd2e8f434e5438c48a18857988f7"
+  }
+}

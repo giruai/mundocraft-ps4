@@ -1,0 +1,211 @@
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -5,6 +5,9 @@
+ 
+ # This can be read from ${PROJECT_NAME} after project() is called
+ project(luanti)
++if(PS4)
++ include("${PS4_PORT_SOURCE}/client/cmake/options.cmake")
++endif()
+ set(PROJECT_NAME_CAPITALIZED "Luanti")
+ 
+ set(CMAKE_CXX_STANDARD 17)
+--- a/src/porting.cpp
++++ b/src/porting.cpp
+@@ -9,8 +9,11 @@
+ */
+ 
+ #include "porting.h"
+-
+-#if defined(__FreeBSD__)  || defined(__NetBSD__) || defined(__DragonFly__) || defined(__OpenBSD__)
++#ifdef __ORBIS__
++#include "ps4_platform.h"
++#endif
++
++#if !defined(__ORBIS__) && (defined(__FreeBSD__)  || defined(__NetBSD__) || defined(__DragonFly__) || defined(__OpenBSD__))
+ 	#include <sys/types.h>
+ 	#include <sys/sysctl.h>
+ 	extern char **environ;
+@@ -238,7 +241,9 @@
+ 
+ static std::string detectSystemInfo()
+ {
+-#ifdef _WIN32
++#ifdef __ORBIS__
++	return "Orbis x86_64";
++#elif defined(_WIN32)
+ 	std::ostringstream oss;
+ 	char filePath[PATH_MAX];
+ 	UINT blockSize;
+@@ -359,8 +364,16 @@
+ #endif
+ }
+ 
+-//// Windows
+-#if defined(_WIN32)
++//// PS4
++#if defined(__ORBIS__)
++bool getCurrentExecPath(char *buf, size_t len)
++{
++ const char *path="/app0/eboot.bin";
++ if(len<=strlen(path))return false;
++ memcpy(buf,path,strlen(path)+1);
++ return true;
++}
++#elif defined(_WIN32)
+ 
+ bool getCurrentExecPath(char *buf, size_t len)
+ {
+@@ -480,8 +493,16 @@
+ }
+ 
+ 
+-//// Windows
+-#if defined(_WIN32)
++//// PS4
++#if defined(__ORBIS__)
++bool setSystemPaths()
++{
++ path_share="/app0/luanti/share";
++ path_user="/data/luanti";
++ path_cache="/data/luanti/cache";
++ return true;
++}
++#elif defined(_WIN32)
+ 
+ bool setSystemPaths()
+ {
+@@ -728,7 +749,9 @@
+ 	if (!setSystemPaths())
+ 		errorstream << "Failed to get one or more system-wide path" << std::endl;
+ 
+-#  ifdef __ANDROID__
++#  if defined(__ORBIS__)
++	path_cache = path_user + DIR_DELIM "cache";
++#  elif defined(__ANDROID__)
+ 	sanity_check(!path_cache.empty());
+ #  elif defined(_WIN32)
+ 	path_cache = path_user + DIR_DELIM "cache";
+@@ -790,7 +813,12 @@
+ //// OS-specific Secure Random
+ ////
+ 
+-#ifdef WIN32
++#if defined(__ORBIS__)
++bool secure_rand_fill_buf(void *buf, size_t len)
++{
++ return ps4port::secure_random(buf,len);
++}
++#elif defined(WIN32)
+ 
+ bool secure_rand_fill_buf(void *buf, size_t len)
+ {
+--- a/src/main.cpp
++++ b/src/main.cpp
+@@ -101,6 +101,10 @@
+ static bool use_debugger(int argc, char *argv[]);
+ static bool init_common(const Settings &cmd_args, int argc, char *argv[]);
+ static void uninit_common();
++#ifdef __ORBIS__
++static bool ps4_common_ready=false;
++void ps4_luanti_shutdown(){if(ps4_common_ready){ps4_common_ready=false;uninit_common();}}
++#endif
+ static void startup_message();
+ static bool read_config_file(const Settings &cmd_args);
+ static void init_log_streams(const Settings &cmd_args);
+@@ -129,7 +133,11 @@
+ 
+ static OptionList allowed_options;
+ 
++#ifdef __ORBIS__
++int ps4_luanti_main(int argc, char *argv[])
++#else
+ int main(int argc, char *argv[])
++#endif
+ {
+ 	int retval;
+ 	debug_set_exception_handler();
+@@ -764,7 +772,11 @@
+ 	Settings::createLayer(SL_GLOBAL);
+ 
+ 	// Set cleanup callback(s) to run at process exit
++#ifdef __ORBIS__
++	ps4_common_ready=true;
++#else
+ 	atexit(uninit_common);
++#endif
+ 
+ 	if (!read_config_file(cmd_args))
+ 		return false;
+--- a/src/filesys.cpp
++++ b/src/filesys.cpp
+@@ -369,6 +369,17 @@
+ 	if (!PathExists(path))
+ 		return true;
+ 
++#ifdef __ORBIS__
++ // No fork/exec on Orbis. Restrict recursive removal to this app's data subtree.
++ const auto normalized=RemoveRelativePathComponents(path);
++ const auto prefix=porting::path_user+DIR_DELIM;
++ if(normalized.compare(0,prefix.size(),prefix)!=0)return false;
++ if(IsDir(normalized))for(const auto &node:GetDirListing(normalized)){
++  if(node.name.empty()||node.name=="."||node.name=="..")continue;
++  if(!RecursiveDelete(normalized+DIR_DELIM+node.name))return false;
++ }
++ return DeleteSingleFileOrEmptyDirectory(normalized,true);
++#else
+ 	// Execute the 'rm' command directly, by fork() and execve()
+ 
+ 	infostream << "Removing \"" << path << "\"" << std::endl;
+@@ -404,6 +415,7 @@
+ 		while (tpid != child_pid);
+ 		return WIFEXITED(status) && WEXITSTATUS(status) == 0;
+ 	}
++#endif
+ }
+ 
+ bool DeleteSingleFileOrEmptyDirectory(const std::string &path, bool log_error)
+@@ -850,6 +862,13 @@
+ 
+ std::string AbsolutePath(const std::string &path)
+ {
++#ifdef __ORBIS__
++ // PFS/app0 and this application's data filesystem expose no symlinks.
++ // SDK realpath relies on Linux /proc/self/fd and cannot resolve these paths.
++ if(path.empty())return "";
++ const auto result=RemoveRelativePathComponents(IsPathAbsolute(path)?path:porting::path_user+DIR_DELIM+path);
++ return PathExists(result)?result:std::string();
++#else
+ #ifdef _WIN32
+ 	// handle behavior differences on windows
+ 	if (path.empty())
+@@ -865,6 +884,7 @@
+ 	std::string abs_path_str(abs_path);
+ 	free(abs_path);
+ 	return abs_path_str;
++#endif
+ }
+ 
+ std::string AbsolutePathPartial(const std::string &path)
+--- a/src/client/renderingengine.cpp
++++ b/src/client/renderingengine.cpp
+@@ -197,6 +197,9 @@
+ 	params.WindowMaximized = window_maximized;
+ 	params.WindowResizable = 1; // 1 means always (required for window_maximized)
+ 	params.Stencilbuffer = false;
++#ifdef __ORBIS__
++	params.WithAlphaChannel = true;
++#endif
+ 	params.Vsync = vsync;
+ 	params.EventReceiver = receiver;
+ 	params.DriverDebug = g_settings->getBool("opengl_debug");
+--- a/src/CMakeLists.txt
++++ b/src/CMakeLists.txt
+@@ -1166,3 +1166,7 @@
+ 
+ 	add_custom_target(translations ALL COMMENT "mo-update" DEPENDS ${MO_FILES})
+ endif()
++
++if(PS4)
++ include("${PS4_PORT_SOURCE}/client/cmake/app.cmake")
++endif()

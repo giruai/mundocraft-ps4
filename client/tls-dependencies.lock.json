@@ -1,0 +1,25 @@
+{
+  "curl": {
+    "version": "8.23.0",
+    "tag": "curl-8_23_0",
+    "commit": "3163ec065643ba20709f190111f42c3e1fe95273",
+    "url": "https://curl.se/download/curl-8.23.0.tar.xz",
+    "archive": "curl-8.23.0.tar.xz",
+    "sha256": "8dadd7d2536a314f982ad05a651b713f426bf7d02cc2c76cffb9796f2218e6c5"
+  },
+  "mbedtls": {
+    "version": "3.6.7",
+    "tag": "mbedtls-3.6.7",
+    "commit": "068ff080b369adfac81509f9b57b2afabaf82dc5",
+    "url": "https://github.com/Mbed-TLS/mbedtls/releases/download/mbedtls-3.6.7/mbedtls-3.6.7.tar.bz2",
+    "archive": "mbedtls-3.6.7.tar.bz2",
+    "sha256": "a7e8bcbec0e6f761b4af24f25677626b35f762f68eef79c08677a363212d11f6"
+  },
+  "ca_bundle": {
+    "date": "2026-09-25",
+    "url": "https://curl.se/ca/cacert-2026-09-25.pem",
+    "archive": "cacert-2026-09-25.pem",
+    "sha256": "a41b5d356aea97a529fe27e0f7316d2f9d946d75927476cf9cf1b90637d00505",
+    "target_path": "/app0/client/cacert.pem"
+  }
+}

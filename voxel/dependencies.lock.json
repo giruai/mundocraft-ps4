@@ -1,0 +1,20 @@
+{
+  "libpng": {
+    "commit": "2b978915d82377df13fcbb1fb56660195ded868a",
+    "archive": "libpng-source.tar",
+    "sha256": "7def7cd90b18267c7d4242288e6aafc97077ff59b5454ab9a99ee8b6e9171047",
+    "url": "https://github.com/pnggroup/libpng.git"
+  },
+  "libjpeg-turbo": {
+    "commit": "4e151a4ad91001b3aa8c2ece2205c15f487ce320",
+    "archive": "libjpeg-turbo-source.tar",
+    "sha256": "a95d439ed00b2001e8bb6b65a5d68ba1826f92a8f1107bd656be01762be0bd6d",
+    "url": "https://github.com/libjpeg-turbo/libjpeg-turbo.git"
+  },
+  "luanti": {
+    "commit": "c0e6812b1a4260bb25a1f606f70f55f4962bb97d",
+    "archive": "luanti-5.17.0-source.tar",
+    "sha256": "b776f0a39359a36c2571454001967b6cc80e436bbe2c62ea502340738e3fd13c",
+    "url": "https://github.com/luanti-org/luanti.git"
+  }
+}

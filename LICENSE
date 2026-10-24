@@ -1,0 +1,27 @@
+MundoCraft - Luanti PS4: component licensing
+===========================================
+
+This distribution contains components under different licenses. It is not
+licensed as a whole under the MIT license, and this document does not relicense
+third-party work. Each original copyright notice and license remains in force.
+
+Luanti engine and modifications: LGPL-2.1-or-later. Bundled mini-GMP: the
+LGPL-3.0-or-later option is used. Original independently authored support code
+covered by LICENSE-MIT.txt retains that MIT grant. Adapted LÖVE PS4 support
+retains the terms and attribution in LICENSES/LOVE-PS4.txt.
+
+OpenOrbis replacement PRX modules and their CRT source: GPL-3.0-only. The
+OpenOrbis-derived linker script is GPL-3.0-only. Their inclusion does not purport
+to relicense every other component. Graphics, image, font, TLS and other
+libraries retain the component terms in THIRD_PARTY_NOTICES.md and LICENSES/.
+Assets and fonts have their own licenses; the launcher icon has documented
+AI-generated provenance. See CREDITS.md and docs/UPSTREAM_POLICY.md.
+
+Complete corresponding modified sources and the build/relink recipes accompany
+the release. Source recipients retain the rights granted by each license,
+including modification and redistribution. Private repository access does not
+add a confidentiality or non-redistribution condition to these grants.
+
+All components are provided without warranty except as their respective
+licenses expressly provide. This inventory records provenance and conditions;
+it is not a guarantee about all legal questions in every jurisdiction.

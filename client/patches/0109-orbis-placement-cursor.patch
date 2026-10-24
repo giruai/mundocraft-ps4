@@ -1,0 +1,190 @@
+--- a/src/client/render/plain.cpp
++++ b/src/client/render/plain.cpp
+@@ -4,6 +4,9 @@
+ // Copyright (C) 2017 numzero, Lobachevskiy Vitaliy <numzer0@yandex.ru>
+ 
+ #include "plain.h"
++#if defined(__ORBIS__)
++#include "ps4_input.h"
++#endif
+ #include "secondstage.h"
+ #include "settings.h"
+ #include "client/camera.h"
+@@ -56,6 +59,9 @@
+ 	}
+ 
+ 	context.device->getGUIEnvironment()->drawAll();
++#if defined(__ORBIS__)
++	ps4_input::draw_cursor(context.device);
++#endif
+ }
+ 
+ 
+--- a/src/gui/guiEngine.cpp
++++ b/src/gui/guiEngine.cpp
+@@ -3,6 +3,9 @@
+ // Copyright (C) 2013 sapier
+ 
+ #include "guiEngine.h"
++#if defined(__ORBIS__)
++#include "ps4_input.h"
++#endif
+ #include "statusTextHelper.h"
+ 
+ #include "client/fontengine.h"
+@@ -374,6 +377,9 @@
+ 			// The header *can* be drawn after the menu because it never intersects
+ 			// the menu.
+ 			drawHeader(driver);
++#if defined(__ORBIS__)
++			ps4_input::draw_cursor(m_rendering_engine->get_raw_device());
++#endif
+ 
+ 			// Take screenshot if requested
+ 			// Must be before endScene() to capture the rendered frame
+--- a/src/client/inputhandler.cpp
++++ b/src/client/inputhandler.cpp
+@@ -172,6 +172,16 @@
+ void MyEventReceiver::setKeyDown(GameKeyType action, std::pair<float, bool> new_state)
+ {
+ 	auto value = new_state.first;
++#if defined(__ORBIS__)
++	if (action == KeyType::PLACE && (value > 0) != IsKeyDown(action)) {
++		static unsigned logs = 0;
++		if (logs < 32) {
++			++logs;
++			infostream << "PS4_PLACE action_state down=" << (value > 0)
++					<< " value=" << value << std::endl;
++		}
++	}
++#endif
+ 	if (value > 0) {
+ 		if (!IsKeyDown(action)) {
+ 			keyWasPressed.set(action);
+@@ -263,6 +273,25 @@
+ 	else if (event.EventType == EET_TOUCH_INPUT_EVENT)
+ 		last_pointer_type = PointerType::Touch;
+ 
++
++#if defined(__ORBIS__)
++	if (event.EventType == EET_GAMEPAD_AXIS_EVENT) {
++		const auto &axis = event.GamepadAxisEvent;
++		if (axis.Axis == GamepadAxis::LEFT_TRIGGER || axis.Axis == GamepadAxis::RIGHT_TRIGGER) {
++			static bool seen[2] = {}, down[2] = {};
++			static unsigned logs[2] = {};
++			const int index = axis.Axis == GamepadAxis::RIGHT_TRIGGER ? 1 : 0;
++			const bool pressed = axis.Value > 6000;
++			if ((!seen[index] || down[index] != pressed) && logs[index] < 32) {
++				++logs[index];
++				infostream << "PS4_TRIGGER axis=" << (index + 4)
++						<< " value=" << axis.Value << " menu=" << isMenuActive() << std::endl;
++			}
++			seen[index] = true;
++			down[index] = pressed;
++		}
++	}
++#endif
+ 	// Let the PS4 controller adapter consume menu input first.
+ #if defined(__ORBIS__)
+ 	if (isMenuActive() && ps4_input::on_menu_event(event))
+--- a/src/client/game.cpp
++++ b/src/client/game.cpp
+@@ -2992,6 +2992,26 @@
+ 	const PointedThing &pointed, const NodeMetadata *meta)
+ {
+ 	const auto &prediction = selected_def.node_placement_prediction;
++#if defined(__ORBIS__)
++	static unsigned attempts = 0;
++	const unsigned attempt = attempts < 32 ? ++attempts : 0;
++	auto ps4_place_result = [attempt](const char *reason) {
++		if (attempt)
++			infostream << "PS4_PLACE attempt=" << attempt << " outcome=" << reason << std::endl;
++	};
++	if (attempt) {
++		const auto standing = client->getEnv().getLocalPlayer()->getStandingNodePos();
++		infostream << "PS4_PLACE attempt=" << attempt
++				<< " under=" << nodepos.X << ',' << nodepos.Y << ',' << nodepos.Z
++				<< " above=" << neighborpos.X << ',' << neighborpos.Y << ',' << neighborpos.Z
++				<< " standing=" << standing.X << ',' << standing.Y << ',' << standing.Z
++				<< " item=" << selected_def.name.substr(0, 128)
++				<< " prediction=" << prediction.substr(0, 128) << std::endl;
++	}
++#else
++	auto ps4_place_result = [](const char *) {};
++#endif
++
+ 
+ 	const NodeDefManager *nodedef = client->ndef();
+ 	ClientMap &map = client->getEnv().getClientMap();
+@@ -3001,6 +3021,7 @@
+ 	node = map.getNode(nodepos, &is_valid_position);
+ 	if (!is_valid_position) {
+ 		soundmaker->m_player_rightpunch_sound = selected_def.sound_place_failed;
++		ps4_place_result("target_unloaded");
+ 		return false;
+ 	}
+ 
+@@ -3012,6 +3033,7 @@
+ 			client->interact(INTERACT_PLACE, pointed);
+ 
+ 		m_game_formspec.showNodeFormspec(meta->getString("formspec"), nodepos);
++		ps4_place_result("node_formspec");
+ 		return false;
+ 	}
+ 
+@@ -3020,6 +3042,7 @@
+ 			!isKeyDown(KeyType::SNEAK))) {
+ 		// Report to server
+ 		client->interact(INTERACT_PLACE, pointed);
++		ps4_place_result("delegated_request_sent");
+ 		return false;
+ 	}
+ 
+@@ -3038,6 +3061,7 @@
+ 				soundmaker->m_player_rightpunch_sound = selected_def.sound_place_failed;
+ 				// Report to server
+ 				client->interact(INTERACT_PLACE, pointed);
++				ps4_place_result("occupied_target_request_sent");
+ 				return false;
+ 			}
+ 		}
+@@ -3054,6 +3078,7 @@
+ 		// Handle this as if prediction was empty
+ 		// Report to server
+ 		client->interact(INTERACT_PLACE, pointed);
++		ps4_place_result("unknown_prediction_request_sent");
+ 		return false;
+ 	}
+ 
+@@ -3147,6 +3172,7 @@
+ 			soundmaker->m_player_rightpunch_sound = selected_def.sound_place_failed;
+ 			// Report to server
+ 			client->interact(INTERACT_PLACE, pointed);
++			ps4_place_result("missing_support_request_sent");
+ 			return false;
+ 		}
+ 	}
+@@ -3193,9 +3219,15 @@
+ 			client->interact(INTERACT_PLACE, pointed);
+ 			// A node is predicted, also play a sound
+ 			soundmaker->m_player_rightpunch_sound = selected_def.sound_place;
++			ps4_place_result("predicted_request_sent");
+ 			return true;
+ 		} else {
+ 			soundmaker->m_player_rightpunch_sound = selected_def.sound_place_failed;
++			ps4_place_result("player_collision");
++			#if defined(__ORBIS__)
++			if (wasKeyPressed(KeyType::PLACE))
++				m_game_ui->showTranslatedStatusText("Cannot place a block inside the player.");
++			#endif
+ 			return false;
+ 		}
+ 	} catch (const InvalidPositionException &e) {
+@@ -3203,6 +3235,7 @@
+ 			<< selected_def.name << " (places "
+ 			<< prediction << ") - Position not loaded" << std::endl;
+ 		soundmaker->m_player_rightpunch_sound = selected_def.sound_place_failed;
++		ps4_place_result("position_not_loaded");
+ 		return false;
+ 	}
+ }

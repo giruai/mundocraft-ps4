@@ -1,0 +1,38 @@
+--- sqlite3.c
++++ sqlite3-orbis.c
+@@ -38498,7 +38498,7 @@
+ # include <limits.h>
+ #endif /* OS_VXWORKS */
+ 
+-#if defined(__APPLE__) || SQLITE_ENABLE_LOCKING_STYLE
++#if defined(__APPLE__) || (SQLITE_ENABLE_LOCKING_STYLE && !defined(__ORBIS__))
+ # include <sys/mount.h>
+ #endif
+ 
+@@ -44632,7 +44632,7 @@
+ #if SQLITE_ENABLE_LOCKING_STYLE
+   int isAutoProxy  = (flags & SQLITE_OPEN_AUTOPROXY);
+ #endif
+-#if defined(__APPLE__) || SQLITE_ENABLE_LOCKING_STYLE
++#if defined(__APPLE__) || (SQLITE_ENABLE_LOCKING_STYLE && !defined(__ORBIS__))
+   struct statfs fsInfo;
+ #endif
+ 
+@@ -44823,7 +44823,7 @@
+   }
+ #endif
+ 
+-#if defined(__APPLE__) || SQLITE_ENABLE_LOCKING_STYLE
++#if defined(__APPLE__) || (SQLITE_ENABLE_LOCKING_STYLE && !defined(__ORBIS__))
+   if( fstatfs(fd, &fsInfo) == -1 ){
+     storeLastErrno(p, errno);
+     robust_close(p, fd, __LINE__);
+@@ -44845,7 +44845,7 @@
+   if( isNewJrnl )               ctrlFlags |= UNIXFILE_DIRSYNC;
+   if( flags & SQLITE_OPEN_URI ) ctrlFlags |= UNIXFILE_URI;
+ 
+-#if SQLITE_ENABLE_LOCKING_STYLE
++#if SQLITE_ENABLE_LOCKING_STYLE && defined(__APPLE__)
+ #if SQLITE_PREFER_PROXY_LOCKING
+   isAutoProxy = 1;
+ #endif

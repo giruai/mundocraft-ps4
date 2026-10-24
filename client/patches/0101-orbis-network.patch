@@ -1,0 +1,143 @@
+diff --git a/src/network/socket.cpp b/src/network/socket.cpp
+--- a/src/network/socket.cpp
++++ b/src/network/socket.cpp
+@@ -33,25 +33,57 @@
+ #define SOCKET_ERR_STR(e) strerror(e)
+ #endif
+ 
++#if defined(__ORBIS__)
++#include <orbis/Net.h>
++#endif
++
+ static bool g_sockets_initialized = false;
++#if defined(__ORBIS__)
++static int32_t g_net_pool = -1;
++extern "C" void ps4_luanti_resolver_cleanup();
++extern "C" int32_t ps4_luanti_net_pool()
++{
++	return g_net_pool;
++}
++#endif
+ 
+ // Initialize sockets
+ void sockets_init()
+ {
++	if (g_sockets_initialized)
++		return;
+ #ifdef _WIN32
+ 	// Windows needs sockets to be initialized before use
+ 	WSADATA WsaData;
+ 	if (WSAStartup(MAKEWORD(2, 2), &WsaData) != NO_ERROR)
+ 		throw SocketException("WSAStartup failed");
++#elif defined(__ORBIS__)
++	// The POSIX socket entry points still need the PS4 network service.
++	int32_t result = sceNetInit();
++	if (result != 0)
++		throw SocketException("sceNetInit failed: " + std::to_string(result));
++	g_net_pool = sceNetPoolCreate("luanti", 512 * 1024, 0);
++	if (g_net_pool < 0) {
++		int32_t pool_error = g_net_pool;
++		sceNetTerm();
++		throw SocketException("sceNetPoolCreate failed: " + std::to_string(pool_error));
++	}
+ #endif
+ 	g_sockets_initialized = true;
+ }
+ 
+ void sockets_cleanup()
+ {
++	if (!g_sockets_initialized)
++		return;
+ #ifdef _WIN32
+ 	// On Windows, cleanup sockets after use
+ 	WSACleanup();
++#elif defined(__ORBIS__)
++	ps4_luanti_resolver_cleanup();
++	sceNetPoolDestroy(g_net_pool);
++	g_net_pool = -1;
++	sceNetTerm();
+ #endif
+ 	g_sockets_initialized = false;
+ }
+@@ -137,6 +165,9 @@
+ 	if (m_addr_family == AF_INET6) {
+ 		struct sockaddr_in6 address;
+ 		memset(&address, 0, sizeof(address));
++#if defined(__ORBIS__)
++		address.sin6_len = sizeof(address);
++#endif
+ 
+ 		address.sin6_family = AF_INET6;
+ 		address.sin6_addr = addr.getAddress6();
+@@ -147,6 +178,9 @@
+ 	} else {
+ 		struct sockaddr_in address;
+ 		memset(&address, 0, sizeof(address));
++#if defined(__ORBIS__)
++		address.sin_len = sizeof(address);
++#endif
+ 
+ 		address.sin_family = AF_INET;
+ 		address.sin_addr = addr.getAddress();
+@@ -183,6 +217,9 @@
+ 	int sent;
+ 	if (m_addr_family == AF_INET6) {
+ 		struct sockaddr_in6 address = {};
++#if defined(__ORBIS__)
++		address.sin6_len = sizeof(address);
++#endif
+ 		address.sin6_family = AF_INET6;
+ 		address.sin6_addr = destination.getAddress6();
+ 		address.sin6_port = htons(destination.getPort());
+@@ -191,6 +228,9 @@
+ 				(struct sockaddr *)&address, sizeof(struct sockaddr_in6));
+ 	} else {
+ 		struct sockaddr_in address = {};
++#if defined(__ORBIS__)
++		address.sin_len = sizeof(address);
++#endif
+ 		address.sin_family = AF_INET;
+ 		address.sin_addr = destination.getAddress();
+ 		address.sin_port = htons(destination.getPort());
+@@ -221,7 +261,8 @@
+ 		received = recvfrom(m_handle, (char *)data, size, 0,
+ 				(struct sockaddr *)&address, &address_len);
+ 
+-		if (received < 0)
++		if (received < 0 || address_len < sizeof(address) ||
++				address.sin6_family != AF_INET6)
+ 			return -1;
+ 
+ 		u16 address_port = ntohs(address.sin6_port);
+@@ -237,7 +278,8 @@
+ 		received = recvfrom(m_handle, (char *)data, size, 0,
+ 				(struct sockaddr *)&address, &address_len);
+ 
+-		if (received < 0)
++		if (received < 0 || address_len < sizeof(address) ||
++				address.sin_family != AF_INET)
+ 			return -1;
+ 
+ 		u32 address_ip = ntohl(address.sin_addr.s_addr);
+diff --git a/src/network/address.cpp b/src/network/address.cpp
+--- a/src/network/address.cpp
++++ b/src/network/address.cpp
+@@ -89,6 +89,18 @@
+ 		return;
+ 	}
+ 
++#if defined(__ORBIS__)
++	// Numeric LAN addresses must not depend on the SDK DNS resolver.
++	struct in_addr numeric_ipv4;
++	if (inet_pton(AF_INET, name, &numeric_ipv4) == 1) {
++		m_addr_family = AF_INET;
++		m_address.ipv4 = numeric_ipv4;
++		if (fallback)
++			*fallback = Address();
++		return;
++	}
++#endif
++
+ 	const auto &copy_from_ai = [] (const struct addrinfo *ai, Address *to) {
+ 		if (ai->ai_family == AF_INET) {
+ 			struct sockaddr_in *t = (struct sockaddr_in *)ai->ai_addr;

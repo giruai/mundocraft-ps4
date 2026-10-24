@@ -1,0 +1,4275 @@
+Supplemental upstream copyright and SPDX line inventory. Original source headers remain authoritative.
+
+activeobject.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2010-2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+activeobject.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2010-2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+activeobjectmgr.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2010-2018 nerzhul, Loic BLOT <loic.blot@unix-experience.fr>
+
+benchmark/benchmark.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2022 Luanti Authors
+
+benchmark/benchmark.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2022 Luanti Authors
+
+benchmark/benchmark_activeobjectmgr.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+
+benchmark/benchmark_lighting.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2022 Minetest Authors
+
+benchmark/benchmark_map.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2023 Minetest Authors
+
+benchmark/benchmark_mapblock.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2023 Minetest Authors
+
+benchmark/benchmark_mapmodify.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2023 sfan5
+
+benchmark/benchmark_serialize.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2022 Minetest Authors
+
+benchmark/benchmark_sha.cpp:
+// SPDX-FileCopyrightText: 2024 Luanti Contributors
+// SPDX-License-Identifier: LGPL-2.1-or-later
+
+builtin_files.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2025 Luanti contributors
+
+catch.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+
+catch.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+
+chat.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+chat.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+chat_interface.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2015 est31 <MTest31@outlook.com>
+
+chatmessage.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2017 nerzhul, Loic Blot <loic.blot@unix-experience.fr>
+
+client/activeobjectmgr.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2010-2018 nerzhul, Loic BLOT <loic.blot@unix-experience.fr>
+
+client/activeobjectmgr.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2010-2018 nerzhul, Loic BLOT <loic.blot@unix-experience.fr>
+
+client/camera.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2010-2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+client/camera.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2010-2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+client/client.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+client/client.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+client/clientenvironment.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2010-2017 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+client/clientenvironment.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2010-2017 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+client/clientevent.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2017 nerzhul, Loic Blot <loic.blot@unix-experience.fr>
+
+client/clientlauncher.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2010-2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+client/clientlauncher.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2010-2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+client/clientmap.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2010-2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+client/clientmap.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2010-2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+client/clientmedia.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+client/clientmedia.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+client/clientobject.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2010-2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+client/clientobject.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2010-2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+client/clientsimpleobject.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+client/clouds.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2010-2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+client/clouds.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2010-2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+client/content_cao.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2010-2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+client/content_cao.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2010-2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+client/content_cso.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+client/content_cso.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+client/content_mapblock.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2010-2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+client/content_mapblock.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2010-2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+client/event_manager.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+client/filecache.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+// Copyright (C) 2013 Jonathan Neuschäfer <j.neuschaefer@gmx.net>
+
+client/filecache.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+// Copyright (C) 2013 Jonathan Neuschäfer <j.neuschaefer@gmx.net>
+
+client/fontengine.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2010-2014 sapier <sapier at gmx dot net>
+
+client/fontengine.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2010-2014 sapier <sapier at gmx dot net>
+
+client/game.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2010-2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+client/game.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+client/game_formspec.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2010-2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+client/game_formspec.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2024 cx384
+
+client/game_internal.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+client/gameui.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2010-2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+// Copyright (C) 2018 nerzhul, Loic Blot <loic.blot@unix-experience.fr>
+
+client/gameui.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2010-2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+// Copyright (C) 2018 nerzhul, Loic Blot <loic.blot@unix-experience.fr>
+
+client/guiscalingfilter.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2015 Aaron Suen <warr1024@gmail.com>
+
+client/guiscalingfilter.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2015 Aaron Suen <warr1024@gmail.com>
+
+client/hud.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2010-2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+// Copyright (C) 2010-2013 blue42u, Jonathon Anderson <anderjon@umail.iu.edu>
+// Copyright (C) 2010-2013 kwolekr, Ryan Kwolek <kwolekr@minetest.net>
+
+client/hud.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2010-2013 kwolekr, Ryan Kwolek <kwolekr@minetest.net>
+// Copyright (C) 2017 red-001 <red-001@outlook.ie>
+
+client/imagefilters.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2015 Aaron Suen <warr1024@gmail.com>
+
+client/imagefilters.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2015 Aaron Suen <warr1024@gmail.com>
+
+client/imagesource.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2010-2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+client/imagesource.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2010-2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+client/inputhandler.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2010-2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+// Copyright (C) 2017 nerzhul, Loic Blot <loic.blot@unix-experience.fr>
+
+client/inputhandler.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2010-2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+client/item_visuals_manager.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2025 cx384
+
+client/item_visuals_manager.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2025 cx384
+
+client/keycode.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2010-2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+client/keycode.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2010-2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+client/keys.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2016 est31, <MTest31@outlook.com>
+
+client/localplayer.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2010-2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+client/localplayer.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2010-2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+client/mapblock_mesh.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2010-2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+client/mapblock_mesh.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2010-2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+client/mesh.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2010-2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+client/mesh.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2010-2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+client/mesh_generator_thread.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013, 2017 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+client/mesh_generator_thread.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013, 2017 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+client/meshgen/collector.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2018 numzero, Lobachevskiy Vitaliy <numzer0@yandex.ru>
+
+client/meshgen/collector.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2018 numzero, Lobachevskiy Vitaliy <numzer0@yandex.ru>
+
+client/minimap.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2010-2015 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+client/minimap.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2010-2015 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+client/mod_vfs.cpp:
+// SPDX-FileCopyrightText: 2025 Luanti authors
+// SPDX-License-Identifier: LGPL-2.1-or-later
+
+client/mod_vfs.h:
+// SPDX-FileCopyrightText: 2025 Luanti authors
+// SPDX-License-Identifier: LGPL-2.1-or-later
+
+client/mtevent.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+client/node_visuals.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2025 cx384
+
+client/node_visuals.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2025 cx384
+
+client/particles.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+client/particles.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+client/render/anaglyph.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2010-2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+// Copyright (C) 2017 numzero, Lobachevskiy Vitaliy <numzer0@yandex.ru>
+
+client/render/anaglyph.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2010-2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+// Copyright (C) 2017 numzero, Lobachevskiy Vitaliy <numzer0@yandex.ru>
+
+client/render/core.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2010-2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+// Copyright (C) 2017 numzero, Lobachevskiy Vitaliy <numzer0@yandex.ru>
+
+client/render/core.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2010-2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+// Copyright (C) 2017 numzero, Lobachevskiy Vitaliy <numzer0@yandex.ru>
+
+client/render/factory.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2010-2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+// Copyright (C) 2017 numzero, Lobachevskiy Vitaliy <numzer0@yandex.ru>
+
+client/render/factory.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2010-2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+// Copyright (C) 2017 numzero, Lobachevskiy Vitaliy <numzer0@yandex.ru>
+
+client/render/pipeline.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2022 x2048, Dmitry Kostenko <codeforsmile@gmail.com>
+
+client/render/pipeline.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2022 x2048, Dmitry Kostenko <codeforsmile@gmail.com>
+
+client/render/plain.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2010-2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+// Copyright (C) 2017 numzero, Lobachevskiy Vitaliy <numzer0@yandex.ru>
+
+client/render/plain.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2010-2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+// Copyright (C) 2017 numzero, Lobachevskiy Vitaliy <numzer0@yandex.ru>
+
+client/render/secondstage.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2010-2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+// Copyright (C) 2017 numzero, Lobachevskiy Vitaliy <numzer0@yandex.ru>
+// Copyright (C) 2020 appgurueu, Lars Mueller <appgurulars@gmx.de>
+
+client/render/secondstage.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2010-2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+// Copyright (C) 2017 numzero, Lobachevskiy Vitaliy <numzer0@yandex.ru>
+
+client/render/sidebyside.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2010-2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+// Copyright (C) 2017 numzero, Lobachevskiy Vitaliy <numzer0@yandex.ru>
+
+client/render/sidebyside.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2010-2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+// Copyright (C) 2017 numzero, Lobachevskiy Vitaliy <numzer0@yandex.ru>
+
+client/render/stereo.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2010-2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+// Copyright (C) 2017 numzero, Lobachevskiy Vitaliy <numzer0@yandex.ru>
+
+client/render/stereo.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2010-2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+// Copyright (C) 2017 numzero, Lobachevskiy Vitaliy <numzer0@yandex.ru>
+
+client/renderingengine.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2010-2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+// Copyright (C) 2017 nerzhul, Loic Blot <loic.blot@unix-experience.fr>
+
+client/renderingengine.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2010-2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+// Copyright (C) 2017 nerzhul, Loic Blot <loic.blot@unix-experience.fr>
+
+client/shader.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+// Copyright (C) 2013 Kahrl <kahrl@gmx.net>
+
+client/shader.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+// Copyright (C) 2013 Kahrl <kahrl@gmx.net>
+
+client/shadows/dynamicshadows.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2021 Liso <anlismon@gmail.com>
+
+client/shadows/dynamicshadows.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2021 Liso <anlismon@gmail.com>
+
+client/shadows/dynamicshadowsrender.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2021 Liso <anlismon@gmail.com>
+
+client/shadows/dynamicshadowsrender.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2021 Liso <anlismon@gmail.com>
+
+client/shadows/shadowsScreenQuad.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2021 Liso <anlismon@gmail.com>
+
+client/shadows/shadowsScreenQuad.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2021 Liso <anlismon@gmail.com>
+
+client/shadows/shadowsshadercallbacks.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2021 Liso <anlismon@gmail.com>
+
+client/shadows/shadowsshadercallbacks.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2021 Liso <anlismon@gmail.com>
+
+client/sky.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2010-2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+// Copyright (C) 2020 numzero, Lobachevskiy Vitaliy <numzer0@yandex.ru>
+
+client/sky.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+client/sound/al_extensions.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2023 DS
+
+client/sound/al_extensions.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2023 DS
+
+client/sound/al_helpers.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2022 DS
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+// Copyright (C) 2011 Sebastian 'Bahamada' Rühl
+// Copyright (C) 2011 Cyriaque 'Cisoun' Skrapits <cysoun@gmail.com>
+// Copyright (C) 2011 Giuseppe Bilotta <giuseppe.bilotta@gmail.com>
+
+client/sound/al_helpers.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2022 DS
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+// Copyright (C) 2011 Sebastian 'Bahamada' Rühl
+// Copyright (C) 2011 Cyriaque 'Cisoun' Skrapits <cysoun@gmail.com>
+// Copyright (C) 2011 Giuseppe Bilotta <giuseppe.bilotta@gmail.com>
+
+client/sound/ogg_file.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2022 DS
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+// Copyright (C) 2011 Sebastian 'Bahamada' Rühl
+// Copyright (C) 2011 Cyriaque 'Cisoun' Skrapits <cysoun@gmail.com>
+// Copyright (C) 2011 Giuseppe Bilotta <giuseppe.bilotta@gmail.com>
+
+client/sound/ogg_file.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2022 DS
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+// Copyright (C) 2011 Sebastian 'Bahamada' Rühl
+// Copyright (C) 2011 Cyriaque 'Cisoun' Skrapits <cysoun@gmail.com>
+// Copyright (C) 2011 Giuseppe Bilotta <giuseppe.bilotta@gmail.com>
+
+client/sound/playing_sound.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2022 DS
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+// Copyright (C) 2011 Sebastian 'Bahamada' Rühl
+// Copyright (C) 2011 Cyriaque 'Cisoun' Skrapits <cysoun@gmail.com>
+// Copyright (C) 2011 Giuseppe Bilotta <giuseppe.bilotta@gmail.com>
+
+client/sound/playing_sound.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2022 DS
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+// Copyright (C) 2011 Sebastian 'Bahamada' Rühl
+// Copyright (C) 2011 Cyriaque 'Cisoun' Skrapits <cysoun@gmail.com>
+// Copyright (C) 2011 Giuseppe Bilotta <giuseppe.bilotta@gmail.com>
+
+client/sound/proxy_sound_manager.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2023 DS
+
+client/sound/proxy_sound_manager.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2023 DS
+
+client/sound/sound_constants.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2022 DS
+
+client/sound/sound_data.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2022 DS
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+// Copyright (C) 2011 Sebastian 'Bahamada' Rühl
+// Copyright (C) 2011 Cyriaque 'Cisoun' Skrapits <cysoun@gmail.com>
+// Copyright (C) 2011 Giuseppe Bilotta <giuseppe.bilotta@gmail.com>
+
+client/sound/sound_data.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2022 DS
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+// Copyright (C) 2011 Sebastian 'Bahamada' Rühl
+// Copyright (C) 2011 Cyriaque 'Cisoun' Skrapits <cysoun@gmail.com>
+// Copyright (C) 2011 Giuseppe Bilotta <giuseppe.bilotta@gmail.com>
+
+client/sound/sound_manager.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2022 DS
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+// Copyright (C) 2011 Sebastian 'Bahamada' Rühl
+// Copyright (C) 2011 Cyriaque 'Cisoun' Skrapits <cysoun@gmail.com>
+// Copyright (C) 2011 Giuseppe Bilotta <giuseppe.bilotta@gmail.com>
+
+client/sound/sound_manager.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2022 DS
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+// Copyright (C) 2011 Sebastian 'Bahamada' Rühl
+// Copyright (C) 2011 Cyriaque 'Cisoun' Skrapits <cysoun@gmail.com>
+// Copyright (C) 2011 Giuseppe Bilotta <giuseppe.bilotta@gmail.com>
+
+client/sound/sound_manager_messages.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2023 DS
+
+client/sound/sound_openal.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+// Copyright (C) 2011 Sebastian 'Bahamada' Rühl
+// Copyright (C) 2011 Cyriaque 'Cisoun' Skrapits <cysoun@gmail.com>
+// Copyright (C) 2011 Giuseppe Bilotta <giuseppe.bilotta@gmail.com>
+
+client/sound/sound_openal.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+client/sound/sound_singleton.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2022 DS
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+// Copyright (C) 2011 Sebastian 'Bahamada' Rühl
+// Copyright (C) 2011 Cyriaque 'Cisoun' Skrapits <cysoun@gmail.com>
+// Copyright (C) 2011 Giuseppe Bilotta <giuseppe.bilotta@gmail.com>
+
+client/sound/sound_singleton.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2022 DS
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+// Copyright (C) 2011 Sebastian 'Bahamada' Rühl
+// Copyright (C) 2011 Cyriaque 'Cisoun' Skrapits <cysoun@gmail.com>
+// Copyright (C) 2011 Giuseppe Bilotta <giuseppe.bilotta@gmail.com>
+
+client/sound.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2023 DS
+
+client/sound.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+client/sound_maker.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2025 Luanti developers
+
+client/sound_maker.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2025 Luanti developers
+
+client/texturepaths.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2010-2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+client/texturepaths.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2010-2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+client/texturesource.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2010-2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+client/texturesource.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2010-2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+client/tile.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2010-2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+client/tile.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2010-2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+client/wieldmesh.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2010-2014 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+client/wieldmesh.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2010-2014 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+clientdynamicinfo.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2022-3 rubenwardy <rw@rubenwardy.com>
+
+clientdynamicinfo.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2022-3 rubenwardy <rw@rubenwardy.com>
+
+collision.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+collision.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+constants.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+content/content.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2018 rubenwardy <rw@rubenwardy.com>
+
+content/content.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2018 rubenwardy <rw@rubenwardy.com>
+
+content/mod_configuration.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013-22 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+content/mod_configuration.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013-22 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+content/mods.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+content/mods.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+content/subgames.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+content/subgames.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+content_mapnode.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2010-2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+content_mapnode.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2010-2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+content_nodemeta.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2010-2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+content_nodemeta.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2010-2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+convert_json.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+convert_json.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+craftdef.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+craftdef.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+database/database-dummy.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+database/database-dummy.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+database/database-files.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2017 nerzhul, Loic Blot <loic.blot@unix-experience.fr>
+
+database/database-files.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2017 nerzhul, Loic Blot <loic.blot@unix-experience.fr>
+
+database/database-leveldb.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+database/database-leveldb.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+database/database-postgresql.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2016 Loic Blot <loic.blot@unix-experience.fr>
+
+database/database-postgresql.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+database/database-redis.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2014 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+database/database-redis.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2014 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+database/database-sqlite3.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+database/database-sqlite3.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+database/database.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+database/database.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+daynightratio.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2010-2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+debug.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+debug.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+defaultsettings.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+defaultsettings.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+dummygamedef.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+// Copyright (C) 2022 TurkeyMcMac, Jude Melton-Houghton <jwmhjwmh@gmail.com>
+
+dummymap.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2022 TurkeyMcMac, Jude Melton-Houghton <jwmhjwmh@gmail.com>
+
+emerge.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2010-2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+// Copyright (C) 2010-2013 kwolekr, Ryan Kwolek <kwolekr@minetest.net>
+
+emerge.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2010-2013 kwolekr, Ryan Kwolek <kwolekr@minetest.net>
+
+emerge_internal.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2010-2013 kwolekr, Ryan Kwolek <kwolekr@minetest.net>
+
+environment.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2010-2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+environment.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2010-2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+exceptions.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+face_position_cache.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2015 Nerzhul, Loic Blot <loic.blot@unix-experience.fr>
+
+face_position_cache.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2015 Nerzhul, Loic Blot <loic.blot@unix-experience.fr>
+
+filesys.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+filesys.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+gamedef.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+gameparams.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2010-2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+gettext.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+gettext.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+gettext_plural_form.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+
+gettext_plural_form.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+
+gettime.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+gui/StyleSpec.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2019 rubenwardy
+
+gui/drawItemStack.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2024 cx384
+
+gui/drawItemStack.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2024 cx384
+
+gui/guiBox.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+gui/guiBox.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+gui/guiButton.cpp:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+gui/guiButton.h:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+gui/guiButtonImage.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+gui/guiButtonImage.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+gui/guiButtonItemImage.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+gui/guiButtonItemImage.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+gui/guiButtonKey.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+
+gui/guiButtonKey.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+
+gui/guiChatConsole.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+gui/guiChatConsole.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+gui/guiEditBoxWithScrollbar.cpp:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+gui/guiEditBoxWithScrollbar.h:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt, Modified by Mustapha Tachouct
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+gui/guiEngine.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 sapier
+
+gui/guiEngine.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 sapier
+
+gui/guiFormSpecMenu.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+gui/guiFormSpecMenu.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+gui/guiHyperText.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2019 EvicenceBKidscode / Pierre-Yves Rollo <dev@pyrollo.com>
+
+gui/guiHyperText.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2019 EvicenceBKidscode / Pierre-Yves Rollo <dev@pyrollo.com>
+
+gui/guiInventoryList.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+gui/guiInventoryList.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+gui/guiItemImage.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+gui/guiItemImage.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+gui/guiMainMenu.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2010-2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+gui/guiPathSelectMenu.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 sapier
+
+gui/guiPathSelectMenu.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 sapier
+
+gui/guiScene.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2020 Jean-Patrick Guerrero <jeanpatrick.guerrero@gmail.com>
+
+gui/guiScene.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2020 Jean-Patrick Guerrero <jeanpatrick.guerrero@gmail.com>
+
+gui/guiScrollContainer.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2020 DS
+
+gui/guiScrollContainer.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2020 DS
+
+gui/guiTable.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+gui/guiTable.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+gui/mainmenumanager.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+gui/modalMenu.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+// Copyright (C) 2018 stujones11, Stuart Jones <stujones111@gmail.com>
+
+gui/modalMenu.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+gui/profilergraph.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2010-2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+// Copyright (C) 2018 nerzhul, Loic Blot <loic.blot@unix-experience.fr>
+
+gui/profilergraph.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2010-2018 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+gui/statusTextHelper.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2010-2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+gui/statusTextHelper.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2010-2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+gui/touchcontrols.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2014 sapier
+// Copyright (C) 2018 srifqi, Muhammad Rifqi Priyo Susanto
+// Copyright (C) 2024 grorp, Gregor Parzefall
+
+gui/touchcontrols.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2014 sapier
+// Copyright (C) 2024 grorp, Gregor Parzefall
+
+gui/touchscreeneditor.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2024 grorp, Gregor Parzefall <grorp@posteo.de>
+
+gui/touchscreeneditor.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2024 grorp, Gregor Parzefall <grorp@posteo.de>
+
+gui/touchscreenlayout.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2024 grorp, Gregor Parzefall <grorp@posteo.de>
+
+gui/touchscreenlayout.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2024 grorp, Gregor Parzefall <grorp@posteo.de>
+
+httpfetch.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+httpfetch.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+hud_element.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2010-2018 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+hud_element.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2010-2013 kwolekr, Ryan Kwolek <kwolekr@minetest.net>
+// Copyright (C) 2017 red-001 <red-001@outlook.ie>
+
+inventory.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2010-2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+inventory.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2010-2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+inventorymanager.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2010-2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+inventorymanager.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2010-2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+irr_aabb3d.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2010-2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+irr_gui_ptr.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2024 grorp, Gregor Parzefall <grorp@posteo.de>
+
+irr_v2d.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2010-2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+irr_v3d.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2010-2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+irrlicht_changes/printing.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2023 Vitaliy Lobachevskiy
+
+irrlicht_changes/static_text.cpp:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// Copyright (C) 2016 Nathanaëlle Courant:
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+irrlicht_changes/static_text.h:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// Copyright (C) 2016 Nathanaëlle Courant
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+irrlichttypes.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2010-2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+irrlichttypes_bloated.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2010-2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+itemdef.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2010-2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+// Copyright (C) 2013 Kahrl <kahrl@gmx.net>
+
+itemdef.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2010-2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+// Copyright (C) 2013 Kahrl <kahrl@gmx.net>
+
+itemgroup.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+itemstackmetadata.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2017-8 rubenwardy <rw@rubenwardy.com>
+
+itemstackmetadata.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2017-8 rubenwardy <rw@rubenwardy.com>
+
+json-forwards.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2023 DS
+
+light.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+light.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+lighting.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2021 x2048, Dmitry Kostenko <codeforsmile@gmail.com>
+
+log.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+log.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+
+log_internal.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+
+main.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2010-2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+map.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2010-2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+map.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2010-2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+map_settings_manager.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2010-2013 kwolekr, Ryan Kwolek <kwolekr@minetest.net>
+
+map_settings_manager.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2010-2013 kwolekr, Ryan Kwolek <kwolekr@minetest.net>
+
+mapblock.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+mapblock.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+mapgen/cavegen.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2010-2020 celeron55, Perttu Ahola <celeron55@gmail.com>
+// Copyright (C) 2015-2020 paramat
+// Copyright (C) 2010-2016 kwolekr, Ryan Kwolek <kwolekr@minetest.net>
+
+mapgen/cavegen.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2015-2020 paramat
+// Copyright (C) 2010-2016 kwolekr, Ryan Kwolek <kwolekr@minetest.net>
+
+mapgen/dungeongen.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2010-2018 celeron55, Perttu Ahola <celeron55@gmail.com>
+// Copyright (C) 2015-2018 paramat
+
+mapgen/dungeongen.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2010-2018 celeron55, Perttu Ahola <celeron55@gmail.com>
+// Copyright (C) 2015-2018 paramat
+
+mapgen/mapgen.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2010-2018 celeron55, Perttu Ahola <celeron55@gmail.com>
+// Copyright (C) 2013-2018 kwolekr, Ryan Kwolek <kwolekr@minetest.net>
+// Copyright (C) 2015-2018 paramat
+
+mapgen/mapgen.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2010-2020 celeron55, Perttu Ahola <celeron55@gmail.com>
+// Copyright (C) 2015-2020 paramat
+// Copyright (C) 2013-2016 kwolekr, Ryan Kwolek <kwolekr@minetest.net>
+
+mapgen/mapgen_carpathian.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2017-2019 vlapsley, Vaughan Lapsley <vlapsley@gmail.com>
+// Copyright (C) 2017-2019 paramat
+
+mapgen/mapgen_carpathian.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2017-2019 vlapsley, Vaughan Lapsley <vlapsley@gmail.com>
+// Copyright (C) 2017-2019 paramat
+
+mapgen/mapgen_flat.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2015-2020 paramat
+// Copyright (C) 2015-2016 kwolekr, Ryan Kwolek <kwolekr@minetest.net>
+
+mapgen/mapgen_flat.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2015-2020 paramat
+// Copyright (C) 2015-2016 kwolekr, Ryan Kwolek <kwolekr@minetest.net>
+
+mapgen/mapgen_fractal.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2015-2019 paramat
+// Copyright (C) 2015-2016 kwolekr, Ryan Kwolek
+
+mapgen/mapgen_fractal.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2015-2019 paramat
+// Copyright (C) 2015-2016 kwolekr, Ryan Kwolek
+
+mapgen/mapgen_singlenode.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013-2018 celeron55, Perttu Ahola <celeron55@gmail.com>
+// Copyright (C) 2013-2018 kwolekr, Ryan Kwolek <kwolekr@minetest.net>
+// Copyright (C) 2015-2018 paramat
+
+mapgen/mapgen_singlenode.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013-2018 celeron55, Perttu Ahola <celeron55@gmail.com>
+// Copyright (C) 2013-2018 kwolekr, Ryan Kwolek <kwolekr@minetest.net>
+// Copyright (C) 2015-2018 paramat
+
+mapgen/mapgen_v5.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2014-2018 paramat
+// Copyright (C) 2014-2018 kwolekr, Ryan Kwolek <kwolekr@minetest.net>
+
+mapgen/mapgen_v5.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2014-2018 paramat
+// Copyright (C) 2014-2018 kwolekr, Ryan Kwolek <kwolekr@minetest.net>
+
+mapgen/mapgen_v6.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2010-2018 celeron55, Perttu Ahola <celeron55@gmail.com>
+// Copyright (C) 2013-2018 kwolekr, Ryan Kwolek <kwolekr@minetest.net>
+// Copyright (C) 2014-2018 paramat
+
+mapgen/mapgen_v6.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2010-2018 celeron55, Perttu Ahola <celeron55@gmail.com>
+// Copyright (C) 2013-2018 kwolekr, Ryan Kwolek <kwolekr@minetest.net>
+// Copyright (C) 2014-2018 paramat
+
+mapgen/mapgen_v7.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2014-2020 paramat
+// Copyright (C) 2013-2016 kwolekr, Ryan Kwolek <kwolekr@minetest.net>
+
+mapgen/mapgen_v7.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2014-2020 paramat
+// Copyright (C) 2013-2016 kwolekr, Ryan Kwolek <kwolekr@minetest.net>
+
+mapgen/mg_biome.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2014-2018 kwolekr, Ryan Kwolek <kwolekr@minetest.net>
+// Copyright (C) 2014-2018 paramat
+
+mapgen/mg_biome.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2014-2020 paramat
+// Copyright (C) 2014-2016 kwolekr, Ryan Kwolek <kwolekr@minetest.net>
+
+mapgen/mg_decoration.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2014-2018 kwolekr, Ryan Kwolek <kwolekr@minetest.net>
+// Copyright (C) 2015-2018 paramat
+
+mapgen/mg_decoration.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2014-2018 kwolekr, Ryan Kwolek <kwolekr@minetest.net>
+// Copyright (C) 2015-2018 paramat
+
+mapgen/mg_ore.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2015-2020 paramat
+// Copyright (C) 2014-2016 kwolekr, Ryan Kwolek <kwolekr@minetest.net>
+
+mapgen/mg_ore.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2015-2020 paramat
+// Copyright (C) 2014-2016 kwolekr, Ryan Kwolek <kwolekr@minetest.net>
+
+mapgen/mg_schematic.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2014-2018 kwolekr, Ryan Kwolek <kwolekr@minetest.net>
+// Copyright (C) 2015-2018 paramat
+
+mapgen/mg_schematic.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2014-2018 kwolekr, Ryan Kwolek <kwolekr@minetest.net>
+// Copyright (C) 2015-2018 paramat
+
+mapgen/treegen.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2010-2018 celeron55, Perttu Ahola <celeron55@gmail.com>,
+// Copyright (C) 2012-2018 RealBadAngel, Maciej Kasatkin
+// Copyright (C) 2015-2018 paramat
+
+mapgen/treegen.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2010-2018 celeron55, Perttu Ahola <celeron55@gmail.com>,
+// Copyright (C) 2012-2018 RealBadAngel, Maciej Kasatkin
+// Copyright (C) 2015-2018 paramat
+
+mapnode.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+mapnode.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2010-2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+mapsector.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+mapsector.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+metadata.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2010-2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+metadata.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2010-2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+migratesettings.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+
+modchannels.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2017 nerzhul, Loic Blot <loic.blot@unix-experience.fr>
+
+modchannels.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2017 nerzhul, Loic Blot <loic.blot@unix-experience.fr>
+
+modifiedstate.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+nameidmapping.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+nameidmapping.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+network/address.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+network/address.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+network/clientopcodes.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+// Copyright (C) 2015 nerzhul, Loic Blot <loic.blot@unix-experience.fr>
+
+network/clientopcodes.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+// Copyright (C) 2015 nerzhul, Loic Blot <loic.blot@unix-experience.fr>
+
+network/clientpackethandler.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2015 nerzhul, Loic Blot <loic.blot@unix-experience.fr>
+
+network/connection.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+
+network/connection.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+
+network/mtp/impl.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+network/mtp/impl.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+network/mtp/internal.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+network/mtp/threads.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013-2017 celeron55, Perttu Ahola <celeron55@gmail.com>
+// Copyright (C) 2017 celeron55, Loic Blot <loic.blot@unix-experience.fr>
+
+network/mtp/threads.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013-2017 celeron55, Perttu Ahola <celeron55@gmail.com>
+// Copyright (C) 2017 celeron55, Loic Blot <loic.blot@unix-experience.fr>
+
+network/networkexceptions.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013-2017 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+network/networkpacket.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2015 nerzhul, Loic Blot <loic.blot@unix-experience.fr>
+
+network/networkpacket.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2015 nerzhul, Loic Blot <loic.blot@unix-experience.fr>
+
+network/networkprotocol.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+
+network/networkprotocol.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2010-2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+network/peerhandler.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+network/serveropcodes.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+// Copyright (C) 2015 nerzhul, Loic Blot <loic.blot@unix-experience.fr>
+
+network/serveropcodes.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+// Copyright (C) 2015 nerzhul, Loic Blot <loic.blot@unix-experience.fr>
+
+network/serverpackethandler.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2015 nerzhul, Loic Blot <loic.blot@unix-experience.fr>
+
+network/socket.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+network/socket.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+nodedef.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+nodedef.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2010-2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+nodemetadata.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2010-2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+nodemetadata.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2010-2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+nodetimer.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2010-2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+nodetimer.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2010-2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+noise.cpp:
+* Copyright (C) 2010-2014 celeron55, Perttu Ahola <celeron55@gmail.com>
+* Copyright (C) 2010-2014 kwolekr, Ryan Kwolek <kwolekr@minetest.net>
+*  1. Redistributions of source code must retain the above copyright notice, this list of
+*  2. Redistributions in binary form must reproduce the above copyright notice, this list
+
+noise.h:
+* Copyright (C) 2010-2014 celeron55, Perttu Ahola <celeron55@gmail.com>
+* Copyright (C) 2010-2014 kwolekr, Ryan Kwolek <kwolekr@minetest.net>
+*  1. Redistributions of source code must retain the above copyright notice, this list of
+*  2. Redistributions in binary form must reproduce the above copyright notice, this list
+
+objdef.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2010-2015 kwolekr, Ryan Kwolek <kwolekr@minetest.net>
+
+objdef.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2010-2015 kwolekr, Ryan Kwolek <kwolekr@minetest.net>
+
+object_properties.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+object_properties.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+particles.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2020 sfan5 <sfan5@live.de>
+
+particles.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+pathfinder.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 sapier, sapier at gmx dot net
+// Copyright (C) 2016 est31, <MTest31@outlook.com>
+
+pathfinder.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 sapier, sapier at gmx dot net
+
+player.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2010-2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+player.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2010-2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+porting.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+porting.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+porting_android.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2014 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+porting_android.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2014 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+profiler.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2015 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+profiler.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+raycast.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2016 juhdanad, Daniel Juhasz <juhdanad@gmail.com>
+
+raycast.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2016 juhdanad, Daniel Juhasz <juhdanad@gmail.com>
+
+reflowscan.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2016 MillersMan <millersman@users.noreply.github.com>
+
+reflowscan.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2016 MillersMan <millersman@users.noreply.github.com>
+
+remoteplayer.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2010-2016 celeron55, Perttu Ahola <celeron55@gmail.com>
+// Copyright (C) 2014-2016 nerzhul, Loic Blot <loic.blot@unix-experience.fr>
+
+remoteplayer.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2010-2016 celeron55, Perttu Ahola <celeron55@gmail.com>
+// Copyright (C) 2014-2016 nerzhul, Loic Blot <loic.blot@unix-experience.fr>
+
+rollback_interface.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+rollback_interface.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+script/common/c_content.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+script/common/c_content.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+script/common/c_converter.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+script/common/c_converter.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+script/common/c_internal.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+script/common/c_internal.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+script/common/c_packer.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2022 sfan5 <sfan5@live.de>
+
+script/common/c_packer.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2022 sfan5 <sfan5@live.de>
+
+script/common/c_types.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+script/common/helper.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2018 nerzhul, Loic Blot <loic.blot@unix-experience.fr>
+
+script/common/helper.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2018 nerzhul, Loic Blot <loic.blot@unix-experience.fr>
+
+script/cpp_api/s_async.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 sapier, <sapier AT gmx DOT net>
+
+script/cpp_api/s_async.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 sapier, <sapier AT gmx DOT net>
+
+script/cpp_api/s_base.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+script/cpp_api/s_base.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+script/cpp_api/s_client.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+// Copyright (C) 2017 nerzhul, Loic Blot <loic.blot@unix-experience.fr>
+
+script/cpp_api/s_client.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+// Copyright (C) 2017 nerzhul, Loic Blot <loic.blot@unix-experience.fr>
+
+script/cpp_api/s_client_common.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+// Copyright (C) 2017 nerzhul, Loic Blot <loic.blot@unix-experience.fr>
+// Copyright (C) 2025 grorp
+
+script/cpp_api/s_client_common.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+// Copyright (C) 2017 nerzhul, Loic Blot <loic.blot@unix-experience.fr>
+// Copyright (C) 2025 grorp
+
+script/cpp_api/s_entity.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+script/cpp_api/s_entity.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+script/cpp_api/s_env.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+script/cpp_api/s_env.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+script/cpp_api/s_internal.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+script/cpp_api/s_inventory.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+script/cpp_api/s_inventory.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+script/cpp_api/s_item.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+script/cpp_api/s_item.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+script/cpp_api/s_mainmenu.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+script/cpp_api/s_mainmenu.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+script/cpp_api/s_mapgen.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2022 sfan5 <sfan5@live.de>
+
+script/cpp_api/s_mapgen.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2022 sfan5 <sfan5@live.de>
+
+script/cpp_api/s_modchannels.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2017 nerzhul, Loic Blot <loic.blot@unix-experience.fr>
+
+script/cpp_api/s_modchannels.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2017 nerzhul, Loic Blot <loic.blot@unix-experience.fr>
+
+script/cpp_api/s_node.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+script/cpp_api/s_node.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+script/cpp_api/s_nodemeta.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+script/cpp_api/s_nodemeta.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+script/cpp_api/s_pause_menu.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2025 grorp
+
+script/cpp_api/s_pause_menu.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2025 grorp
+
+script/cpp_api/s_player.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+script/cpp_api/s_player.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+script/cpp_api/s_security.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+script/cpp_api/s_security.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+script/cpp_api/s_server.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+script/cpp_api/s_server.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+script/cpp_api/s_sscsm.cpp:
+// SPDX-FileCopyrightText: 2025 Luanti authors
+// SPDX-License-Identifier: LGPL-2.1-or-later
+
+script/cpp_api/s_sscsm.h:
+// SPDX-FileCopyrightText: 2025 Luanti authors
+// SPDX-License-Identifier: LGPL-2.1-or-later
+
+script/lua_api/l_areastore.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2015 est31 <mtest31@outlook.com>
+
+script/lua_api/l_areastore.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2015 est31 <mtest31@outlook.com>
+
+script/lua_api/l_async.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+
+script/lua_api/l_async.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+
+script/lua_api/l_auth.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2018 bendeutsch, Ben Deutsch <ben@bendeutsch.de>
+
+script/lua_api/l_auth.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2018 bendeutsch, Ben Deutsch <ben@bendeutsch.de>
+
+script/lua_api/l_base.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+script/lua_api/l_base.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+script/lua_api/l_camera.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2010-2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+script/lua_api/l_camera.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013-2017 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+script/lua_api/l_client.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+// Copyright (C) 2017 nerzhul, Loic Blot <loic.blot@unix-experience.fr>
+
+script/lua_api/l_client.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+// Copyright (C) 2017 nerzhul, Loic Blot <loic.blot@unix-experience.fr>
+
+script/lua_api/l_client_common.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+// Copyright (C) 2017 nerzhul, Loic Blot <loic.blot@unix-experience.fr>
+// Copyright (C) 2025 grorp
+
+script/lua_api/l_client_common.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+// Copyright (C) 2017 nerzhul, Loic Blot <loic.blot@unix-experience.fr>
+// Copyright (C) 2025 grorp
+
+script/lua_api/l_client_sound.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2023 DS
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+// Copyright (C) 2017 nerzhul, Loic Blot <loic.blot@unix-experience.fr>
+
+script/lua_api/l_client_sound.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2023 DS
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+// Copyright (C) 2017 nerzhul, Loic Blot <loic.blot@unix-experience.fr>
+
+script/lua_api/l_craft.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+script/lua_api/l_craft.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+script/lua_api/l_env.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+script/lua_api/l_env.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+script/lua_api/l_http.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+script/lua_api/l_http.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+script/lua_api/l_internal.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+script/lua_api/l_inventory.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+script/lua_api/l_inventory.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+script/lua_api/l_ipc.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+
+script/lua_api/l_ipc.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+
+script/lua_api/l_item.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+script/lua_api/l_item.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+script/lua_api/l_itemstackmeta.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+// Copyright (C) 2017-8 rubenwardy <rw@rubenwardy.com>
+// Copyright (C) 2017 raymoo
+
+script/lua_api/l_itemstackmeta.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+// Copyright (C) 2017-8 rubenwardy <rw@rubenwardy.com>
+// Copyright (C) 2017 raymoo
+
+script/lua_api/l_localplayer.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2017 Dumbeldor, Vincent Glize <vincent.glize@live.fr>
+
+script/lua_api/l_localplayer.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2017 Dumbeldor, Vincent Glize <vincent.glize@live.fr>
+
+script/lua_api/l_mainmenu.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 sapier
+
+script/lua_api/l_mainmenu.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 sapier
+
+script/lua_api/l_mainmenu_sound.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2023 DS
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+// Copyright (C) 2017 nerzhul, Loic Blot <loic.blot@unix-experience.fr>
+
+script/lua_api/l_mainmenu_sound.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2023 DS
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+// Copyright (C) 2017 nerzhul, Loic Blot <loic.blot@unix-experience.fr>
+
+script/lua_api/l_mapgen.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+script/lua_api/l_mapgen.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+script/lua_api/l_menu_common.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 sapier
+// Copyright (C) 2025 grorp
+
+script/lua_api/l_menu_common.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 sapier
+// Copyright (C) 2025 grorp
+
+script/lua_api/l_metadata.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+// Copyright (C) 2017-8 rubenwardy <rw@rubenwardy.com>
+
+script/lua_api/l_metadata.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013-8 celeron55, Perttu Ahola <celeron55@gmail.com>
+// Copyright (C) 2017-8 rubenwardy <rw@rubenwardy.com>
+
+script/lua_api/l_minimap.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2017 Loic Blot <loic.blot@unix-experience.fr>
+
+script/lua_api/l_minimap.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2017 Loic Blot <loic.blot@unix-experience.fr>
+
+script/lua_api/l_modchannels.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2017 nerzhul, Loic Blot <loic.blot@unix-experience.fr>
+
+script/lua_api/l_modchannels.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2017 nerzhul, Loic Blot <loic.blot@unix-experience.fr>
+
+script/lua_api/l_nodemeta.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+script/lua_api/l_nodemeta.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+script/lua_api/l_nodetimer.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+script/lua_api/l_nodetimer.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+script/lua_api/l_noise.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+script/lua_api/l_noise.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+script/lua_api/l_object.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+script/lua_api/l_object.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+script/lua_api/l_particleparams.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2021 velartrill, Lexi Hale <lexi@hale.su>
+
+script/lua_api/l_particles.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+script/lua_api/l_particles.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+script/lua_api/l_particles_local.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+// Copyright (C) 2017 red-001 <red-001@outlook.ie>
+
+script/lua_api/l_particles_local.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+// Copyright (C) 2017 red-001 <red-001@outlook.ie>
+
+script/lua_api/l_pause_menu.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2025 grorp
+
+script/lua_api/l_pause_menu.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2025 grorp
+
+script/lua_api/l_playermeta.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+// Copyright (C) 2017-8 rubenwardy <rw@rubenwardy.com>
+
+script/lua_api/l_playermeta.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+// Copyright (C) 2017-8 rubenwardy <rw@rubenwardy.com>
+
+script/lua_api/l_rollback.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+script/lua_api/l_rollback.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+script/lua_api/l_server.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+script/lua_api/l_server.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+script/lua_api/l_settings.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 PilzAdam <pilzadam@minetest.net>
+
+script/lua_api/l_settings.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 PilzAdam <pilzadam@minetest.net>
+
+script/lua_api/l_sscsm.cpp:
+// SPDX-FileCopyrightText: 2025 Luanti authors
+// SPDX-License-Identifier: LGPL-2.1-or-later
+
+script/lua_api/l_sscsm.h:
+// SPDX-FileCopyrightText: 2025 Luanti authors
+// SPDX-License-Identifier: LGPL-2.1-or-later
+
+script/lua_api/l_storage.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+// Copyright (C) 2017 nerzhul, Loic Blot <loic.blot@unix-experience.fr>
+
+script/lua_api/l_storage.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+// Copyright (C) 2017 nerzhul, Loic Blot <loic.blot@unix-experience.fr>
+
+script/lua_api/l_util.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+script/lua_api/l_util.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+script/lua_api/l_vmanip.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 kwolekr, Ryan Kwolek <kwolekr@minetest.net>
+
+script/lua_api/l_vmanip.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 kwolekr, Ryan Kwolek <kwolekr@minetest.net>
+
+script/scripting_client.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+// Copyright (C) 2017 nerzhul, Loic Blot <loic.blot@unix-experience.fr>
+
+script/scripting_client.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+// Copyright (C) 2017 nerzhul, Loic Blot <loic.blot@unix-experience.fr>
+
+script/scripting_emerge.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2022 sfan5 <sfan5@live.de>
+
+script/scripting_emerge.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2022 sfan5 <sfan5@live.de>
+
+script/scripting_mainmenu.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+script/scripting_mainmenu.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+script/scripting_pause_menu.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2025 grorp
+
+script/scripting_pause_menu.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2025 grorp
+
+script/scripting_server.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+script/scripting_server.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+script/scripting_sscsm.cpp:
+// SPDX-FileCopyrightText: 2025 Luanti authors
+// SPDX-License-Identifier: LGPL-2.1-or-later
+
+script/scripting_sscsm.h:
+// SPDX-FileCopyrightText: 2025 Luanti authors
+// SPDX-License-Identifier: LGPL-2.1-or-later
+
+script/sscsm/sscsm_controller.cpp:
+// SPDX-FileCopyrightText: 2024 Luanti authors
+// SPDX-License-Identifier: LGPL-2.1-or-later
+
+script/sscsm/sscsm_controller.h:
+// SPDX-FileCopyrightText: 2024 Luanti authors
+// SPDX-License-Identifier: LGPL-2.1-or-later
+
+script/sscsm/sscsm_environment.cpp:
+// SPDX-FileCopyrightText: 2024 Luanti authors
+// SPDX-License-Identifier: LGPL-2.1-or-later
+
+script/sscsm/sscsm_environment.h:
+// SPDX-FileCopyrightText: 2024 Luanti authors
+// SPDX-License-Identifier: LGPL-2.1-or-later
+
+script/sscsm/sscsm_events.h:
+// SPDX-FileCopyrightText: 2024 Luanti authors
+// SPDX-License-Identifier: LGPL-2.1-or-later
+
+script/sscsm/sscsm_ievent.h:
+// SPDX-FileCopyrightText: 2024 Luanti authors
+// SPDX-License-Identifier: LGPL-2.1-or-later
+
+script/sscsm/sscsm_irequest.h:
+// SPDX-FileCopyrightText: 2024 Luanti authors
+// SPDX-License-Identifier: LGPL-2.1-or-later
+
+script/sscsm/sscsm_requests.h:
+// SPDX-FileCopyrightText: 2024 Luanti authors
+// SPDX-License-Identifier: LGPL-2.1-or-later
+
+script/sscsm/sscsm_stupid_channel.h:
+// SPDX-FileCopyrightText: 2024 Luanti authors
+// SPDX-License-Identifier: LGPL-2.1-or-later
+
+serialization.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+serialization.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+server/activeobjectmgr.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2010-2018 nerzhul, Loic BLOT <loic.blot@unix-experience.fr>
+
+server/activeobjectmgr.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2010-2018 nerzhul, Loic BLOT <loic.blot@unix-experience.fr>
+
+server/ban.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+// Copyright (C) 2018 nerzhul, Loic BLOT <loic.blot@unix-experience.fr>
+
+server/ban.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+server/blockmodifier.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2010-2017 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+server/blockmodifier.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2010-2017 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+server/clientiface.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2010-2014 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+server/clientiface.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2010-2014 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+server/luaentity_sao.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2010-2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+// Copyright (C) 2013-2020 Minetest core developers & community
+
+server/luaentity_sao.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2010-2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+// Copyright (C) 2013-2020 Minetest core developers & community
+
+server/mods.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2018 nerzhul, Loic Blot <loic.blot@unix-experience.fr>
+
+server/mods.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2018 nerzhul, Loic Blot <loic.blot@unix-experience.fr>
+
+server/player_sao.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2010-2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+// Copyright (C) 2013-2020 Minetest core developers & community
+
+server/player_sao.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2010-2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+// Copyright (C) 2013-2020 Minetest core developers & community
+
+server/rollback.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+server/rollback.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+server/serveractiveobject.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2010-2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+server/serveractiveobject.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2010-2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+server/serverinventorymgr.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2010-2020 Minetest core development team
+
+server/serverinventorymgr.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2010-2020 Minetest core development team
+
+server/serverlist.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+server/serverlist.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+server/unit_sao.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2010-2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+// Copyright (C) 2013-2020 Minetest core developers & community
+
+server/unit_sao.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2010-2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+// Copyright (C) 2013-2020 Minetest core developers & community
+
+server.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2010-2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+server.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2010-2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+serverenvironment.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2010-2017 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+serverenvironment.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2010-2017 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+servermap.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2010-2024 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+servermap.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2010-2024 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+settings.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2010-2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+settings.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2010-2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+skyparams.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2019 Jordach, Jordan Snelling <jordach.snelling@gmail.com>
+
+sound_spec.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2025 Luanti developers
+
+sound_spec.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+staticobject.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2010-2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+staticobject.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2010-2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+terminal_chat_console.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2015 est31 <MTest31@outlook.com>
+
+terminal_chat_console.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2015 est31 <MTest31@outlook.com>
+
+test/client/test_irr_gltf_mesh_loader.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+
+test/client/test_irr_x_mesh_loader.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+
+test/test.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2026 Luanti Authors
+
+test/test.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2026 Luanti Authors
+
+test/test_irr_matrix4.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+
+test/test_irr_rotation.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+
+test/test_k_d_tree.cpp:
+// Copyright (C) 2024 Lars Müller
+// SPDX-License-Identifier: LGPL-2.1-or-later
+
+test/test_nodedef.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+test/test_serveractiveobjectmgr.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2018 nerzhul, Loic Blot <loic.blot@unix-experience.fr>
+
+test/test_translations.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+
+texture_override.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2020 Hugues Ross <hugues.ross@gmail.com>
+
+texture_override.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2020 Hugues Ross <hugues.ross@gmail.com>
+
+threading/lambda.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+
+threading/ordered_mutex.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+
+threading/semaphore.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 sapier <sapier AT gmx DOT net>
+
+threading/semaphore.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 sapier <sapier AT gmx DOT net>
+
+tileanimation.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2016 sfan5 <sfan5@live.de>
+
+tileanimation.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2016 sfan5 <sfan5@live.de>
+
+tool.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+tool.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2010-2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+translation.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2017 Nore, Nathanaëlle Courant <nore@mesecons.net>
+
+translation.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2017 Nore, Nathanaëlle Courant <nore@mesecons.net>
+
+unittest/mesh_compare.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2023 Vitaliy Lobachevskiy
+
+unittest/mesh_compare.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2023 Vitaliy Lobachevskiy
+
+unittest/mock_activeobject.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2022 Minetest core developers & community
+
+unittest/mock_inventorymanager.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2022 Minetest core developers & community
+
+unittest/mock_server.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2022 Minetest core developers & community
+
+unittest/mock_serveractiveobject.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2022 Minetest core developers & community
+
+unittest/test.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+unittest/test.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+unittest/test_activeobject.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2018 nerzhul, Loic BLOT <loic.blot@unix-experience.fr>
+
+unittest/test_address.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+unittest/test_areastore.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2015 est31, <MTest31@outlook.com>
+
+unittest/test_authdatabase.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2018 bendeutsch, Ben Deutsch <ben@bendeutsch.de>
+
+unittest/test_ban.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2018 nerzhul, Loic BLOT <loic.blot@unix-experience.fr>
+
+unittest/test_clientactiveobjectmgr.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2018 nerzhul, Loic Blot <loic.blot@unix-experience.fr>
+
+unittest/test_collision.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+unittest/test_compression.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+unittest/test_connection.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+unittest/test_content_mapblock.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2023 Vitaliy Lobachevskiy
+
+unittest/test_craft.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2023 DS
+
+unittest/test_datastructures.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2024 sfan5
+
+unittest/test_eventmanager.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2018 nerzhul, Loic BLOT <loic.blot@unix-experience.fr>
+
+unittest/test_filesys.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+unittest/test_gameui.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2018 nerzhul, Loic BLOT <loic.blot@unix-experience.fr>
+
+unittest/test_inventory.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+unittest/test_irrptr.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2018 numzero, Lobachevskiy Vitaliy <numzer0@yandex.ru>
+
+unittest/test_keycode.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2016 sfan5 <sfan5@live.de>
+
+unittest/test_lbmmanager.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2025 sfan5
+
+unittest/test_logging.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+
+unittest/test_lua.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+// Copyright (C) 2021 TurkeyMcMac, Jude Melton-Houghton <jwmhjwmh@gmail.com>
+
+unittest/test_map_settings_manager.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2010-2014 kwolekr, Ryan Kwolek <kwolekr@minetest.net>
+
+unittest/test_mapblock.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+
+unittest/test_mapdatabase.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2024 sfan5
+
+unittest/test_mapgen.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2024 Minetest core developers & community
+
+unittest/test_mapnode.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+unittest/test_mesh_compare.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2023 Vitaliy Lobachevskiy
+
+unittest/test_modchannels.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+unittest/test_modstoragedatabase.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2018 bendeutsch, Ben Deutsch <ben@bendeutsch.de>
+// Copyright (C) 2021 TurkeyMcMac, Jude Melton-Houghton <jwmhjwmh@gmail.com>
+
+unittest/test_moveaction.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2022 Minetest core developers & community
+
+unittest/test_noderesolver.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2010-2014 kwolekr, Ryan Kwolek <kwolekr@minetest.net>
+
+unittest/test_noise.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2010-2014 kwolekr, Ryan Kwolek <kwolekr@minetest.net>
+
+unittest/test_objdef.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2010-2014 kwolekr, Ryan Kwolek <kwolekr@minetest.net>
+
+unittest/test_profiler.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+unittest/test_random.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2010-2014 kwolekr, Ryan Kwolek <kwolekr@minetest.net>
+
+unittest/test_sao.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2024 sfan5
+
+unittest/test_schematic.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2010-2014 kwolekr, Ryan Kwolek <kwolekr@minetest.net>
+
+unittest/test_scriptapi.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2022 Minetest core developers & community
+
+unittest/test_serialization.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+unittest/test_server_shutdown_state.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2018 nerzhul, Loic BLOT <loic.blot@unix-experience.fr>
+
+unittest/test_servermodmanager.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2018 nerzhul, Loic Blot <loic.blot@unix-experience.fr>
+
+unittest/test_settings.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+unittest/test_socket.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+unittest/test_threading.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+unittest/test_utilities.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+unittest/test_voxelalgorithms.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+unittest/test_voxelarea.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2018 nerzhul, Loic Blot <loic.blot@unix-experience.fr>
+
+unittest/test_voxelmanipulator.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+util/areastore.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2015 est31 <mtest31@outlook.com>
+
+util/areastore.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2015 est31 <mtest31@outlook.com>
+
+util/auth.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2015, 2016 est31 <MTest31@outlook.com>
+
+util/auth.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2015, 2016 est31 <MTest31@outlook.com>
+
+util/basic_macros.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2010-2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+util/bitmap.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2021-2025 sfan5
+
+util/container.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2010-2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+util/directiontables.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2010-2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+util/directiontables.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2010-2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+util/enum_string.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2025 cx384
+
+util/enum_string.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2025 cx384
+
+util/guid.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2024 SFENCE
+
+util/guid.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2024 SFENCE
+
+util/hashing.cpp:
+// SPDX-FileCopyrightText: 2024 Luanti Contributors
+// SPDX-License-Identifier: LGPL-2.1-or-later
+
+util/hashing.h:
+// SPDX-FileCopyrightText: 2024 Luanti Contributors
+// SPDX-License-Identifier: LGPL-2.1-or-later
+
+util/hex.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 Jonathan Neuschäfer <j.neuschaefer@gmx.net>
+
+util/ieee_float.cpp:
+* © Copyright 2018 Pedro Gimeno Fortea.
+* The above copyright notice and this permission notice shall be included
+* IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+
+util/ieee_float.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2018 SmallJoker <mk939@ymail.com>
+
+util/k_d_tree.h:
+// Copyright (C) 2024 Lars Müller
+// SPDX-License-Identifier: LGPL-2.1-or-later
+
+util/metricsbackend.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013-2020 Minetest core developers team
+
+util/metricsbackend.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013-2020 Minetest core developers team
+
+util/numeric.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2010-2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+util/numeric.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2010-2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+util/png.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2021 hecks
+
+util/png.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2021 hecks
+
+util/pointabilities.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2023 cx384
+
+util/pointabilities.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2023 cx384
+
+util/pointedthing.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2010-2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+util/pointedthing.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2010-2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+util/pointer.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2010-2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+util/quicktune.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+util/quicktune.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+util/quicktune_shortcutter.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+util/screenshot.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+util/screenshot.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+util/serialize.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2010-2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+util/serialize.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2010-2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+util/srp.cpp:
+* Copyright (c) 2010, 2013 Tom Cocagne, 2015 est31 <MTest31@outlook.com>
+* The above copyright notice and this permission notice shall be included in all
+* AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+
+util/srp.h:
+* Copyright (c) 2010, 2013 Tom Cocagne, 2015 est31 <MTest31@outlook.com>
+* The above copyright notice and this permission notice shall be included in all
+* AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+
+util/stream.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2022 Minetest Authors
+
+util/strfnd.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+util/string.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2010-2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+util/string.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2010-2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+util/thread.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2010-2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+util/timetaker.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2010-2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+util/timetaker.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2010-2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+util/tracy_wrapper.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2024 DS
+
+version.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+version.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+voxel.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+voxel.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+voxelalgorithms.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2010-2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+voxelalgorithms.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+// Copyright (C) 2010-2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+bitop/bit.cpp:
+** Copyright (C) 2008-2012 Mike Pall. All rights reserved.
+** The above copyright notice and this permission notice shall be
+** IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+
+bitop/bit.h:
+** Copyright (C) 2008-2012 Mike Pall. All rights reserved.
+** The above copyright notice and this permission notice shall be
+** IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+
+catch2/catch_amalgamated.cpp:
+//              Copyright Catch2 Authors
+// SPDX-License-Identifier: BSL-1.0
+
+catch2/catch_amalgamated.hpp:
+//              Copyright Catch2 Authors
+// SPDX-License-Identifier: BSL-1.0
+
+jsoncpp/json/json-forwards.h:
+// Copyright 2007-2010 Baptiste Lepilleur and The JsonCpp Authors
+// Copyright 2007-2010 Baptiste Lepilleur and The JsonCpp Authors
+// Copyright 2007-2010 Baptiste Lepilleur and The JsonCpp Authors
+
+jsoncpp/json/json.h:
+// Copyright 2007-2010 Baptiste Lepilleur and The JsonCpp Authors
+// Copyright 2007-2010 Baptiste Lepilleur and The JsonCpp Authors
+// Copyright 2007-2010 Baptiste Lepilleur and The JsonCpp Authors
+// Copyright 2007-2010 Baptiste Lepilleur and The JsonCpp Authors
+// Copyright 2007-2010 Baptiste Lepilleur and The JsonCpp Authors
+// Copyright 2007-2010 Baptiste Lepilleur and The JsonCpp Authors
+// Copyright 2007-2010 Baptiste Lepilleur and The JsonCpp Authors
+// Copyright 2007-2010 Baptiste Lepilleur and The JsonCpp Authors
+
+jsoncpp/jsoncpp.cpp:
+// Copyright 2007-2010 Baptiste Lepilleur and The JsonCpp Authors
+// Copyright 2007-2011 Baptiste Lepilleur and The JsonCpp Authors
+// Copyright (C) 2016 InfoTeCS JSC. All rights reserved.
+// Copyright 2007-2010 Baptiste Lepilleur and The JsonCpp Authors
+// Copyright 2011 Baptiste Lepilleur and The JsonCpp Authors
+// Copyright 2011 Baptiste Lepilleur and The JsonCpp Authors
+
+lstrpack/lstrpack.c:
+// SPDX-License-Identifier: MIT
+
+lua/src/lapi.c:
+** See Copyright Notice in lua.h
+
+lua/src/lapi.h:
+** See Copyright Notice in lua.h
+
+lua/src/lauxlib.c:
+** See Copyright Notice in lua.h
+
+lua/src/lauxlib.h:
+** See Copyright Notice in lua.h
+
+lua/src/lbaselib.c:
+** See Copyright Notice in lua.h
+
+lua/src/lcode.c:
+** See Copyright Notice in lua.h
+
+lua/src/lcode.h:
+** See Copyright Notice in lua.h
+
+lua/src/ldblib.c:
+** See Copyright Notice in lua.h
+
+lua/src/ldebug.c:
+** See Copyright Notice in lua.h
+
+lua/src/ldebug.h:
+** See Copyright Notice in lua.h
+
+lua/src/ldo.c:
+** See Copyright Notice in lua.h
+
+lua/src/ldo.h:
+** See Copyright Notice in lua.h
+
+lua/src/ldump.c:
+** See Copyright Notice in lua.h
+
+lua/src/lfunc.c:
+** See Copyright Notice in lua.h
+
+lua/src/lfunc.h:
+** See Copyright Notice in lua.h
+
+lua/src/lgc.c:
+** See Copyright Notice in lua.h
+
+lua/src/lgc.h:
+** See Copyright Notice in lua.h
+
+lua/src/linit.c:
+** See Copyright Notice in lua.h
+
+lua/src/liolib.c:
+** See Copyright Notice in lua.h
+
+lua/src/llex.c:
+** See Copyright Notice in lua.h
+
+lua/src/llex.h:
+** See Copyright Notice in lua.h
+
+lua/src/llimits.h:
+** See Copyright Notice in lua.h
+
+lua/src/lmathlib.c:
+** See Copyright Notice in lua.h
+
+lua/src/lmem.c:
+** See Copyright Notice in lua.h
+
+lua/src/lmem.h:
+** See Copyright Notice in lua.h
+
+lua/src/loadlib.c:
+** See Copyright Notice in lua.h
+
+lua/src/lobject.c:
+** See Copyright Notice in lua.h
+
+lua/src/lobject.h:
+** See Copyright Notice in lua.h
+
+lua/src/lopcodes.c:
+** See Copyright Notice in lua.h
+
+lua/src/lopcodes.h:
+** See Copyright Notice in lua.h
+
+lua/src/loslib.c:
+** See Copyright Notice in lua.h
+
+lua/src/lparser.c:
+** See Copyright Notice in lua.h
+
+lua/src/lparser.h:
+** See Copyright Notice in lua.h
+
+lua/src/lstate.c:
+** See Copyright Notice in lua.h
+
+lua/src/lstate.h:
+** See Copyright Notice in lua.h
+
+lua/src/lstring.c:
+** See Copyright Notice in lua.h
+
+lua/src/lstring.h:
+** See Copyright Notice in lua.h
+
+lua/src/lstrlib.c:
+** See Copyright Notice in lua.h
+
+lua/src/ltable.c:
+** See Copyright Notice in lua.h
+
+lua/src/ltable.h:
+** See Copyright Notice in lua.h
+
+lua/src/ltablib.c:
+** See Copyright Notice in lua.h
+
+lua/src/ltm.c:
+** See Copyright Notice in lua.h
+
+lua/src/ltm.h:
+** See Copyright Notice in lua.h
+
+lua/src/lua.c:
+** See Copyright Notice in lua.h
+
+lua/src/lua.h:
+** See Copyright Notice at the end of this file
+#define LUA_COPYRIGHT	"Copyright (C) 1994-2012 Lua.org, PUC-Rio"
+* Copyright (C) 1994-2012 Lua.org, PUC-Rio.  All rights reserved.
+* The above copyright notice and this permission notice shall be
+* IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+
+lua/src/luac.c:
+** See Copyright Notice in lua.h
+
+lua/src/luaconf.h:
+** See Copyright Notice in lua.h
+
+lua/src/lualib.h:
+** See Copyright Notice in lua.h
+
+lua/src/lundump.c:
+** See Copyright Notice in lua.h
+
+lua/src/lundump.h:
+** See Copyright Notice in lua.h
+
+lua/src/lvm.c:
+** See Copyright Notice in lua.h
+
+lua/src/lvm.h:
+** See Copyright Notice in lua.h
+
+lua/src/lzio.c:
+** See Copyright Notice in lua.h
+
+lua/src/lzio.h:
+** See Copyright Notice in lua.h
+
+lua/src/print.c:
+** See Copyright Notice in lua.h
+
+sha256/my_sha256.h:
+/* Copyright (C) 1995-1998 Eric Young (eay@cryptsoft.com)
+* included with this distribution is covered by the same copyright terms
+* Copyright remains Eric Young's, and as such any Copyright notices in
+* 1. Redistributions of source code must retain the copyright
+* 2. Redistributions in binary form must reproduce the above copyright
+
+sha256/sha256.c:
+* Copyright (c) 1998-2011 The OpenSSL Project.  All rights reserved.
+* 1. Redistributions of source code must retain the above copyright
+* 2. Redistributions in binary form must reproduce the above copyright
+
+include/AnimSpec.h:
+// Copyright (C) 2026 Lars Müller
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+include/AnimatedMeshSceneNode.h:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+include/BoneSceneNode.h:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+include/CGUIEditBox.h:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+include/CGUIScrollBar.h:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+include/CIndexBuffer.h:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+include/CMeshBuffer.h:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+include/CVertexBuffer.h:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+include/ECullingTypes.h:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+include/EDebugSceneTypes.h:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+include/EDeviceTypes.h:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+include/EDriverFeatures.h:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+include/EDriverTypes.h:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+include/EFocusFlags.h:
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+include/EGUIAlignment.h:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+include/EGUIElementTypes.h:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+include/EHardwareBufferFlags.h:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+include/EMaterialProps.h:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+include/EMaterialTypes.h:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+include/EPrimitiveTypes.h:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+include/EReadFileType.h:
+// Copyright (C) Michael Zeilfelder
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+include/ESceneNodeTypes.h:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+include/EVideoTypes.h:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+include/IAnimatedMesh.h:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+include/IBillboardSceneNode.h:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+include/ICameraSceneNode.h:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+include/IContextManager.h:
+// Copyright (C) 2013-2015 Patryk Nadrowski
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+include/ICursorControl.h:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+include/IDummyTransformationSceneNode.h:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+include/IEventReceiver.h:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+include/IFileArchive.h:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt/ Thomas Alten
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+include/IFileList.h:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+include/IFileSystem.h:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+include/IGPUProgrammingServices.h:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+include/IGUIButton.h:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+include/IGUICheckBox.h:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+include/IGUIComboBox.h:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+include/IGUIEditBox.h:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+include/IGUIElement.h:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+include/IGUIEnvironment.h:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+include/IGUIFileOpenDialog.h:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+include/IGUIFont.h:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+include/IGUIFontBitmap.h:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+include/IGUIImage.h:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+include/IGUIListBox.h:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+include/IGUIScrollBar.h:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+include/IGUISkin.h:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+include/IGUISpriteBank.h:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+include/IGUIStaticText.h:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+include/IGUITabControl.h:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+include/IGUIToolbar.h:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+include/IImage.h:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+include/IImageLoader.h:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+include/IImageWriter.h:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+include/IIndexBuffer.h:
+// Copyright (C) 2008-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+include/ILogger.h:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+include/IMaterialRenderer.h:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+include/IMaterialRendererServices.h:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+include/IMemoryReadFile.h:
+// Copyright Michael Zeilfelder
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+include/IMesh.h:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+include/IMeshBuffer.h:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+include/IMeshCache.h:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+include/IMeshLoader.h:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+include/IMeshManipulator.h:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+include/IMeshSceneNode.h:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+include/IOSOperator.h:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+include/IReadFile.h:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+include/IReferenceCounted.h:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+include/IRenderTarget.h:
+// Copyright (C) 2015 Patryk Nadrowski
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+include/ISceneCollisionManager.h:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+include/ISceneManager.h:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+include/ISceneNode.h:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+include/IShaderConstantSetCallBack.h:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+include/ITexture.h:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+include/ITimer.h:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+include/IVertexBuffer.h:
+// Copyright (C) 2008-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+include/IVideoDriver.h:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+include/IWriteFile.h:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+include/IrrlichtDevice.h:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+include/KHR/khrplatform.h:
+** Copyright (c) 2008-2018 The Khronos Group Inc.
+** The above copyright notice and this permission notice shall be included
+** IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+
+include/Keycodes.h:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+include/S3DVertex.h:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+include/SColor.h:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+include/SExposedVideoData.h:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+include/SIrrCreationParameters.h:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+include/SMaterial.h:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+include/SMaterialLayer.h:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+include/SMesh.h:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+include/SOverrideMaterial.h:
+// Copyright (C) 2017 Michael Zeilfelder
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+include/SSkinMeshBuffer.h:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+include/SVertexIndex.h:
+// Copyright (C) 2008-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+include/SVertexManipulator.h:
+// Copyright (C) 2009-2012 Christian Stehno
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+include/SViewFrustum.h:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+include/SkinnedMesh.h:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+include/WeightBuffer.h:
+// Copyright (C) 2025 Lars Müller
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+include/aabbox3d.h:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+include/coreutil.h:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+include/dimension2d.h:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+include/irrArray.h:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h and irrXML.h
+
+include/irrBitCast.h:
+// Copyright (C) 2026 Lars Müller
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+include/irrMath.h:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+include/irrString.h:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h and irrXML.h
+
+include/irrTypes.h:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+include/irrpack.h:
+// Copyright (C) 2007-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+include/irrunpack.h:
+// Copyright (C) 2007-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+include/line2d.h:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+include/line3d.h:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+include/matrix4.h:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+include/path.h:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+include/plane3d.h:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+include/position2d.h:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+include/quaternion.h:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+include/rect.h:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+include/vector2d.h:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+include/vector3d.h:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+src/AnimSpec.cpp:
+// Copyright (C) 2026 Lars Müller
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+src/AnimatedMeshSceneNode.cpp:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+src/BuiltInFont.h:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+src/CB3DMeshFileLoader.cpp:
+// Copyright (C) 2006-2012 Luke Hoschke
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+src/CB3DMeshFileLoader.h:
+// Copyright (C) 2006-2012 Luke Hoschke
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+src/CBillboardSceneNode.cpp:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+src/CBillboardSceneNode.h:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+src/CBlit.h:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt / Thomas Alten
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+src/CCameraSceneNode.cpp:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+src/CCameraSceneNode.h:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+src/CColorConverter.cpp:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+src/CColorConverter.h:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+src/CDummyTransformationSceneNode.cpp:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+src/CDummyTransformationSceneNode.h:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+src/CEGLManager.cpp:
+// Copyright (C) 2013 Patryk Nadrowski
+// For conditions of distribution and use, see copyright notice in Irrlicht.h
+
+src/CEGLManager.h:
+// Copyright (C) 2013 Patryk Nadrowski
+// For conditions of distribution and use, see copyright notice in Irrlicht.h
+
+src/CEmptySceneNode.cpp:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+src/CEmptySceneNode.h:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+src/CFileList.cpp:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+src/CFileList.h:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+src/CFileSystem.cpp:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+src/CFileSystem.h:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+src/CGLTFMeshFileLoader.cpp:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+
+src/CGLTFMeshFileLoader.h:
+// SPDX-License-Identifier: LGPL-2.1-or-later
+
+src/CGUIButton.cpp:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+src/CGUIButton.h:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+src/CGUICheckBox.cpp:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+src/CGUICheckBox.h:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+src/CGUIComboBox.cpp:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+src/CGUIComboBox.h:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+src/CGUIEditBox.cpp:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+src/CGUIEnvironment.cpp:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+src/CGUIEnvironment.h:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+src/CGUIFileOpenDialog.cpp:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+src/CGUIFileOpenDialog.h:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+src/CGUIFont.cpp:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+src/CGUIFont.h:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+src/CGUIImage.cpp:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+src/CGUIImage.h:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+src/CGUIListBox.cpp:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+src/CGUIListBox.h:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+src/CGUIScrollBar.cpp:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// Copyright (C) 2019 Stuart Jones <stujones111@gmail.com>
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+src/CGUISkin.cpp:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// Copyright (C) 2019 Irrlick
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+src/CGUISkin.h:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+src/CGUISpriteBank.cpp:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+src/CGUISpriteBank.h:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+src/CGUIStaticText.cpp:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+src/CGUIStaticText.h:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+src/CGUITabControl.cpp:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+src/CGUITabControl.h:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+src/CImage.cpp:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt / Thomas Alten
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+src/CImage.h:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+src/CImageLoaderJPG.cpp:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+src/CImageLoaderJPG.h:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+src/CImageLoaderPNG.cpp:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+src/CImageLoaderPNG.h:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+src/CImageLoaderTGA.cpp:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+src/CImageLoaderTGA.h:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+src/CImageWriterJPG.cpp:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+src/CImageWriterJPG.h:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+src/CImageWriterPNG.cpp:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+src/CImageWriterPNG.h:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+src/CIrrDeviceSDL.cpp:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+src/CIrrDeviceSDL.h:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+src/CIrrDeviceStub.cpp:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+src/CIrrDeviceStub.h:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+src/CLimitReadFile.cpp:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+src/CLimitReadFile.h:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+src/CLogger.cpp:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+src/CLogger.h:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+src/CMemoryFile.cpp:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+src/CMemoryFile.h:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+src/CMeshCache.cpp:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+src/CMeshCache.h:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+src/CMeshManipulator.cpp:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+src/CMeshManipulator.h:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+src/CMeshSceneNode.cpp:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+src/CMeshSceneNode.h:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+src/CNullDriver.cpp:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+src/CNullDriver.h:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+src/COBJMeshFileLoader.cpp:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+src/COBJMeshFileLoader.h:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+src/COGLESCoreExtensionHandler.h:
+// Copyright (C) 2017 Michael Zeilfelder
+// For conditions of distribution and use, see copyright notice in Irrlicht.h
+
+src/COSOperator.cpp:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+src/COSOperator.h:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+src/COpenGLCacheHandler.cpp:
+// Copyright (C) 2015 Patryk Nadrowski
+// For conditions of distribution and use, see copyright notice in Irrlicht.h
+
+src/COpenGLCacheHandler.h:
+// Copyright (C) 2015 Patryk Nadrowski
+// For conditions of distribution and use, see copyright notice in Irrlicht.h
+
+src/COpenGLCommon.h:
+// Copyright (C) 2015 Patryk Nadrowski
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+src/COpenGLCoreCacheHandler.h:
+// Copyright (C) 2015 Patryk Nadrowski
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+src/COpenGLCoreFeature.h:
+// Copyright (C) 2015 Patryk Nadrowski
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+src/COpenGLCoreRenderTarget.h:
+// Copyright (C) 2015 Patryk Nadrowski
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+src/COpenGLCoreTexture.h:
+// Copyright (C) 2015 Patryk Nadrowski
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+src/COpenGLDriver.cpp:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+src/COpenGLDriver.h:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in Irrlicht.h
+
+src/COpenGLExtensionHandler.cpp:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+src/COpenGLExtensionHandler.h:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in Irrlicht.h
+
+src/COpenGLMaterialRenderer.h:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+src/COpenGLSLMaterialRenderer.cpp:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+src/COpenGLSLMaterialRenderer.h:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+src/CReadFile.cpp:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+src/CReadFile.h:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+src/CSDLManager.cpp:
+// Copyright (C) 2022 sfan5
+// For conditions of distribution and use, see copyright notice in Irrlicht.h
+
+src/CSDLManager.h:
+// Copyright (C) 2022 sfan5
+// For conditions of distribution and use, see copyright notice in Irrlicht.h
+
+src/CSceneCollisionManager.cpp:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+src/CSceneCollisionManager.h:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+src/CSceneManager.cpp:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+src/CSceneManager.h:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+src/CTimer.h:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+src/CWriteFile.cpp:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+src/CWriteFile.h:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+src/CXMeshFileLoader.cpp:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+src/CXMeshFileLoader.h:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+src/CZipReader.cpp:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+src/CZipReader.h:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+src/Irrlicht.cpp:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+src/OpenGL/BufferObject.cpp:
+// Copyright (C) 2024 sfan5
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+src/OpenGL/BufferObject.h:
+// Copyright (C) 2024 sfan5
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+src/OpenGL/Common.h:
+// Copyright (C) 2023 Vitaliy Lobachevskiy
+// Copyright (C) 2015 Patryk Nadrowski
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+src/OpenGL/Driver.cpp:
+// Copyright (C) 2023 Vitaliy Lobachevskiy
+// Copyright (C) 2014 Patryk Nadrowski
+// Copyright (C) 2009-2010 Amundis
+// For conditions of distribution and use, see copyright notice in Irrlicht.h
+
+src/OpenGL/Driver.h:
+// Copyright (C) 2023 Vitaliy Lobachevskiy
+// Copyright (C) 2014 Patryk Nadrowski
+// Copyright (C) 2009-2010 Amundis
+// For conditions of distribution and use, see copyright notice in Irrlicht.h
+
+src/OpenGL/ExtensionHandler.cpp:
+// Copyright (C) 2015 Patryk Nadrowski
+// Copyright (C) 2009-2010 Amundis
+// For conditions of distribution and use, see copyright notice in Irrlicht.h
+
+src/OpenGL/ExtensionHandler.h:
+// Copyright (C) 2023 Vitaliy Lobachevskiy
+// Copyright (C) 2015 Patryk Nadrowski
+// Copyright (C) 2009-2010 Amundis
+// For conditions of distribution and use, see copyright notice in Irrlicht.h
+
+src/OpenGL/FixedPipelineRenderer.cpp:
+// Copyright (C) 2023 Vitaliy Lobachevskiy
+// Copyright (C) 2014 Patryk Nadrowski
+// For conditions of distribution and use, see copyright notice in Irrlicht.h
+
+src/OpenGL/FixedPipelineRenderer.h:
+// Copyright (C) 2023 Vitaliy Lobachevskiy
+// Copyright (C) 2014 Patryk Nadrowski
+// For conditions of distribution and use, see copyright notice in Irrlicht.h
+
+src/OpenGL/MaterialRenderer.cpp:
+// Copyright (C) 2014 Patryk Nadrowski
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+src/OpenGL/MaterialRenderer.h:
+// Copyright (C) 2014 Patryk Nadrowski
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+src/OpenGL/Renderer2D.cpp:
+// Copyright (C) 2014 Patryk Nadrowski
+// For conditions of distribution and use, see copyright notice in Irrlicht.h
+
+src/OpenGL/Renderer2D.h:
+// Copyright (C) 2014 Patryk Nadrowski
+// For conditions of distribution and use, see copyright notice in Irrlicht.h
+
+src/OpenGL3/DriverGL3.cpp:
+// Copyright (C) 2023 Vitaliy Lobachevskiy
+// For conditions of distribution and use, see copyright notice in Irrlicht.h
+
+src/OpenGL3/DriverGL3.h:
+// Copyright (C) 2023 Vitaliy Lobachevskiy
+// For conditions of distribution and use, see copyright notice in Irrlicht.h
+
+src/OpenGLES2/DriverGLES2.cpp:
+// Copyright (C) 2023 Vitaliy Lobachevskiy
+// For conditions of distribution and use, see copyright notice in Irrlicht.h
+
+src/OpenGLES2/DriverGLES2.h:
+// Copyright (C) 2023 Vitaliy Lobachevskiy
+// For conditions of distribution and use, see copyright notice in Irrlicht.h
+
+src/SB3DStructs.h:
+// Copyright (C) 2006-2012 Luke Hoschke
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+src/SkinnedMesh.cpp:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+src/SoftwareDriver2_helper.h:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt / Thomas Alten
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+src/WeightBuffer.cpp:
+// Copyright (C) 2025 Lars Müller
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+src/os.cpp:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+src/os.h:
+// Copyright (C) 2002-2012 Nikolaus Gebhardt
+// For conditions of distribution and use, see copyright notice in irrlicht.h
+
+src/vendor/gl.h:
+* Copyright (C) 1999-2006  Brian Paul   All Rights Reserved.
+* Copyright (C) 2009  VMware, Inc.  All Rights Reserved.
+* The above copyright notice and this permission notice shall be included
+* THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR
+
+src/vendor/glext.h:
+** Copyright 2013-2020 The Khronos Group Inc.
+** SPDX-License-Identifier: MIT

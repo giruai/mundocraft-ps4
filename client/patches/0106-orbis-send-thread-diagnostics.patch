@@ -1,0 +1,292 @@
+--- a/src/network/mtp/impl.cpp
++++ b/src/network/mtp/impl.cpp
+@@ -4,6 +4,10 @@
+ 
+ #include <algorithm>
+ #include <cmath>
++#if defined(__ORBIS__)
++#include <atomic>
++#include <cerrno>
++#endif
+ #include "network/mtp/internal.h"
+ #include "log.h"
+ #include "porting.h"
+@@ -30,6 +34,22 @@
+ 
+ // TODO: Clean this up.
+ #define LOG(a) a
++
++#if defined(__ORBIS__)
++static std::atomic<unsigned> g_ps4_send_start_logs{0};
++static std::atomic<unsigned> g_ps4_send_enqueue_logs{0};
++
++static bool ps4_send_diagnostic_slot(std::atomic<unsigned> &counter)
++{
++	unsigned count = counter.load(std::memory_order_relaxed);
++	while (count < 8) {
++		if (counter.compare_exchange_weak(count, count + 1,
++				std::memory_order_relaxed))
++			return true;
++	}
++	return false;
++}
++#endif
+ 
+ #define PING_INTERVAL 5.0f
+ 
+@@ -1299,8 +1319,26 @@
+ 	m_sendThread->setParent(this);
+ 	m_receiveThread->setParent(this);
+ 
++#if defined(__ORBIS__)
++	const bool log_start = ps4_send_diagnostic_slot(g_ps4_send_start_logs);
++	const bool send_started = m_sendThread->start();
++	const int send_start_errno = errno;
++	if (log_start) {
++		infostream << "PS4_SEND start send_result=" << send_started
++			<< " running=" << m_sendThread->isRunning() << std::endl;
++		errno = send_start_errno;
++	}
++	const bool receive_started = m_receiveThread->start();
++	const int receive_start_errno = errno;
++	if (log_start) {
++		infostream << "PS4_SEND start receive_result=" << receive_started
++			<< " running=" << m_receiveThread->isRunning() << std::endl;
++		errno = receive_start_errno;
++	}
++#else
+ 	m_sendThread->start();
+ 	m_receiveThread->start();
++#endif
+ }
+ 
+ 
+@@ -1416,8 +1454,31 @@
+ void Connection::putCommand(ConnectionCommandPtr c)
+ {
+ 	if (!m_shutting_down) {
++#if defined(__ORBIS__)
++		const bool log_connect_command = c && c->type == CONNCMD_CONNECT &&
++			ps4_send_diagnostic_slot(g_ps4_send_enqueue_logs);
++		if (log_connect_command) {
++			const int saved_errno = errno;
++			infostream << "PS4_SEND enqueue_connect before_push" << std::endl;
++			errno = saved_errno;
++		}
++#endif
+ 		m_command_queue.push_back(c);
++#if defined(__ORBIS__)
++		if (log_connect_command) {
++			const int saved_errno = errno;
++			infostream << "PS4_SEND enqueue_connect pushed" << std::endl;
++			errno = saved_errno;
++		}
++#endif
+ 		m_sendThread->Trigger();
++#if defined(__ORBIS__)
++		if (log_connect_command) {
++			const int saved_errno = errno;
++			infostream << "PS4_SEND enqueue_connect triggered" << std::endl;
++			errno = saved_errno;
++		}
++#endif
+ 	}
+ }
+ 
+--- a/src/network/mtp/threads.cpp
++++ b/src/network/mtp/threads.cpp
+@@ -10,6 +10,10 @@
+ #include "network/networkexceptions.h"
+ #include "network/networkpacket.h"
+ #include "util/serialize.h"
++#if defined(__ORBIS__)
++#include <atomic>
++#include <cerrno>
++#endif
+ 
+ namespace con
+ {
+@@ -29,6 +33,30 @@
+ // TODO: Clean this up.
+ #define LOG(a) a
+ 
++#if defined(__ORBIS__)
++static std::atomic<unsigned> g_ps4_send_run_logs{0};
++static std::atomic<unsigned> g_ps4_send_wait_entry_logs{0};
++static std::atomic<unsigned> g_ps4_send_wake_logs{0};
++static std::atomic<unsigned> g_ps4_send_drain_entry_logs{0};
++static std::atomic<unsigned> g_ps4_send_drain_logs{0};
++static std::atomic<unsigned> g_ps4_send_timeout_entry_logs{0};
++static std::atomic<unsigned> g_ps4_send_queue_entry_logs{0};
++static std::atomic<unsigned> g_ps4_send_queue_positive_logs{0};
++static std::atomic<unsigned> g_ps4_send_queue_connect_logs{0};
++static std::atomic<unsigned> g_ps4_send_connect_logs{0};
++
++static bool ps4_send_diagnostic_slot(std::atomic<unsigned> &counter)
++{
++	unsigned count = counter.load(std::memory_order_relaxed);
++	while (count < 8) {
++		if (counter.compare_exchange_weak(count, count + 1,
++				std::memory_order_relaxed))
++			return true;
++	}
++	return false;
++}
++#endif
++
+ #define INIT_PHASE_MIN_TIMEOUT 5.0f
+ 
+ #define MAX_NEW_PEERS_PER_SEC 30
+@@ -70,6 +98,14 @@
+ {
+ 	assert(m_connection);
+ 
++#if defined(__ORBIS__)
++	if (ps4_send_diagnostic_slot(g_ps4_send_run_logs)) {
++		const int saved_errno = errno;
++		infostream << "PS4_SEND run_enter" << std::endl;
++		errno = saved_errno;
++	}
++#endif
++
+ 	LOG(dout_con << m_connection->getDesc()
+ 		<< "ConnectionSend thread started" << std::endl);
+ 
+@@ -81,16 +117,57 @@
+ 
+ 	/* if stop is requested don't stop immediately but try to send all        */
+ 	/* packets first */
++#if defined(__ORBIS__)
++	bool first_wait = true;
++#endif
+ 	while (!stopRequested() || packetsQueued()) {
+ 		BEGIN_DEBUG_EXCEPTION_HANDLER
+ 		PROFILE(ScopeProfiler sp(g_profiler, ThreadIdentifier.str(), SPT_AVG));
+ 
+ 		/* wait for trigger or timeout */
++#if defined(__ORBIS__)
++		if (first_wait) {
++			first_wait = false;
++			if (ps4_send_diagnostic_slot(g_ps4_send_wait_entry_logs)) {
++				const int saved_errno = errno;
++				infostream << "PS4_SEND wait_enter timeout_ms=50" << std::endl;
++				errno = saved_errno;
++			}
++		}
++		const u64 wait_started_ms = porting::getTimeMs();
++		const bool wait_signaled = m_send_sleep_semaphore.wait(50);
++		const int wait_errno = errno;
++		const u64 wait_elapsed_ms = porting::getTimeMs() - wait_started_ms;
++		if (ps4_send_diagnostic_slot(g_ps4_send_wake_logs))
++			infostream << "PS4_SEND wake signaled=" << wait_signaled
++				<< " errno=" << (wait_signaled ? 0 : wait_errno)
++				<< " elapsed_ms=" << wait_elapsed_ms << std::endl;
++		errno = wait_errno;
++#else
+ 		m_send_sleep_semaphore.wait(50);
++#endif
+ 
+ 		/* remove all triggers */
++#if defined(__ORBIS__)
++		unsigned drained_triggers = 0;
++		if (ps4_send_diagnostic_slot(g_ps4_send_drain_entry_logs)) {
++			const int saved_errno = errno;
++			infostream << "PS4_SEND wake_drain_enter" << std::endl;
++			errno = saved_errno;
++		}
++#endif
+ 		while (m_send_sleep_semaphore.wait(0)) {
+-		}
++#if defined(__ORBIS__)
++			++drained_triggers;
++#endif
++		}
++#if defined(__ORBIS__)
++		const int drain_errno = errno;
++		if (ps4_send_diagnostic_slot(g_ps4_send_drain_logs))
++			infostream << "PS4_SEND wake_drain_done count="
++				<< drained_triggers << " errno=" << drain_errno << std::endl;
++		errno = drain_errno;
++#endif
+ 
+ 		lasttime = curtime;
+ 		curtime = porting::getTimeMs();
+@@ -105,6 +182,13 @@
+ 		};
+ 
+ 		/* first resend timed-out packets */
++#if defined(__ORBIS__)
++		if (ps4_send_diagnostic_slot(g_ps4_send_timeout_entry_logs)) {
++			const int saved_errno = errno;
++			infostream << "PS4_SEND timeouts_enter" << std::endl;
++			errno = saved_errno;
++		}
++#endif
+ 		runTimeouts(dtime, calculate_quota());
+ 		if (m_iteration_packets_avaialble == 0) {
+ 			LOG(warningstream << m_connection->getDesc()
+@@ -113,7 +197,27 @@
+ 		}
+ 
+ 		/* translate commands to packets */
++#if defined(__ORBIS__)
++		const bool log_queue_entry = ps4_send_diagnostic_slot(g_ps4_send_queue_entry_logs);
++		if (log_queue_entry) {
++			const int saved_errno = errno;
++			infostream << "PS4_SEND queue_pop_enter timeout_ms=0" << std::endl;
++			errno = saved_errno;
++		}
++#endif
+ 		auto c = m_connection->m_command_queue.pop_frontNoEx(0);
++#if defined(__ORBIS__)
++		const int pop_errno = errno;
++		const bool log_positive = c &&
++			ps4_send_diagnostic_slot(g_ps4_send_queue_positive_logs);
++		const bool log_connect = c && c->type == CONNCMD_CONNECT &&
++			ps4_send_diagnostic_slot(g_ps4_send_queue_connect_logs);
++		if (log_queue_entry || log_positive || log_connect)
++			infostream << "PS4_SEND queue_pop type="
++				<< (c ? static_cast<int>(c->type) : -1)
++				<< " errno=" << (c ? 0 : pop_errno) << std::endl;
++		errno = pop_errno;
++#endif
+ 		while (c && c->type != CONNCMD_NONE) {
+ 			if (c->reliable)
+ 				processReliableCommand(c);
+@@ -534,14 +638,36 @@
+ 
+ void ConnectionSendThread::connect(Address address)
+ {
++#if defined(__ORBIS__)
++	const bool log_connect = ps4_send_diagnostic_slot(g_ps4_send_connect_logs);
++	if (log_connect) {
++		const int saved_errno = errno;
++		infostream << "PS4_SEND connect_enter" << std::endl;
++		errno = saved_errno;
++	}
++#endif
+ 	dout_con << m_connection->getDesc() << " connecting to ";
+ 	address.print(dout_con);
+ 	dout_con << std::endl;
+ 
+ 	UDPPeer *peer = m_connection->createServerPeer(address);
++#if defined(__ORBIS__)
++	if (log_connect) {
++		const int saved_errno = errno;
++		infostream << "PS4_SEND peer_created" << std::endl;
++		errno = saved_errno;
++	}
++#endif
+ 
+ 	// Create event
+ 	m_connection->putEvent(ConnectionEvent::peerAdded(peer->id, peer->address));
++#if defined(__ORBIS__)
++	if (log_connect) {
++		const int saved_errno = errno;
++		infostream << "PS4_SEND peer_event_queued before_bind" << std::endl;
++		errno = saved_errno;
++	}
++#endif
+ 
+ 	Address bind_addr;
+ 	if (address.isIPv6())

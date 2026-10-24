@@ -1,0 +1,55 @@
+--- a/builtin/mainmenu/serverlistmgr.lua
++++ b/builtin/mainmenu/serverlistmgr.lua
+@@ -227,6 +227,23 @@
+ 	end)
+ end
+ 
++local function apply_list_result(result)
++	browser_diag("list-result-begin")
++	local servers = {}
++	if type(result) == "string" and result ~= "" then
++		browser_diag("list-json-begin", #result)
++		local decoded = core.parse_json(result)
++		browser_diag("list-json-end")
++		if type(decoded) == "table" and type(decoded.list) == "table" then
++			servers = decoded.list
++		end
++	end
++	local favs = order_server_list(validate_servers(servers))
++	if favs[1] then serverlistmgr.servers = favs end
++	core.event_handler("Refresh")
++	browser_diag("list-result-end", #favs)
++end
++
+ function serverlistmgr.sync()
+ 	if not serverlistmgr.servers then
+ 		serverlistmgr.servers = {{name=fgettext("Loading..."),
+@@ -248,19 +265,17 @@
+ 			core.settings:get("serverlist_url"), core.get_min_supp_proto(), core.get_max_supp_proto())
+ 		local response = http.fetch_sync({url=url})
+ 		core.log("action", "PS4_BROWSER phase=list-http-end")
+-		if not response.succeeded then return {} end
+-		core.log("action", "PS4_BROWSER phase=list-json-begin")
+-		local retval = core.parse_json(response.data)
+-		core.log("action", "PS4_BROWSER phase=list-json-end")
+-		if type(retval) ~= "table" or type(retval.list) ~= "table" then return {} end
+-		return retval.list
++		-- Keep the async result scalar: do not build, pack and rebuild the
++		-- complete server table across two independent Lua VMs.
++		if not response.succeeded or type(response.data) ~= "string" then return "" end
++		core.log("action", "PS4_BROWSER phase=list-body-ready count=" .. #response.data)
++		return response.data
+ 	end, nil, function(result)
+-		browser_diag("list-result-begin")
+-		local favs = order_server_list(validate_servers(result))
+-		if favs[1] then serverlistmgr.servers = favs end
+-		core.event_handler("Refresh")
+-		browser_diag("list-result-end", #favs)
++		-- Keep the busy flag set through synchronous Refresh reentry, but
++		-- release it on every callback exit before preserving the error policy.
++		local ok, err = pcall(apply_list_result, result)
+ 		public_downloading = false
++		if not ok then error(err, 0) end
+ 		-- The optional location request follows list completion; it never
+ 		-- overlaps the browser request. Both features remain enabled by default.
+ 		request_geoip()

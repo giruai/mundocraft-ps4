@@ -1,0 +1,14 @@
+--- a/src/porting.cpp
++++ b/src/porting.cpp
+@@ -937,7 +937,10 @@
+ 	}
+ 	verbosestream << "Opening URI: " << uri << std::endl;
+ 
+-#if defined(_WIN32)
++#if defined(__ORBIS__)
++	// This build has no external desktop browser/file manager.
++	return false;
++#elif defined(_WIN32)
+ 	return (intptr_t)ShellExecuteA(NULL, NULL, uri.c_str(), NULL, NULL, SW_SHOWNORMAL) > 32;
+ #elif defined(__ANDROID__)
+ 	openURIAndroid(uri.c_str());

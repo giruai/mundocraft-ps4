@@ -1,0 +1,17 @@
+--- a/src/filesys.cpp
++++ b/src/filesys.cpp
+@@ -329,7 +329,14 @@
+ 
+ bool PathExists(const std::string &path)
+ {
++#if defined(__ORBIS__)
++	// Native access() does not establish existence on this PS4 runtime.
++	// Use the same real metadata query as IsDir and the SQLite adapter.
++	struct stat info{};
++	return !path.empty() && stat(path.c_str(), &info) == 0;
++#else
+ 	return access(path.c_str(), F_OK) == 0;
++#endif
+ }
+ 
+ bool IsPathAbsolute(const std::string &path)

@@ -1,0 +1,50 @@
+--- a/builtin/async/mainmenu.lua
++++ b/builtin/async/mainmenu.lua
+@@ -12,6 +12,14 @@
+ 	local param = core.deserialize(serialized_param)
+ 
+ 	local value = func(param)
++	-- A scalar string is data, not generated Lua source. Both endpoints
++	-- are shipped in the same application package.
++	if type(value) == "string" then
++		async_diag("worker-string-frame-before", #value)
++		local framed = "\0LMS1\0" .. value
++		async_diag("worker-string-frame-after", #value)
++		return framed
++	end
+ 	async_diag("worker-serialize-before")
+ 	local retval = core.serialize(value)
+ 	async_diag("worker-serialize-after", #(retval or ""))
+--- a/builtin/mainmenu/async_event.lua
++++ b/builtin/mainmenu/async_event.lua
+@@ -9,12 +9,27 @@
+ core.async_jobs = {}
+ 
+ local function handle_job(jobid, serialized_retval)
+-	async_diag("menu-deserialize-before", #serialized_retval)
+-	local retval = core.deserialize(serialized_retval)
+-	async_diag("menu-deserialize-after")
+ 	assert(type(core.async_jobs[jobid]) == "function")
+ 	local callback = core.async_jobs[jobid]
+ 	core.async_jobs[jobid] = nil
++	if type(serialized_retval) ~= "string" then
++		error("Invalid menu async result type")
++	end
++	local prefix = "\0LMS1\0"
++	local retval
++	if serialized_retval:sub(1, #prefix) == prefix then
++		async_diag("menu-string-frame-before", #serialized_retval - #prefix)
++		retval = serialized_retval:sub(#prefix + 1)
++		async_diag("menu-string-frame-after", #retval)
++	elseif serialized_retval:sub(1, 1) == "\0" then
++		-- Unknown/truncated binary frames must never enter the Lua loader.
++		error("Unsupported menu async string frame")
++	else
++		-- Preserve the existing nil/boolean/number/table result protocol.
++		async_diag("menu-deserialize-before", #serialized_retval)
++		retval = core.deserialize(serialized_retval)
++		async_diag("menu-deserialize-after")
++	end
+ 	callback(retval)
+ end
+ 

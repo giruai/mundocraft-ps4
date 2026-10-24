@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1050" height="210" viewBox="0 0 1050 210" role="img" aria-labelledby="title desc">
+<!-- SPDX-License-Identifier: MIT -->
+  <title id="title">MundoCraft build flow</title>
+  <desc id="desc">Pinned sources, PS4 dependencies, Luanti client, PKG, and local verification.</desc>
+  <defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0 10 5 0 10z" fill="#73918b"/></marker></defs>
+  <rect width="1050" height="210" rx="18" fill="#f3f7f4"/>
+  <g font-family="system-ui,sans-serif" text-anchor="middle">
+    <g fill="#153f46"><rect x="25" y="64" width="170" height="82" rx="14"/><rect x="235" y="64" width="170" height="82" rx="14"/><rect x="445" y="64" width="170" height="82" rx="14"/><rect x="655" y="64" width="170" height="82" rx="14"/><rect x="865" y="64" width="160" height="82" rx="14"/></g>
+    <g fill="#eaf4eb" font-size="16" font-weight="650"><text x="110" y="98">Sources</text><text x="110" y="122" font-size="12" font-weight="400">versions + hashes</text><text x="320" y="98">Dependencies</text><text x="320" y="122" font-size="12" font-weight="400">Mesa · SDL2 · libraries</text><text x="530" y="98">Client</text><text x="530" y="122" font-size="12" font-weight="400">Luanti 5.17.0 + patches</text><text x="740" y="98">Packaging</text><text x="740" y="122" font-size="12" font-weight="400">Orbis PS4 kit</text><text x="945" y="98">PKG</text><text x="945" y="122" font-size="12" font-weight="400">local checks</text></g>
+    <g stroke="#73918b" stroke-width="3" marker-end="url(#arrow)"><path d="M198 105h28"/><path d="M408 105h28"/><path d="M618 105h28"/><path d="M828 105h28"/></g>
+    <text x="525" y="181" fill="#526b67" font-size="12">Cross-build; the PKG needs a separate PS4 hardware test.</text>
+  </g>
+</svg>

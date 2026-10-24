@@ -1,0 +1,1280 @@
+Upstream source copyright and license comment inventory. Original per-file notices remain authoritative. Paths below are relative to the component source directories.
+
+Files: gui/guiBackgroundImage.cpp, gui/guiBackgroundImage.h
+/*
+Part of Minetest
+Copyright (C) 2013 RealBadAngel, Maciej Kasatkin <mk@realbadangel.pl>
+
+Permission to use, copy, modify, and distribute this software for any
+purpose with or without fee is hereby granted, provided that the above
+copyright notice and this permission notice appear in all copies.
+
+THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
+WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
+MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
+ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
+ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
+OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+*/
+
+Files: gui/guiOpenURL.cpp
+/*
+Part of Minetest
+Copyright (C) 2023-24 rubenwardy
+
+Permission to use, copy, modify, and distribute this software for any
+purpose with or without fee is hereby granted, provided that the above
+copyright notice and this permission notice appear in all copies.
+
+THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
+WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
+MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
+ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
+ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
+OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+*/
+
+Files: gui/guiOpenURL.h
+/*
+Part of Minetest
+Copyright (C) 2023 rubenwardy
+
+Permission to use, copy, modify, and distribute this software for any
+purpose with or without fee is hereby granted, provided that the above
+copyright notice and this permission notice appear in all copies.
+
+THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
+WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
+MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
+ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
+ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
+OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+*/
+
+Files: gui/guiPasswordChange.cpp
+/*
+Part of Minetest
+Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+Copyright (C) 2013 Ciaran Gultnieks <ciaran@ciarang.com>
+
+Permission to use, copy, modify, and distribute this software for any
+purpose with or without fee is hereby granted, provided that the above
+copyright notice and this permission notice appear in all copies.
+
+THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
+WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
+MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
+ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
+ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
+OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+*/
+
+Files: gui/guiPasswordChange.h
+/*
+Part of Minetest
+Copyright (C) 2010-2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+Copyright (C) 2013 Ciaran Gultnieks <ciaran@ciarang.com>
+
+Permission to use, copy, modify, and distribute this software for any
+purpose with or without fee is hereby granted, provided that the above
+copyright notice and this permission notice appear in all copies.
+
+THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
+WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
+MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
+ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
+ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
+OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+*/
+
+Files: gui/guiScrollBar.cpp, gui/guiScrollBar.h
+/*
+Copyright (C) 2002-2013 Nikolaus Gebhardt
+This file is part of the "Irrlicht Engine".
+For conditions of distribution and use, see copyright notice in irrlicht.h
+*/
+
+Files: gui/guiTable.h
+/*
+	A table GUI element for GUIFormSpecMenu.
+
+	Sends a EGET_TABLE_CHANGED event to the parent when
+	an item is selected or double-clicked.
+	Call checkEvent() to get info.
+
+	Credits: The interface and implementation of this class are (very)
+	loosely based on the Irrlicht classes CGUITable and CGUIListBox.
+	CGUITable and CGUIListBox are licensed under the Irrlicht license;
+	they are Copyright (C) 2002-2012 Nikolaus Gebhardt
+*/
+
+Files: gui/guiVolumeChange.cpp
+/*
+Part of Minetest
+Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+Copyright (C) 2013 Ciaran Gultnieks <ciaran@ciarang.com>
+Copyright (C) 2013 RealBadAngel, Maciej Kasatkin <mk@realbadangel.pl>
+
+Permission to use, copy, modify, and distribute this software for any
+purpose with or without fee is hereby granted, provided that the above
+copyright notice and this permission notice appear in all copies.
+
+THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
+WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
+MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
+ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
+ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
+OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+*/
+
+Files: gui/guiVolumeChange.h
+/*
+Part of Minetest
+Copyright (C) 2010-2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+Copyright (C) 2013 Ciaran Gultnieks <ciaran@ciarang.com>
+Copyright (C) 2013 RealBadAngel, Maciej Kasatkin <mk@realbadangel.pl>
+
+Permission to use, copy, modify, and distribute this software for any
+purpose with or without fee is hereby granted, provided that the above
+copyright notice and this permission notice appear in all copies.
+
+THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
+WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
+MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
+ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
+ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
+OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+*/
+
+Files: irrlicht_changes/CGUITTFont.cpp
+/*
+   CGUITTFont FreeType class for Irrlicht
+   Copyright (c) 2009-2010 John Norman
+   with changes from Luanti contributors:
+   Copyright (c) 2016 Nathanaëlle Courant
+   Copyright (c) 2023 Caleb Butler
+
+   This software is provided 'as-is', without any express or implied
+   warranty. In no event will the authors be held liable for any
+   damages arising from the use of this software.
+
+   Permission is granted to anyone to use this software for any
+   purpose, including commercial applications, and to alter it and
+   redistribute it freely, subject to the following restrictions:
+
+   1. The origin of this software must not be misrepresented; you
+      must not claim that you wrote the original software. If you use
+      this software in a product, an acknowledgment in the product
+      documentation would be appreciated but is not required.
+
+   2. Altered source versions must be plainly marked as such, and
+      must not be misrepresented as being the original software.
+
+   3. This notice may not be removed or altered from any source
+      distribution.
+
+   The original version of this class can be located at:
+   http://irrlicht.suckerfreegames.com/
+
+   John Norman
+   john@suckerfreegames.com
+*/
+
+Files: irrlicht_changes/CGUITTFont.h
+/*
+   CGUITTFont FreeType class for Irrlicht
+   Copyright (c) 2009-2010 John Norman
+   Copyright (c) 2016 Nathanaëlle Courant
+   Copyright (c) 2023 Caleb Butler
+   Copyright (c) 2024 Luanti contributors
+
+   This software is provided 'as-is', without any express or implied
+   warranty. In no event will the authors be held liable for any
+   damages arising from the use of this software.
+
+   Permission is granted to anyone to use this software for any
+   purpose, including commercial applications, and to alter it and
+   redistribute it freely, subject to the following restrictions:
+
+   1. The origin of this software must not be misrepresented; you
+      must not claim that you wrote the original software. If you use
+      this software in a product, an acknowledgment in the product
+      documentation would be appreciated but is not required.
+
+   2. Altered source versions must be plainly marked as such, and
+      must not be misrepresented as being the original software.
+
+   3. This notice may not be removed or altered from any source
+      distribution.
+
+   The original version of this class can be located at:
+   http://irrlicht.suckerfreegames.com/
+
+   John Norman
+   john@suckerfreegames.com
+*/
+
+Files: mapgen/mapgen_valleys.cpp, mapgen/mapgen_valleys.h
+/*
+Luanti
+SPDX-License-Identifier: LGPL-2.1-or-later
+Copyright (C) 2016-2019 Duane Robertson <duane@duanerobertson.com>
+Copyright (C) 2016-2019 paramat
+
+Based on Valleys Mapgen by Gael de Sailly
+(https://forum.luanti.org/viewtopic.php?f=9&t=11430)
+and mapgen_v7, mapgen_flat by kwolekr and paramat.
+
+Licensing changed by permission of Gael de Sailly.
+*/
+
+Files: noise.cpp, noise.h
+/*
+ * Minetest
+ * Copyright (C) 2010-2014 celeron55, Perttu Ahola <celeron55@gmail.com>
+ * Copyright (C) 2010-2014 kwolekr, Ryan Kwolek <kwolekr@minetest.net>
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without modification, are
+ * permitted provided that the following conditions are met:
+ *  1. Redistributions of source code must retain the above copyright notice, this list of
+ *     conditions and the following disclaimer.
+ *  2. Redistributions in binary form must reproduce the above copyright notice, this list
+ *     of conditions and the following disclaimer in the documentation and/or other materials
+ *     provided with the distribution.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE AUTHOR AND CONTRIBUTORS ``AS IS'' AND ANY EXPRESS OR IMPLIED
+ * WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND
+ * FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE AUTHOR OR
+ * CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+ * CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+ * SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON
+ * ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+ * NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
+ * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ */
+
+Files: threading/event.cpp, threading/event.h, threading/mutex_auto_lock.h, threading/thread.cpp, threading/thread.h
+/*
+This file is a part of the JThread package, which contains some object-
+oriented thread wrappers for different thread implementations.
+
+Copyright (c) 2000-2006  Jori Liesenborgs (jori.liesenborgs@gmail.com)
+
+Permission is hereby granted, free of charge, to any person obtaining a
+copy of this software and associated documentation files (the "Software"),
+to deal in the Software without restriction, including without limitation
+the rights to use, copy, modify, merge, publish, distribute, sublicense,
+and/or sell copies of the Software, and to permit persons to whom the
+Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL
+THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+DEALINGS IN THE SOFTWARE.
+*/
+
+Files: util/base64.cpp
+/*
+base64.cpp and base64.h
+
+Copyright (C) 2004-2008 René Nyffenegger
+Stricter validation added by the Minetest Contributors.
+
+This source code is provided 'as-is', without any express or implied
+warranty. In no event will the author be held liable for any damages
+arising from the use of this software.
+
+Permission is granted to anyone to use this software for any purpose,
+including commercial applications, and to alter it and redistribute it
+freely, subject to the following restrictions:
+
+1. The origin of this source code must not be misrepresented; you must not
+   claim that you wrote the original source code. If you use this source code
+   in a product, an acknowledgment in the product documentation would be
+   appreciated but is not required.
+
+2. Altered source versions must be plainly marked as such, and must not be
+   misrepresented as being the original source code.
+
+3. This notice may not be removed or altered from any source distribution.
+
+René Nyffenegger rene.nyffenegger@adp-gmbh.ch
+
+*/
+
+Files: util/base64.h
+/*
+base64.cpp and base64.h
+
+Copyright (C) 2004-2008 René Nyffenegger
+Minor modifications by the Minetest Contributors.
+
+This source code is provided 'as-is', without any express or implied
+warranty. In no event will the author be held liable for any damages
+arising from the use of this software.
+
+Permission is granted to anyone to use this software for any purpose,
+including commercial applications, and to alter it and redistribute it
+freely, subject to the following restrictions:
+
+1. The origin of this source code must not be misrepresented; you must not
+   claim that you wrote the original source code. If you use this source code
+   in a product, an acknowledgment in the product documentation would be
+   appreciated but is not required.
+
+2. Altered source versions must be plainly marked as such, and must not be
+   misrepresented as being the original source code.
+
+3. This notice may not be removed or altered from any source distribution.
+
+René Nyffenegger rene.nyffenegger@adp-gmbh.ch
+
+*/
+
+Files: util/colorize.cpp, util/colorize.h
+/*
+Part of Minetest
+Copyright (C) 2024 rubenwardy
+
+Permission to use, copy, modify, and distribute this software for any
+purpose with or without fee is hereby granted, provided that the above
+copyright notice and this permission notice appear in all copies.
+
+THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
+WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
+MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
+ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
+ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
+OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+*/
+
+Files: util/enriched_string.cpp, util/enriched_string.h
+/*
+Copyright (C) 2013 xyz, Ilya Zhuravlev <whatever@xyz.is>
+Copyright (C) 2016 Nore, Nathanaëlle Courant <nore@mesecons.net>
+
+This program is free software; you can redistribute it and/or modify
+it under the terms of the GNU Lesser General Public License as published by
+the Free Software Foundation; either version 2.1 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU Lesser General Public License for more details.
+
+You should have received a copy of the GNU Lesser General Public License along
+with this program; if not, see <https://www.gnu.org/licenses/>.
+*/
+
+Files: util/ieee_float.cpp
+/*
+ * Conversion of f32 to IEEE-754 and vice versa.
+ *
+ * © Copyright 2018 Pedro Gimeno Fortea.
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining
+ * a copy of this software and associated documentation files (the
+ * "Software"), to deal in the Software without restriction, including
+ * without limitation the rights to use, copy, modify, merge, publish,
+ * distribute, sublicense, and/or sell copies of the Software, and to
+ * permit persons to whom the Software is furnished to do so, subject to
+ * the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included
+ * in all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+ * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+ * IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+ * CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+ * TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+ * SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ */
+
+Files: util/sha1.cpp
+/* sha1.cpp
+
+Copyright (c) 2005 Michael D. Leonhard
+
+http://tamale.net/
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of
+this software and associated documentation files (the "Software"), to deal in
+the Software without restriction, including without limitation the rights to
+use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies
+of the Software, and to permit persons to whom the Software is furnished to do
+so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+*/
+
+Files: util/sha1.h
+/* sha1.h
+
+Copyright (c) 2005 Michael D. Leonhard
+
+http://tamale.net/
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of
+this software and associated documentation files (the "Software"), to deal in
+the Software without restriction, including without limitation the rights to
+use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies
+of the Software, and to permit persons to whom the Software is furnished to do
+so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+*/
+
+Files: util/srp.cpp, util/srp.h
+/*
+ * Secure Remote Password 6a implementation
+ * https://github.com/est31/csrp-gmp
+ *
+ * The MIT License (MIT)
+ *
+ * Copyright (c) 2010, 2013 Tom Cocagne, 2015 est31 <MTest31@outlook.com>
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy of
+ * this software and associated documentation files (the "Software"), to deal in
+ * the Software without restriction, including without limitation the rights to
+ * use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies
+ * of the Software, and to permit persons to whom the Software is furnished to do
+ * so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
+ *
+ */
+
+Files: bitop/bit.cpp, bitop/bit.h
+/*
+** Lua BitOp -- a bit operations library for Lua 5.1/5.2.
+** http://bitop.luajit.org/
+**
+** Copyright (C) 2008-2012 Mike Pall. All rights reserved.
+**
+** Permission is hereby granted, free of charge, to any person obtaining
+** a copy of this software and associated documentation files (the
+** "Software"), to deal in the Software without restriction, including
+** without limitation the rights to use, copy, modify, merge, publish,
+** distribute, sublicense, and/or sell copies of the Software, and to
+** permit persons to whom the Software is furnished to do so, subject to
+** the following conditions:
+**
+** The above copyright notice and this permission notice shall be
+** included in all copies or substantial portions of the Software.
+**
+** THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+** EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+** MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+** IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+** CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+** TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+** SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+**
+** [ MIT license: http://www.opensource.org/licenses/mit-license.php ]
+*/
+
+Files: gmp/mini-gmp.c
+/* mini-gmp, a minimalistic implementation of a GNU GMP subset.
+
+   Contributed to the GNU project by Niels Möller
+   Additional functionalities and improvements by Marco Bodrato.
+
+Copyright 1991-1997, 1999-2022 Free Software Foundation, Inc.
+
+This file is part of the GNU MP Library.
+
+The GNU MP Library is free software; you can redistribute it and/or modify
+it under the terms of either:
+
+  * the GNU Lesser General Public License as published by the Free
+    Software Foundation; either version 3 of the License, or (at your
+    option) any later version.
+
+or
+
+  * the GNU General Public License as published by the Free Software
+    Foundation; either version 2 of the License, or (at your option) any
+    later version.
+
+or both in parallel, as here.
+
+The GNU MP Library is distributed in the hope that it will be useful, but
+WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
+or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
+for more details.
+
+You should have received copies of the GNU General Public License and the
+GNU Lesser General Public License along with the GNU MP Library.  If not,
+see https://www.gnu.org/licenses/.  */
+
+Files: gmp/mini-gmp.h
+/* mini-gmp, a minimalistic implementation of a GNU GMP subset.
+
+Copyright 2011-2015, 2017, 2019-2021 Free Software Foundation, Inc.
+
+This file is part of the GNU MP Library.
+
+The GNU MP Library is free software; you can redistribute it and/or modify
+it under the terms of either:
+
+  * the GNU Lesser General Public License as published by the Free
+    Software Foundation; either version 3 of the License, or (at your
+    option) any later version.
+
+or
+
+  * the GNU General Public License as published by the Free Software
+    Foundation; either version 2 of the License, or (at your option) any
+    later version.
+
+or both in parallel, as here.
+
+The GNU MP Library is distributed in the hope that it will be useful, but
+WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
+or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
+for more details.
+
+You should have received copies of the GNU General Public License and the
+GNU Lesser General Public License along with the GNU MP Library.  If not,
+see https://www.gnu.org/licenses/.  */
+
+Files: jsoncpp/json/json-forwards.h, jsoncpp/json/json.h, jsoncpp/jsoncpp.cpp
+/*
+The JsonCpp library's source code, including accompanying documentation,
+tests and demonstration applications, are licensed under the following
+conditions...
+
+Baptiste Lepilleur and The JsonCpp Authors explicitly disclaim copyright in all
+jurisdictions which recognize such a disclaimer. In such jurisdictions,
+this software is released into the Public Domain.
+
+In jurisdictions which do not recognize Public Domain property (e.g. Germany as of
+2010), this software is Copyright (c) 2007-2010 by Baptiste Lepilleur and
+The JsonCpp Authors, and is released under the terms of the MIT License (see below).
+
+In jurisdictions which recognize Public Domain property, the user of this
+software may choose to accept it either as 1) Public Domain, 2) under the
+conditions of the MIT License (see below), or 3) under the terms of dual
+Public Domain/MIT License conditions described here, as they choose.
+
+The MIT License is about as close to Public Domain as a license can get, and is
+described in clear, concise terms at:
+
+   http://en.wikipedia.org/wiki/MIT_License
+
+The full text of the MIT License follows:
+
+========================================================================
+Copyright (c) 2007-2010 Baptiste Lepilleur and The JsonCpp Authors
+
+Permission is hereby granted, free of charge, to any person
+obtaining a copy of this software and associated documentation
+files (the "Software"), to deal in the Software without
+restriction, including without limitation the rights to use, copy,
+modify, merge, publish, distribute, sublicense, and/or sell copies
+of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be
+included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
+BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
+ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+========================================================================
+(END LICENSE TEXT)
+
+The MIT license is compatible with both the GPL and commercial
+software, affording one all of the rights of Public Domain with the
+minor nuisance of being required to keep the above copyright notice
+and license text in the source code. Note also that by accepting the
+Public Domain "license" you can re-license your copy using whatever
+license you like.
+
+*/
+
+Files: lua/src/lapi.c
+/*
+** $Id: lapi.c,v 2.55.1.5 2008/07/04 18:41:18 roberto Exp $
+** Lua API
+** See Copyright Notice in lua.h
+*/
+
+Files: lua/src/lapi.h
+/*
+** $Id: lapi.h,v 2.2.1.1 2007/12/27 13:02:25 roberto Exp $
+** Auxiliary functions from Lua API
+** See Copyright Notice in lua.h
+*/
+
+Files: lua/src/lauxlib.c
+/*
+** $Id: lauxlib.c,v 1.159.1.3 2008/01/21 13:20:51 roberto Exp $
+** Auxiliary functions for building Lua libraries
+** See Copyright Notice in lua.h
+*/
+
+Files: lua/src/lauxlib.h
+/*
+** $Id: lauxlib.h,v 1.88.1.1 2007/12/27 13:02:25 roberto Exp $
+** Auxiliary functions for building Lua libraries
+** See Copyright Notice in lua.h
+*/
+
+Files: lua/src/lbaselib.c
+/*
+** $Id: lbaselib.c,v 1.191.1.6 2008/02/14 16:46:22 roberto Exp $
+** Basic library
+** See Copyright Notice in lua.h
+*/
+
+Files: lua/src/lcode.c
+/*
+** $Id: lcode.c,v 2.25.1.5 2011/01/31 14:53:16 roberto Exp $
+** Code generator for Lua
+** See Copyright Notice in lua.h
+*/
+
+Files: lua/src/lcode.h
+/*
+** $Id: lcode.h,v 1.48.1.1 2007/12/27 13:02:25 roberto Exp $
+** Code generator for Lua
+** See Copyright Notice in lua.h
+*/
+
+Files: lua/src/ldblib.c
+/*
+** $Id: ldblib.c,v 1.104.1.4 2009/08/04 18:50:18 roberto Exp $
+** Interface from Lua to its debug API
+** See Copyright Notice in lua.h
+*/
+
+Files: lua/src/ldebug.c
+/*
+** $Id: ldebug.c,v 2.29.1.6 2008/05/08 16:56:26 roberto Exp $
+** Debug Interface
+** See Copyright Notice in lua.h
+*/
+
+Files: lua/src/ldebug.h
+/*
+** $Id: ldebug.h,v 2.3.1.1 2007/12/27 13:02:25 roberto Exp $
+** Auxiliary functions from Debug Interface module
+** See Copyright Notice in lua.h
+*/
+
+Files: lua/src/ldo.c
+/*
+** $Id: ldo.c,v 2.38.1.4 2012/01/18 02:27:10 roberto Exp $
+** Stack and Call structure of Lua
+** See Copyright Notice in lua.h
+*/
+
+Files: lua/src/ldo.h
+/*
+** $Id: ldo.h,v 2.7.1.1 2007/12/27 13:02:25 roberto Exp $
+** Stack and Call structure of Lua
+** See Copyright Notice in lua.h
+*/
+
+Files: lua/src/ldump.c
+/*
+** $Id: ldump.c,v 2.8.1.1 2007/12/27 13:02:25 roberto Exp $
+** save precompiled Lua chunks
+** See Copyright Notice in lua.h
+*/
+
+Files: lua/src/lfunc.c
+/*
+** $Id: lfunc.c,v 2.12.1.2 2007/12/28 14:58:43 roberto Exp $
+** Auxiliary functions to manipulate prototypes and closures
+** See Copyright Notice in lua.h
+*/
+
+Files: lua/src/lfunc.h
+/*
+** $Id: lfunc.h,v 2.4.1.1 2007/12/27 13:02:25 roberto Exp $
+** Auxiliary functions to manipulate prototypes and closures
+** See Copyright Notice in lua.h
+*/
+
+Files: lua/src/lgc.c
+/*
+** $Id: lgc.c,v 2.38.1.2 2011/03/18 18:05:38 roberto Exp $
+** Garbage Collector
+** See Copyright Notice in lua.h
+*/
+
+Files: lua/src/lgc.h
+/*
+** $Id: lgc.h,v 2.15.1.1 2007/12/27 13:02:25 roberto Exp $
+** Garbage Collector
+** See Copyright Notice in lua.h
+*/
+
+Files: lua/src/linit.c
+/*
+** $Id: linit.c,v 1.14.1.1 2007/12/27 13:02:25 roberto Exp $
+** Initialization of libraries for lua.c
+** See Copyright Notice in lua.h
+*/
+
+Files: lua/src/liolib.c
+/*
+** $Id: liolib.c,v 2.73.1.4 2010/05/14 15:33:51 roberto Exp $
+** Standard I/O (and system) library
+** See Copyright Notice in lua.h
+*/
+
+Files: lua/src/llex.c
+/*
+** $Id: llex.c,v 2.20.1.2 2009/11/23 14:58:22 roberto Exp $
+** Lexical Analyzer
+** See Copyright Notice in lua.h
+*/
+
+Files: lua/src/llex.h
+/*
+** $Id: llex.h,v 1.58.1.1 2007/12/27 13:02:25 roberto Exp $
+** Lexical Analyzer
+** See Copyright Notice in lua.h
+*/
+
+Files: lua/src/llimits.h
+/*
+** $Id: llimits.h,v 1.69.1.1 2007/12/27 13:02:25 roberto Exp $
+** Limits, basic types, and some other `installation-dependent' definitions
+** See Copyright Notice in lua.h
+*/
+
+Files: lua/src/lmathlib.c
+/*
+** $Id: lmathlib.c,v 1.67.1.1 2007/12/27 13:02:25 roberto Exp $
+** Standard mathematical library
+** See Copyright Notice in lua.h
+*/
+
+Files: lua/src/lmem.c
+/*
+** $Id: lmem.c,v 1.70.1.1 2007/12/27 13:02:25 roberto Exp $
+** Interface to Memory Manager
+** See Copyright Notice in lua.h
+*/
+
+Files: lua/src/lmem.h
+/*
+** $Id: lmem.h,v 1.31.1.1 2007/12/27 13:02:25 roberto Exp $
+** Interface to Memory Manager
+** See Copyright Notice in lua.h
+*/
+
+Files: lua/src/loadlib.c
+/*
+** $Id: loadlib.c,v 1.52.1.4 2009/09/09 13:17:16 roberto Exp $
+** Dynamic library loader for Lua
+** See Copyright Notice in lua.h
+**
+** This module contains an implementation of loadlib for Unix systems
+** that have dlfcn, an implementation for Darwin (Mac OS X), an
+** implementation for Windows, and a stub for other systems.
+*/
+
+Files: lua/src/lobject.c
+/*
+** $Id: lobject.c,v 2.22.1.1 2007/12/27 13:02:25 roberto Exp $
+** Some generic functions over Lua objects
+** See Copyright Notice in lua.h
+*/
+
+Files: lua/src/lobject.h
+/*
+** $Id: lobject.h,v 2.20.1.2 2008/08/06 13:29:48 roberto Exp $
+** Type definitions for Lua objects
+** See Copyright Notice in lua.h
+*/
+
+Files: lua/src/lopcodes.c
+/*
+** $Id: lopcodes.c,v 1.37.1.1 2007/12/27 13:02:25 roberto Exp $
+** See Copyright Notice in lua.h
+*/
+
+Files: lua/src/lopcodes.h
+/*
+** $Id: lopcodes.h,v 1.125.1.1 2007/12/27 13:02:25 roberto Exp $
+** Opcodes for Lua virtual machine
+** See Copyright Notice in lua.h
+*/
+
+Files: lua/src/loslib.c
+/*
+** $Id: loslib.c,v 1.19.1.3 2008/01/18 16:38:18 roberto Exp $
+** Standard Operating System library
+** See Copyright Notice in lua.h
+*/
+
+Files: lua/src/lparser.c
+/*
+** $Id: lparser.c,v 2.42.1.4 2011/10/21 19:31:42 roberto Exp $
+** Lua Parser
+** See Copyright Notice in lua.h
+*/
+
+Files: lua/src/lparser.h
+/*
+** $Id: lparser.h,v 1.57.1.1 2007/12/27 13:02:25 roberto Exp $
+** Lua Parser
+** See Copyright Notice in lua.h
+*/
+
+Files: lua/src/lstate.c
+/*
+** $Id: lstate.c,v 2.36.1.2 2008/01/03 15:20:39 roberto Exp $
+** Global State
+** See Copyright Notice in lua.h
+*/
+
+Files: lua/src/lstate.h
+/*
+** $Id: lstate.h,v 2.24.1.2 2008/01/03 15:20:39 roberto Exp $
+** Global State
+** See Copyright Notice in lua.h
+*/
+
+Files: lua/src/lstring.c
+/*
+** $Id: lstring.c,v 2.8.1.1 2007/12/27 13:02:25 roberto Exp $
+** String table (keeps all strings handled by Lua)
+** See Copyright Notice in lua.h
+*/
+
+Files: lua/src/lstring.h
+/*
+** $Id: lstring.h,v 1.43.1.1 2007/12/27 13:02:25 roberto Exp $
+** String table (keep all strings handled by Lua)
+** See Copyright Notice in lua.h
+*/
+
+Files: lua/src/lstrlib.c
+/*
+** $Id: lstrlib.c,v 1.132.1.5 2010/05/14 15:34:19 roberto Exp $
+** Standard library for string operations and pattern-matching
+** See Copyright Notice in lua.h
+*/
+
+Files: lua/src/ltable.c
+/*
+** $Id: ltable.c,v 2.32.1.2 2007/12/28 15:32:23 roberto Exp $
+** Lua tables (hash)
+** See Copyright Notice in lua.h
+*/
+
+Files: lua/src/ltable.h
+/*
+** $Id: ltable.h,v 2.10.1.1 2007/12/27 13:02:25 roberto Exp $
+** Lua tables (hash)
+** See Copyright Notice in lua.h
+*/
+
+Files: lua/src/ltablib.c
+/*
+** $Id: ltablib.c,v 1.38.1.3 2008/02/14 16:46:58 roberto Exp $
+** Library for Table Manipulation
+** See Copyright Notice in lua.h
+*/
+
+Files: lua/src/ltm.c
+/*
+** $Id: ltm.c,v 2.8.1.1 2007/12/27 13:02:25 roberto Exp $
+** Tag methods
+** See Copyright Notice in lua.h
+*/
+
+Files: lua/src/ltm.h
+/*
+** $Id: ltm.h,v 2.6.1.1 2007/12/27 13:02:25 roberto Exp $
+** Tag methods
+** See Copyright Notice in lua.h
+*/
+
+Files: lua/src/lua.c
+/*
+** $Id: lua.c,v 1.160.1.2 2007/12/28 15:32:23 roberto Exp $
+** Lua stand-alone interpreter
+** See Copyright Notice in lua.h
+*/
+
+Files: lua/src/lua.h
+/*
+** $Id: lua.h,v 1.218.1.7 2012/01/13 20:36:20 roberto Exp $
+** Lua - An Extensible Extension Language
+** Lua.org, PUC-Rio, Brazil (http://www.lua.org)
+** See Copyright Notice at the end of this file
+*/
+
+Files: lua/src/lua.h
+/******************************************************************************
+* Copyright (C) 1994-2012 Lua.org, PUC-Rio.  All rights reserved.
+*
+* Permission is hereby granted, free of charge, to any person obtaining
+* a copy of this software and associated documentation files (the
+* "Software"), to deal in the Software without restriction, including
+* without limitation the rights to use, copy, modify, merge, publish,
+* distribute, sublicense, and/or sell copies of the Software, and to
+* permit persons to whom the Software is furnished to do so, subject to
+* the following conditions:
+*
+* The above copyright notice and this permission notice shall be
+* included in all copies or substantial portions of the Software.
+*
+* THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+* EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+* MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+* IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+* CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+* TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+* SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+******************************************************************************/
+
+Files: lua/src/luac.c
+/*
+** $Id: luac.c,v 1.54 2006/06/02 17:37:11 lhf Exp $
+** Lua compiler (saves bytecodes to files; also list bytecodes)
+** See Copyright Notice in lua.h
+*/
+
+Files: lua/src/luaconf.h
+/*
+** $Id: luaconf.h,v 1.82.1.7 2008/02/11 16:25:08 roberto Exp $
+** Configuration file for Lua
+** See Copyright Notice in lua.h
+*/
+
+Files: lua/src/lualib.h
+/*
+** $Id: lualib.h,v 1.36.1.1 2007/12/27 13:02:25 roberto Exp $
+** Lua standard libraries
+** See Copyright Notice in lua.h
+*/
+
+Files: lua/src/lundump.c
+/*
+** $Id: lundump.c,v 2.7.1.4 2008/04/04 19:51:41 roberto Exp $
+** load precompiled Lua chunks
+** See Copyright Notice in lua.h
+*/
+
+Files: lua/src/lundump.h
+/*
+** $Id: lundump.h,v 1.37.1.1 2007/12/27 13:02:25 roberto Exp $
+** load precompiled Lua chunks
+** See Copyright Notice in lua.h
+*/
+
+Files: lua/src/lvm.c
+/*
+** $Id: lvm.c,v 2.63.1.5 2011/08/17 20:43:11 roberto Exp $
+** Lua virtual machine
+** See Copyright Notice in lua.h
+*/
+
+Files: lua/src/lvm.h
+/*
+** $Id: lvm.h,v 2.5.1.1 2007/12/27 13:02:25 roberto Exp $
+** Lua virtual machine
+** See Copyright Notice in lua.h
+*/
+
+Files: lua/src/lzio.c
+/*
+** $Id: lzio.c,v 1.31.1.1 2007/12/27 13:02:25 roberto Exp $
+** a generic input stream interface
+** See Copyright Notice in lua.h
+*/
+
+Files: lua/src/lzio.h
+/*
+** $Id: lzio.h,v 1.21.1.1 2007/12/27 13:02:25 roberto Exp $
+** Buffered streams
+** See Copyright Notice in lua.h
+*/
+
+Files: lua/src/print.c
+/*
+** $Id: print.c,v 1.55a 2006/05/31 13:30:05 lhf Exp $
+** print bytecodes
+** See Copyright Notice in lua.h
+*/
+
+Files: sha256/my_sha256.h
+/* Copyright (C) 1995-1998 Eric Young (eay@cryptsoft.com)
+ * All rights reserved.
+ *
+ * This package is an SSL implementation written
+ * by Eric Young (eay@cryptsoft.com).
+ * The implementation was written so as to conform with Netscapes SSL.
+ *
+ * This library is free for commercial and non-commercial use as long as
+ * the following conditions are aheared to.  The following conditions
+ * apply to all code found in this distribution, be it the RC4, RSA,
+ * lhash, DES, etc., code; not just the SSL code.  The SSL documentation
+ * included with this distribution is covered by the same copyright terms
+ * except that the holder is Tim Hudson (tjh@cryptsoft.com).
+ *
+ * Copyright remains Eric Young's, and as such any Copyright notices in
+ * the code are not to be removed.
+ * If this package is used in a product, Eric Young should be given attribution
+ * as the author of the parts of the library used.
+ * This can be in the form of a textual message at program startup or
+ * in documentation (online or textual) provided with the package.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ * 1. Redistributions of source code must retain the copyright
+ *    notice, this list of conditions and the following disclaimer.
+ * 2. Redistributions in binary form must reproduce the above copyright
+ *    notice, this list of conditions and the following disclaimer in the
+ *    documentation and/or other materials provided with the distribution.
+ * 3. All advertising materials mentioning features or use of this software
+ *    must display the following acknowledgement:
+ *    "This product includes cryptographic software written by
+ *     Eric Young (eay@cryptsoft.com)"
+ *    The word 'cryptographic' can be left out if the rouines from the library
+ *    being used are not cryptographic related :-).
+ * 4. If you include any Windows specific code (or a derivative thereof) from
+ *    the apps directory (application code) you must include an acknowledgement:
+ *    "This product includes software written by Tim Hudson (tjh@cryptsoft.com)"
+ *
+ * THIS SOFTWARE IS PROVIDED BY ERIC YOUNG ``AS IS'' AND
+ * ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+ * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+ * ARE DISCLAIMED.  IN NO EVENT SHALL THE AUTHOR OR CONTRIBUTORS BE LIABLE
+ * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+ * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+ * OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+ * HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+ * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+ * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+ * SUCH DAMAGE.
+ *
+ * The licence and distribution terms for any publically available version or
+ * derivative of this code cannot be changed.  i.e. this code cannot simply be
+ * copied and put under another distribution licence
+ * [including the GNU Public Licence.]
+ */
+
+Files: sha256/sha256.c
+/* ====================================================================
+ * Copyright (c) 1998-2011 The OpenSSL Project.  All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ *
+ * 1. Redistributions of source code must retain the above copyright
+ *    notice, this list of conditions and the following disclaimer.
+ *
+ * 2. Redistributions in binary form must reproduce the above copyright
+ *    notice, this list of conditions and the following disclaimer in
+ *    the documentation and/or other materials provided with the
+ *    distribution.
+ *
+ * 3. All advertising materials mentioning features or use of this
+ *    software must display the following acknowledgment:
+ *    "This product includes software developed by the OpenSSL Project
+ *    for use in the OpenSSL Toolkit. (http://www.openssl.org/)"
+ *
+ * 4. The names "OpenSSL Toolkit" and "OpenSSL Project" must not be used to
+ *    endorse or promote products derived from this software without
+ *    prior written permission. For written permission, please contact
+ *    openssl-core@openssl.org.
+ *
+ * 5. Products derived from this software may not be called "OpenSSL"
+ *    nor may "OpenSSL" appear in their names without prior written
+ *    permission of the OpenSSL Project.
+ *
+ * 6. Redistributions of any form whatsoever must retain the following
+ *    acknowledgment:
+ *    "This product includes software developed by the OpenSSL Project
+ *    for use in the OpenSSL Toolkit (http://www.openssl.org/)"
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE OpenSSL PROJECT ``AS IS'' AND ANY
+ * EXPRESSED OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+ * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+ * PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL THE OpenSSL PROJECT OR
+ * ITS CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+ * SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT
+ * NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+ * LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+ * HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT,
+ * STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+ * ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED
+ * OF THE POSSIBILITY OF SUCH DAMAGE.
+ * ====================================================================
+ *
+ * This product includes cryptographic software written by Eric Young
+ * (eay@cryptsoft.com).  This product includes software written by Tim
+ * Hudson (tjh@cryptsoft.com).
+ */
+
+Files: include/KHR/khrplatform.h
+/*
+** Copyright (c) 2008-2018 The Khronos Group Inc.
+**
+** Permission is hereby granted, free of charge, to any person obtaining a
+** copy of this software and/or associated documentation files (the
+** "Materials"), to deal in the Materials without restriction, including
+** without limitation the rights to use, copy, modify, merge, publish,
+** distribute, sublicense, and/or sell copies of the Materials, and to
+** permit persons to whom the Materials are furnished to do so, subject to
+** the following conditions:
+**
+** The above copyright notice and this permission notice shall be included
+** in all copies or substantial portions of the Materials.
+**
+** THE MATERIALS ARE PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+** EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+** MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+** IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+** CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+** TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+** MATERIALS OR THE USE OR OTHER DEALINGS IN THE MATERIALS.
+*/
+
+Files: include/irr_ptr.h
+/*
+Minetest
+Copyright (C) 2018 numzero, Lobachevskiy Vitaliy <numzer0@yandex.ru>
+
+This program is free software; you can redistribute it and/or modify
+it under the terms of the GNU Lesser General Public License as published by
+the Free Software Foundation; either version 2.1 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU Lesser General Public License for more details.
+
+You should have received a copy of the GNU Lesser General Public License along
+with this program; if not, see <https://www.gnu.org/licenses/>.
+*/
+
+Files: include/irrlicht.h
+/* irrlicht.h -- interface of the 'Irrlicht Engine'
+
+  Copyright (C) 2002-2012 Nikolaus Gebhardt
+
+  This software is provided 'as-is', without any express or implied
+  warranty.  In no event will the authors be held liable for any damages
+  arising from the use of this software.
+
+  Permission is granted to anyone to use this software for any purpose,
+  including commercial applications, and to alter it and redistribute it
+  freely, subject to the following restrictions:
+
+  1. The origin of this software must not be misrepresented; you must not
+	 claim that you wrote the original software. If you use this software
+	 in a product, an acknowledgment in the product documentation would be
+	 appreciated but is not required.
+  2. Altered source versions must be plainly marked as such, and must not be
+	 misrepresented as being the original software.
+  3. This notice may not be removed or altered from any source distribution.
+
+  Please note that the Irrlicht Engine is based in part on the work of the
+  Independent JPEG Group, the zlib and the libPng. This means that if you use
+  the Irrlicht Engine in your product, you must acknowledge somewhere in your
+  documentation that you've used the IJG code. It would also be nice to mention
+  that you use the Irrlicht Engine, the zlib and libPng. See the README files
+  in the jpeglib, the zlib and libPng for further information.
+*/
+
+Files: src/vendor/gl.h
+/*
+ * Mesa 3-D graphics library
+ *
+ * Copyright (C) 1999-2006  Brian Paul   All Rights Reserved.
+ * Copyright (C) 2009  VMware, Inc.  All Rights Reserved.
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a
+ * copy of this software and associated documentation files (the "Software"),
+ * to deal in the Software without restriction, including without limitation
+ * the rights to use, copy, modify, merge, publish, distribute, sublicense,
+ * and/or sell copies of the Software, and to permit persons to whom the
+ * Software is furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included
+ * in all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
+ * OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL
+ * THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR
+ * OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,
+ * ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+ * OTHER DEALINGS IN THE SOFTWARE.
+ */
+
+Files: src/vendor/glext.h
+/*
+** Copyright 2013-2020 The Khronos Group Inc.
+** SPDX-License-Identifier: MIT
+**
+** This header is generated from the Khronos OpenGL / OpenGL ES XML
+** API Registry. The current version of the Registry, generator scripts
+** used to make the header, and the header can be found at
+**   https://github.com/KhronosGroup/OpenGL-Registry
+*/

@@ -1,0 +1,14 @@
+--- a/irr/src/CFileSystem.cpp
++++ b/irr/src/CFileSystem.cpp
+@@ -143,7 +143,10 @@
+ 		WorkingDirectory[FILESYSTEM_NATIVE].replace('\\', '/');
+ #endif
+ 
+-#if (defined(_IRR_POSIX_API_) || defined(_IRR_OSX_PLATFORM_))
++#if defined(__ORBIS__)
++		// This probe uses absolute /app0 assets; OpenOrbis getcwd is ENOSYS.
++		WorkingDirectory[FILESYSTEM_NATIVE] = "/app0";
++#elif (defined(_IRR_POSIX_API_) || defined(_IRR_OSX_PLATFORM_))
+ 
+ 		// getting the CWD is rather complex as we do not know the size
+ 		// so try it until the call was successful

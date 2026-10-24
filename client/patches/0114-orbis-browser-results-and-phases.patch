@@ -1,0 +1,239 @@
+--- a/builtin/mainmenu/serverlistmgr.lua
++++ b/builtin/mainmenu/serverlistmgr.lua
+@@ -121,92 +121,150 @@
+ 
+ local public_downloading = false
+ local geoip_downloading = false
+-
+---------------------------------------------------------------------------------
++local known_continents = {AF=true, AS=true, EU=true, NA=true, OC=true, SA=true}
++
++local function valid_continent(value)
++	return type(value) == "string" and known_continents[value] == true
++end
++serverlistmgr.my_continent = valid_continent(serverlistmgr.my_continent)
++	and serverlistmgr.my_continent or nil
++
++local function browser_diag(phase, count)
++	core.log("action", ("PS4_BROWSER phase=%s count=%d"):format(phase, count or 0))
++end
++
++local function enabled(setting)
++	return core.settings:get_bool(setting, true)
++end
++
++local function finite_number(value)
++	return type(value) == "number" and value == value
++		and value ~= math.huge and value ~= -math.huge
++end
++
++-- Preserve valid records and their extension fields; normalize fields used by
++-- sorting/rendering. JSON objects, scalar results and non-record entries must
++-- not reach the ordering code as though they were a list of server records.
++local function validate_servers(result)
++	local clean, indices = {}, {}
++	if type(result) ~= "table" then return clean end
++	for i in pairs(result) do
++		if finite_number(i) and i >= 1 and i == math.floor(i) then
++			indices[#indices + 1] = i
++		end
++	end
++	table.sort(indices)
++	for _, i in ipairs(indices) do
++		local item = result[i]
++		if type(item) == "table" and type(item.address) == "string"
++				and item.address ~= "" then
++			local port = (type(item.port) == "number" or type(item.port) == "string")
++				and tonumber(item.port) or nil
++			if finite_number(port) and port >= 1 and port <= 65535
++					and port == math.floor(port) then
++				local record = {}
++				for k, v in pairs(item) do record[k] = v end
++				record.port = port
++				for _, key in ipairs({"clients", "clients_max", "ping", "lag", "uptime"}) do
++					if not finite_number(record[key]) or record[key] < 0 then
++						record[key] = nil
++					end
++				end
++				for _, key in ipairs({"proto_min", "proto_max"}) do
++					if not finite_number(record[key]) then record[key] = nil end
++				end
++				for _, key in ipairs({"name", "description", "version", "gameid", "url"}) do
++					if type(record[key]) ~= "string" then record[key] = nil end
++				end
++				if not valid_continent(record.geo_continent) then
++					record.geo_continent = nil
++				end
++				clean[#clean + 1] = record
++			end
++		end
++	end
++	return clean
++end
++
++-- This function is serialized into an independent Lua VM: it intentionally
++-- references only that VM's core API and local variables, never outer upvalues.
+ local function fetch_geoip()
++	core.log("action", "PS4_BROWSER phase=geoip-fetch-begin")
+ 	local http = core.get_http_api()
+-	local url = core.settings:get("serverlist_url") .. "/geoip"
+-
+-	local response = http.fetch_sync({ url = url })
+-	if not response.succeeded then
++	local response = http.fetch_sync({url=core.settings:get("serverlist_url") .. "/geoip"})
++	core.log("action", "PS4_BROWSER phase=geoip-http-end")
++	if not response.succeeded then return end
++	core.log("action", "PS4_BROWSER phase=geoip-json-begin")
++	local retval = core.parse_json(response.data)
++	core.log("action", "PS4_BROWSER phase=geoip-json-end")
++	if type(retval) ~= "table" then return end
++	local known = {AF=true, AS=true, EU=true, NA=true, OC=true, SA=true}
++	return type(retval.continent) == "string" and known[retval.continent]
++		and retval.continent or nil
++end
++
++local function request_geoip()
++	if not enabled("ps4_menu_geoip") or serverlistmgr.my_continent or geoip_downloading then
+ 		return
+ 	end
+-
+-	local retval = core.parse_json(response.data)
+-	if type(retval) ~= "table" then
+-		return
+-	end
+-	return type(retval.continent) == "string" and retval.continent
++	geoip_downloading = true
++	browser_diag("geoip-queued")
++	core.handle_async(fetch_geoip, nil, function(result)
++		geoip_downloading = false
++		browser_diag("geoip-result-begin")
++		if not valid_continent(result) then
++			browser_diag("geoip-result-ignored")
++			return
++		end
++		serverlistmgr.my_continent = result
++		cache_settings:set("geoip", result)
++		cache_settings:set("geoip_last_checked", tostring(os.time()))
++		if serverlistmgr.servers then
++			serverlistmgr.servers = order_server_list(serverlistmgr.servers)
++			core.event_handler("Refresh")
++		end
++		browser_diag("geoip-result-end")
++	end)
+ end
+ 
+ function serverlistmgr.sync()
+ 	if not serverlistmgr.servers then
+-		serverlistmgr.servers = {{
+-			name = fgettext("Loading..."),
+-			description = fgettext_ne("Try reenabling public serverlist and check your internet connection.")
+-		}}
+-	end
+-
+-	local serverlist_url = core.settings:get("serverlist_url") or ""
+-	if not core.get_http_api or serverlist_url == "" then
+-		serverlistmgr.servers = {{
+-			name = fgettext("Public server list is disabled"),
+-			description = ""
+-		}}
++		serverlistmgr.servers = {{name=fgettext("Loading..."),
++			description=fgettext_ne("Try reenabling public serverlist and check your internet connection.")}}
++	end
++	local url = core.settings:get("serverlist_url") or ""
++	if not core.get_http_api or url == "" or not enabled("ps4_menu_public_list") then
++		serverlistmgr.servers = {{name=fgettext("Public server list is disabled"), description=""}}
++		if core.get_http_api and url ~= "" then request_geoip() end
+ 		return
+ 	end
+-
+-	if not serverlistmgr.my_continent and not geoip_downloading then
+-		geoip_downloading = true
+-		core.handle_async(fetch_geoip, nil, function(result)
+-			geoip_downloading = false
+-			if not result then
+-				return
+-			end
+-			serverlistmgr.my_continent = result
+-			cache_settings:set("geoip", result)
+-			cache_settings:set("geoip_last_checked", tostring(os.time()))
+-
+-			-- re-sort list if applicable
+-			if serverlistmgr.servers then
+-				serverlistmgr.servers = order_server_list(serverlistmgr.servers)
+-				core.event_handler("Refresh")
+-			end
+-		end)
+-	end
+-
+-	if public_downloading then
+-		return
+-	end
++	if public_downloading or geoip_downloading then return end
+ 	public_downloading = true
+-
+-	-- note: this isn't cached because it's way too dynamic
+-	core.handle_async(
+-		function(param)
+-			local http = core.get_http_api()
+-			local url = ("%s/list?proto_version_min=%d&proto_version_max=%d"):format(
+-				core.settings:get("serverlist_url"),
+-				core.get_min_supp_proto(),
+-				core.get_max_supp_proto())
+-
+-			local response = http.fetch_sync({ url = url })
+-			if not response.succeeded then
+-				return {}
+-			end
+-
+-			local retval = core.parse_json(response.data)
+-			return retval and retval.list or {}
+-		end,
+-		nil,
+-		function(result)
+-			public_downloading = false
+-			local favs = order_server_list(result)
+-			if favs[1] then
+-				serverlistmgr.servers = favs
+-			end
+-			core.event_handler("Refresh")
+-		end
+-	)
++	browser_diag("list-queued")
++	core.handle_async(function()
++		core.log("action", "PS4_BROWSER phase=list-fetch-begin")
++		local http = core.get_http_api()
++		local url = ("%s/list?proto_version_min=%d&proto_version_max=%d"):format(
++			core.settings:get("serverlist_url"), core.get_min_supp_proto(), core.get_max_supp_proto())
++		local response = http.fetch_sync({url=url})
++		core.log("action", "PS4_BROWSER phase=list-http-end")
++		if not response.succeeded then return {} end
++		core.log("action", "PS4_BROWSER phase=list-json-begin")
++		local retval = core.parse_json(response.data)
++		core.log("action", "PS4_BROWSER phase=list-json-end")
++		if type(retval) ~= "table" or type(retval.list) ~= "table" then return {} end
++		return retval.list
++	end, nil, function(result)
++		browser_diag("list-result-begin")
++		local favs = order_server_list(validate_servers(result))
++		if favs[1] then serverlistmgr.servers = favs end
++		core.event_handler("Refresh")
++		browser_diag("list-result-end", #favs)
++		public_downloading = false
++		-- The optional location request follows list completion; it never
++		-- overlaps the browser request. Both features remain enabled by default.
++		request_geoip()
++	end)
+ end
+ 
+ --------------------------------------------------------------------------------
+--- a/builtin/mainmenu/common.lua
++++ b/builtin/mainmenu/common.lua
+@@ -73,7 +73,7 @@
+ }
+ function estimate_continent_latency(own, spec)
+ 	local there = spec.geo_continent
+-	if not own or not there then
++	if not own or not there or not latency_matrix[own] or not latency_matrix[there] then
+ 		return nil
+ 	end
+ 	if own == there then

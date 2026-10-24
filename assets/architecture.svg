@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="950" height="335" viewBox="0 0 950 335" role="img" aria-labelledby="title desc">
+<!-- SPDX-License-Identifier: MIT -->
+  <title id="title">MundoCraft layers and server connection</title>
+  <desc id="desc">The PS4 client contains platform adapters, Luanti, and libraries, and connects to a server that stores the world and progress.</desc>
+  <defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0 10 5 0 10z" fill="#458274"/></marker></defs>
+  <rect width="950" height="335" rx="18" fill="#f4f8f5"/>
+  <g font-family="system-ui,sans-serif">
+    <text x="50" y="42" fill="#173c42" font-size="16" font-weight="700">MUNDOCRAFT CLIENT · PS4</text>
+    <rect x="45" y="58" width="500" height="230" rx="16" fill="#e4f0e8" stroke="#a6c7b3"/>
+    <g text-anchor="middle">
+      <rect x="87" y="78" width="416" height="45" rx="10" fill="#1d5960"/><text x="295" y="106" fill="white" font-size="15" font-weight="650">PS4 app · controls · storage</text>
+      <rect x="87" y="135" width="416" height="45" rx="10" fill="#28746d"/><text x="295" y="163" fill="white" font-size="15" font-weight="650">Luanti 5.17.0 · interface and game client</text>
+      <rect x="87" y="192" width="198" height="45" rx="10" fill="#518b6e"/><text x="186" y="220" fill="white" font-size="14" font-weight="600">SDL2 · input</text>
+      <rect x="305" y="192" width="198" height="45" rx="10" fill="#518b6e"/><text x="404" y="220" fill="white" font-size="14" font-weight="600">Mesa · graphics</text>
+      <text x="295" y="267" fill="#426358" font-size="12">Other components: SQLite · FreeType · curl · mbedTLS · zstd</text>
+    </g>
+    <path d="M558 174h92" stroke="#458274" stroke-width="4" marker-end="url(#arrow)"/><text x="604" y="156" fill="#456760" text-anchor="middle" font-size="12">network</text>
+    <rect x="670" y="91" width="235" height="166" rx="16" fill="#183d46"/>
+    <text x="787" y="125" fill="#fff" text-anchor="middle" font-size="16" font-weight="700">Luanti server</text>
+    <text x="787" y="159" fill="#cbe4d5" text-anchor="middle" font-size="14">World and accounts</text>
+    <text x="787" y="185" fill="#cbe4d5" text-anchor="middle" font-size="14">Game and resources</text>
+    <text x="787" y="222" fill="#edce87" text-anchor="middle" font-size="12">must run for local play</text>
+    <text x="475" y="317" fill="#6b8179" text-anchor="middle" font-size="12">Conceptual diagram; not a screenshot or proof of execution.</text>
+  </g>
+</svg>

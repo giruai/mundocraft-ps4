@@ -1,0 +1,32 @@
+--- a/src/network/mtp/threads.cpp
++++ b/src/network/mtp/threads.cpp
+@@ -90,18 +90,24 @@
+ 			const auto s = ps4_network_diagnostics::take_snapshot();
+ 			const u64 rx_age = s.last_mtp_rx_ms && now >= s.last_mtp_rx_ms ?
+ 				now - s.last_mtp_rx_ms : 0;
+-			infostream << "PS4_NET window_ms=" << (now - last)
++			// Keep each line below the console's native text-line limit. All
++			// sections share at_ms so even a forced report can be correlated.
++			infostream << "PS4_NET window_ms=" << (now - last) << " at_ms=" << now
+ 					<< " socket_rx=" << s.socket_rx << " socket_tx=" << s.socket_tx
+ 					<< " poll_err=" << s.socket_poll_errors
+ 					<< " recv_err=" << s.socket_recv_errors
+-					<< " send_err=" << s.socket_send_errors
++					<< " send_err=" << s.socket_send_errors << std::endl;
++			infostream << "PS4_NET at_ms=" << now
+ 					<< " mtp_rx=" << s.mtp_rx << " control=" << s.mtp_control
+-					<< " data=" << s.mtp_data << " media=" << s.media_packets
++					<< " data=" << s.mtp_data << " media=" << s.media_packets << std::endl;
++			infostream << "PS4_NET at_ms=" << now
+ 					<< " ack_rx=" << s.ack_received << " ack_match=" << s.ack_matched
+-					<< " ack_unmatched=" << s.ack_unmatched
++					<< " ack_unmatched=" << s.ack_unmatched << std::endl;
++			infostream << "PS4_NET at_ms=" << now
+ 					<< " ack_queued=" << s.ack_queued
+ 					<< " ack_send_attempt=" << s.ack_send_attempts
+-					<< " reliable_resend=" << s.reliable_resends
++					<< " reliable_resend=" << s.reliable_resends << std::endl;
++			infostream << "PS4_NET at_ms=" << now
+ 					<< " split_chunks=" << s.split_chunks
+ 					<< " split_complete=" << s.split_complete
+ 					<< " split_invalid=" << s.split_invalid

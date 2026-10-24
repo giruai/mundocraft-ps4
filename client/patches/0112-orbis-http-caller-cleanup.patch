@@ -1,0 +1,135 @@
+--- a/src/httpfetch.cpp
++++ b/src/httpfetch.cpp
+@@ -20,8 +20,12 @@
+ #include "settings.h"
+ 
+ static std::mutex g_httpfetch_mutex;
+-static std::unordered_map<u64, std::queue<HTTPFetchResult>>
+-	g_httpfetch_results;
++struct HTTPFetchCallerResults {
++	std::queue<HTTPFetchResult> results;
++	// A released caller remains reserved until CurlFetch processes RT_CLEAR.
++	bool active = true;
++};
++static std::unordered_map<u64, HTTPFetchCallerResults> g_httpfetch_results;
+ 
+ static std::string default_user_agent()
+ {
+@@ -42,10 +46,22 @@
+ static void httpfetch_deliver_result(const HTTPFetchResult &fetch_result)
+ {
+ 	u64 caller = fetch_result.caller;
+-	if (caller != HTTPFETCH_DISCARD) {
+-		MutexAutoLock lock(g_httpfetch_mutex);
+-		g_httpfetch_results[caller].emplace(fetch_result);
+-	}
++	if (caller == HTTPFETCH_DISCARD)
++		return;
++
++	MutexAutoLock lock(g_httpfetch_mutex);
++	if (caller < HTTPFETCH_CID_START) {
++		// Reserved callers (e.g. server announcements) do not have an
++		// allocated lifetime and retain the existing result-queue behavior.
++		g_httpfetch_results[caller].results.emplace(fetch_result);
++		return;
++	}
++
++	// Do not recreate a queue after caller_free has retired its ID. The
++	// CurlFetch thread may still finish a request while DNS is blocking it.
++	auto it = g_httpfetch_results.find(caller);
++	if (it != g_httpfetch_results.end() && it->second.active)
++		it->second.results.emplace(fetch_result);
+ }
+ 
+ static void httpfetch_request_clear(u64 caller);
+@@ -103,11 +119,31 @@
+ 	verbosestream<<"httpfetch_caller_free: freeing "
+ 			<<caller<<std::endl;
+ 
++	if (caller < HTTPFETCH_CID_START) {
++		// Reserved IDs are not allocated by httpfetch_caller_alloc*.
++		httpfetch_request_clear(caller);
++		if (caller != HTTPFETCH_DISCARD) {
++			MutexAutoLock lock(g_httpfetch_mutex);
++			g_httpfetch_results.erase(caller);
++		}
++		return;
++	}
++
++	{
++		MutexAutoLock lock(g_httpfetch_mutex);
++		auto it = g_httpfetch_results.find(caller);
++		if (it == g_httpfetch_results.end() || !it->second.active)
++			return;
++		// Retire before asking the worker to cancel. A completion that races
++		// ahead of RT_CLEAR is discarded, and this map entry reserves the ID.
++		it->second.active = false;
++		while (!it->second.results.empty())
++			it->second.results.pop();
++	}
++
++	// Do not wait here: clearing an ongoing Curl request can wait for DNS.
++	// The clear request removes the retired entry after canceling its work.
+ 	httpfetch_request_clear(caller);
+-	if (caller != HTTPFETCH_DISCARD) {
+-		MutexAutoLock lock(g_httpfetch_mutex);
+-		g_httpfetch_results.erase(caller);
+-	}
+ }
+ 
+ bool httpfetch_async_get(u64 caller, HTTPFetchResult &fetch_result)
+@@ -120,13 +156,12 @@
+ 		return false;
+ 
+ 	// Check that result queue is nonempty
+-	std::queue<HTTPFetchResult> &caller_results = it->second;
+-	if (caller_results.empty())
++	if (!it->second.active || it->second.results.empty())
+ 		return false;
+ 
+ 	// Pop first result
+-	fetch_result = std::move(caller_results.front());
+-	caller_results.pop();
++	fetch_result = std::move(it->second.results.front());
++	it->second.results.pop();
+ 	return true;
+ }
+ 
+@@ -564,6 +599,13 @@
+ 				else
+ 					++it;
+ 			}
++
++			// Only the CurlFetch thread can know that no completion for this
++			// caller remains in its ongoing or queued work.
++			{
++				MutexAutoLock lock(g_httpfetch_mutex);
++				g_httpfetch_results.erase(caller);
++			}
+ 		} else if (req.type == RT_WAKEUP) {
+ 			// Wakeup: Nothing to do, thread is awake at this point
+ 		}
+@@ -788,7 +830,13 @@
+ 
+ static void httpfetch_request_clear(u64 caller)
+ {
+-	g_httpfetch_thread->requestClear(caller, nullptr);
++	if (g_httpfetch_thread && g_httpfetch_thread->isRunning()) {
++		g_httpfetch_thread->requestClear(caller, nullptr);
++	} else {
++		// No worker can own pending work before its first fetch or after cleanup.
++		MutexAutoLock lock(g_httpfetch_mutex);
++		g_httpfetch_results.erase(caller);
++	}
+ }
+ 
+ bool httpfetch_sync_interruptible(const HTTPFetchRequest &fetch_request,
+@@ -841,6 +889,8 @@
+ 
+ static void httpfetch_request_clear(u64 caller)
+ {
++	MutexAutoLock lock(g_httpfetch_mutex);
++	g_httpfetch_results.erase(caller);
+ }
+ 
+ bool httpfetch_sync_interruptible(const HTTPFetchRequest &fetch_request,

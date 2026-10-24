@@ -1,0 +1,15 @@
+--- a/irr/src/CFileSystem.cpp
++++ b/irr/src/CFileSystem.cpp
+@@ -198,7 +198,11 @@
+ {
+ 	if (filename.empty())
+ 		return filename;
+-#if defined(_IRR_WINDOWS_API_)
++#if defined(__ORBIS__)
++	// Probe paths are rooted at /app0. The SDK realpath uses /proc/self/fd,
++	// unavailable here; flattenFilename is for directories and adds '/'.
++	return filename[0] == '/' ? filename : io::path("/app0/") + filename;
++#elif defined(_IRR_WINDOWS_API_)
+ 	fschar_t *p = 0;
+ 	fschar_t fpath[_MAX_PATH];
+ 	p = _fullpath(fpath, filename.c_str(), _MAX_PATH);

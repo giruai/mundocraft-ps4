@@ -1,0 +1,11 @@
+.build/
+.local/
+dist/
+*.pkg
+*.elf
+*.prx
+*.a
+*.o
+__pycache__/
+.DS_Store
+client/assets/mundocraft-icon-source.png

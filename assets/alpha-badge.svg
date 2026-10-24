@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="172" height="32" viewBox="0 0 172 32" role="img" aria-labelledby="title desc">
+<!-- SPDX-License-Identifier: MIT -->
+  <title id="title">Experimental alpha</title>
+  <desc id="desc">This version of MundoCraft is experimental.</desc>
+  <rect width="172" height="32" rx="8" fill="#7c2d12"/>
+  <circle cx="18" cy="16" r="5" fill="#fdba74"/>
+  <text x="32" y="21" fill="#fff7ed" font-family="system-ui,sans-serif" font-size="14" font-weight="700">ALPHA · EXPERIMENTAL</text>
+</svg>

@@ -1,0 +1,420 @@
+--- /dev/null
++++ b/src/network/mtp/ps4_network_diagnostics.h
+@@ -0,0 +1,68 @@
++// PS4-only, low-volume transfer diagnostics. Never record packet contents,
++// addresses, names, or account data.
++#pragma once
++
++#if defined(__ORBIS__)
++#include <atomic>
++#include <cstdint>
++
++namespace ps4_network_diagnostics {
++struct Counters {
++	std::atomic<uint64_t> socket_rx{0};
++	std::atomic<uint64_t> socket_tx{0};
++	std::atomic<uint64_t> socket_poll_errors{0};
++	std::atomic<uint64_t> socket_recv_errors{0};
++	std::atomic<uint64_t> socket_send_errors{0};
++	std::atomic<uint64_t> mtp_rx{0};
++	std::atomic<uint64_t> mtp_control{0};
++	std::atomic<uint64_t> mtp_data{0};
++	std::atomic<uint64_t> media_packets{0};
++	std::atomic<uint64_t> ack_received{0};
++	std::atomic<uint64_t> ack_matched{0};
++	std::atomic<uint64_t> ack_unmatched{0};
++	std::atomic<uint64_t> ack_queued{0};
++	std::atomic<uint64_t> ack_send_attempts{0};
++	std::atomic<uint64_t> reliable_resends{0};
++	std::atomic<uint64_t> split_chunks{0};
++	std::atomic<uint64_t> split_complete{0};
++	std::atomic<uint64_t> split_invalid{0};
++	std::atomic<uint64_t> last_mtp_rx_ms{0};
++	std::atomic<uint64_t> last_report_ms{0};
++};
++
++inline Counters counters;
++
++struct Snapshot {
++	uint64_t socket_rx, socket_tx, socket_poll_errors, socket_recv_errors;
++	uint64_t socket_send_errors, mtp_rx, mtp_control, mtp_data, media_packets;
++	uint64_t ack_received, ack_matched, ack_unmatched, ack_queued, ack_send_attempts;
++	uint64_t reliable_resends, split_chunks, split_complete, split_invalid;
++	uint64_t last_mtp_rx_ms;
++};
++
++inline Snapshot take_snapshot()
++{
++	return {
++		counters.socket_rx.exchange(0, std::memory_order_relaxed),
++		counters.socket_tx.exchange(0, std::memory_order_relaxed),
++		counters.socket_poll_errors.exchange(0, std::memory_order_relaxed),
++		counters.socket_recv_errors.exchange(0, std::memory_order_relaxed),
++		counters.socket_send_errors.exchange(0, std::memory_order_relaxed),
++		counters.mtp_rx.exchange(0, std::memory_order_relaxed),
++		counters.mtp_control.exchange(0, std::memory_order_relaxed),
++		counters.mtp_data.exchange(0, std::memory_order_relaxed),
++		counters.media_packets.exchange(0, std::memory_order_relaxed),
++		counters.ack_received.exchange(0, std::memory_order_relaxed),
++		counters.ack_matched.exchange(0, std::memory_order_relaxed),
++		counters.ack_unmatched.exchange(0, std::memory_order_relaxed),
++		counters.ack_queued.exchange(0, std::memory_order_relaxed),
++		counters.ack_send_attempts.exchange(0, std::memory_order_relaxed),
++		counters.reliable_resends.exchange(0, std::memory_order_relaxed),
++		counters.split_chunks.exchange(0, std::memory_order_relaxed),
++		counters.split_complete.exchange(0, std::memory_order_relaxed),
++		counters.split_invalid.exchange(0, std::memory_order_relaxed),
++		counters.last_mtp_rx_ms.load(std::memory_order_relaxed)
++	};
++}
++} // namespace ps4_network_diagnostics
++#endif
+--- a/src/network/socket.cpp
++++ b/src/network/socket.cpp
+@@ -3,6 +3,9 @@
+ // Copyright (C) 2013 celeron55, Perttu Ahola <celeron55@gmail.com>
+ 
+ #include "socket.h"
++#if defined(__ORBIS__)
++#include "network/mtp/ps4_network_diagnostics.h"
++#endif
+ 
+ #include <iostream>
+ #include <cstring>
+@@ -303,6 +306,14 @@
+ 	errno = send_errno;
+ #endif
+ 
++#if defined(__ORBIS__)
++	if (sent == size)
++		ps4_network_diagnostics::counters.socket_tx.fetch_add(
++				1, std::memory_order_relaxed);
++	else
++		ps4_network_diagnostics::counters.socket_send_errors.fetch_add(
++				1, std::memory_order_relaxed);
++#endif
+ 	if (sent != size)
+ 		throw SendFailedException("Failed to send packet");
+ }
+@@ -336,6 +347,14 @@
+ 		errno = receive_errno;
+ #endif
+ 
++#if defined(__ORBIS__)
++		if (received < 0)
++			ps4_network_diagnostics::counters.socket_recv_errors.fetch_add(
++				1, std::memory_order_relaxed);
++		else
++			ps4_network_diagnostics::counters.socket_rx.fetch_add(
++				1, std::memory_order_relaxed);
++#endif
+ 		if (received < 0 || address_len < sizeof(address) ||
+ 				address.sin6_family != AF_INET6)
+ 			return -1;
+@@ -364,6 +383,14 @@
+ 		errno = receive_errno;
+ #endif
+ 
++#if defined(__ORBIS__)
++		if (received < 0)
++			ps4_network_diagnostics::counters.socket_recv_errors.fetch_add(
++				1, std::memory_order_relaxed);
++		else
++			ps4_network_diagnostics::counters.socket_rx.fetch_add(
++				1, std::memory_order_relaxed);
++#endif
+ 		if (received < 0 || address_len < sizeof(address) ||
+ 				address.sin_family != AF_INET)
+ 			return -1;
+@@ -423,6 +450,10 @@
+ 	}
+ 
+ 	// Error case
++#if defined(__ORBIS__)
++	ps4_network_diagnostics::counters.socket_poll_errors.fetch_add(
++		1, std::memory_order_relaxed);
++#endif
+ 	int e = LAST_SOCKET_ERR();
+ 
+ #ifdef _WIN32
+--- a/src/network/mtp/threads.cpp
++++ b/src/network/mtp/threads.cpp
+@@ -4,6 +4,9 @@
+ // Copyright (C) 2017 celeron55, Loic Blot <loic.blot@unix-experience.fr>
+ 
+ #include "network/mtp/threads.h"
++#if defined(__ORBIS__)
++#include "network/mtp/ps4_network_diagnostics.h"
++#endif
+ #include "log.h"
+ #include "profiler.h"
+ #include "settings.h"
+@@ -54,6 +57,52 @@
+ 			return true;
+ 	}
+ 	return false;
++}
++
++static void ps4_report_network_diagnostics(bool force)
++{
++	const int saved_errno = errno;
++	auto &diag = ps4_network_diagnostics::counters;
++	const u64 now = porting::getTimeMs();
++	u64 last = diag.last_report_ms.load(std::memory_order_relaxed);
++	if (last == 0) {
++		if (!force) {
++			diag.last_report_ms.compare_exchange_strong(last, now,
++					std::memory_order_relaxed);
++			errno = saved_errno;
++			return;
++		}
++		if (diag.last_report_ms.compare_exchange_strong(last, now,
++				std::memory_order_relaxed))
++			last = now;
++		else
++			last = diag.last_report_ms.load(std::memory_order_relaxed);
++	}
++	if (force || now - last >= 5000) {
++		if (diag.last_report_ms.compare_exchange_strong(last, now,
++				std::memory_order_relaxed)) {
++			const auto s = ps4_network_diagnostics::take_snapshot();
++			const u64 rx_age = s.last_mtp_rx_ms && now >= s.last_mtp_rx_ms ?
++				now - s.last_mtp_rx_ms : 0;
++			infostream << "PS4_NET window_ms=" << (now - last)
++					<< " socket_rx=" << s.socket_rx << " socket_tx=" << s.socket_tx
++					<< " poll_err=" << s.socket_poll_errors
++					<< " recv_err=" << s.socket_recv_errors
++					<< " send_err=" << s.socket_send_errors
++					<< " mtp_rx=" << s.mtp_rx << " control=" << s.mtp_control
++					<< " data=" << s.mtp_data << " media=" << s.media_packets
++					<< " ack_rx=" << s.ack_received << " ack_match=" << s.ack_matched
++					<< " ack_unmatched=" << s.ack_unmatched
++					<< " ack_queued=" << s.ack_queued
++					<< " ack_send_attempt=" << s.ack_send_attempts
++					<< " reliable_resend=" << s.reliable_resends
++					<< " split_chunks=" << s.split_chunks
++					<< " split_complete=" << s.split_complete
++					<< " split_invalid=" << s.split_invalid
++					<< " rx_age_ms=" << rx_age << std::endl;
++		}
++	}
++	errno = saved_errno;
+ }
+ #endif
+ 
+@@ -301,6 +350,9 @@
+ 			std::max(INIT_PHASE_MIN_TIMEOUT, m_timeout / 4) : m_timeout;
+ 		std::string reason;
+ 		if (peer->isTimedOut(peer_timeout, reason)) {
++#if defined(__ORBIS__)
++			ps4_report_network_diagnostics(true);
++#endif
+ 			infostream << m_connection->getDesc()
+ 				<< "RunTimeouts(): Peer " << peer->id
+ 				<< " has timed out (" << reason << ")"
+@@ -384,6 +436,10 @@
+ 	u16 seqnum = k->getSeqnum();
+ 
+ 	channel.UpdateBytesLost(k->size());
++#if defined(__ORBIS__)
++	ps4_network_diagnostics::counters.reliable_resends.fetch_add(
++		1, std::memory_order_relaxed);
++#endif
+ 
+ 	derr_con << m_connection->getDesc()
+ 		<< "RE-SENDING timed-out RELIABLE to "
+@@ -926,6 +982,11 @@
+ 
+ 		/* send acks immediately */
+ 		if (packet.ack || peer->m_increment_packets_remaining > 0 || stopRequested()) {
++#if defined(__ORBIS__)
++			if (packet.ack)
++				ps4_network_diagnostics::counters.ack_send_attempts.fetch_add(
++					1, std::memory_order_relaxed);
++#endif
+ 			rawSendAsPacket(packet.peer_id, packet.channelnum,
+ 				packet.data, packet.reliable);
+ 			if (peer->m_increment_packets_remaining > 0)
+@@ -1006,6 +1067,10 @@
+ 
+ 		/* receive packets */
+ 		receive(packetdata, packet_queued);
++#if defined(__ORBIS__)
++		// Keep reporting through quiet intervals, even after first-N logs stop.
++		ps4_report_network_diagnostics(false);
++#endif
+ 
+ #ifdef DEBUG_CONNECTION_KBPS
+ 		debug_print_timer += dtime;
+@@ -1060,6 +1125,9 @@
+ 		END_DEBUG_EXCEPTION_HANDLER
+ 	}
+ 
++#if defined(__ORBIS__)
++	ps4_report_network_diagnostics(true);
++#endif
+ 	PROFILE(g_profiler->remove(ThreadIdentifier.str()));
+ 	return NULL;
+ }
+@@ -1184,6 +1252,18 @@
+ 			return;
+ 		}
+ 		Channel *channel = &udpPeer->channels[channelnum];
++#if defined(__ORBIS__)
++		auto &diag = ps4_network_diagnostics::counters;
++		diag.mtp_rx.fetch_add(1, std::memory_order_relaxed);
++		const int diagnostic_errno = errno;
++		diag.last_mtp_rx_ms.store(porting::getTimeMs(), std::memory_order_relaxed);
++		errno = diagnostic_errno;
++		if (received_size > BASE_HEADER_SIZE &&
++				readU8(&packetdata[BASE_HEADER_SIZE]) == PACKET_TYPE_CONTROL)
++			diag.mtp_control.fetch_add(1, std::memory_order_relaxed);
++		else
++			diag.mtp_data.fetch_add(1, std::memory_order_relaxed);
++#endif
+ 
+ 		channel->UpdateBytesReceived(received_size);
+ 
+@@ -1330,6 +1410,10 @@
+ 			throw InvalidIncomingDataException(
+ 				"packetdata.getSize() < 4 (ACK header size)");
+ 		}
++#if defined(__ORBIS__)
++		ps4_network_diagnostics::counters.ack_received.fetch_add(
++				1, std::memory_order_relaxed);
++#endif
+ 
+ 		u16 seqnum = readU16(&packetdata[2]);
+ 		LOG(dout_con << m_connection->getDesc() << " [ CONTROLTYPE_ACK: channelnum="
+@@ -1338,6 +1422,10 @@
+ 
+ 		try {
+ 			BufferedPacketPtr p = channel->outgoing_reliables_sent.popSeqnum(seqnum);
++#if defined(__ORBIS__)
++			ps4_network_diagnostics::counters.ack_matched.fetch_add(
++				1, std::memory_order_relaxed);
++#endif
+ 
+ 			// the rtt calculation will be a bit off for re-sent packets but that's okay
+ 			{
+@@ -1366,6 +1454,10 @@
+ 			if (channel->outgoing_reliables_sent.size() == 0)
+ 				m_connection->TriggerSend();
+ 		} catch (NotFoundException &e) {
++#if defined(__ORBIS__)
++			ps4_network_diagnostics::counters.ack_unmatched.fetch_add(
++				1, std::memory_order_relaxed);
++#endif
+ 			LOG(derr_con << m_connection->getDesc()
+ 				<< "WARNING: ACKed packet not in outgoing queue"
+ 				<< " seqnum=" << seqnum << std::endl);
+--- a/src/network/mtp/impl.cpp
++++ b/src/network/mtp/impl.cpp
+@@ -9,6 +9,9 @@
+ #include <cerrno>
+ #endif
+ #include "network/mtp/internal.h"
++#if defined(__ORBIS__)
++#include "network/mtp/ps4_network_diagnostics.h"
++#endif
+ #include "log.h"
+ #include "porting.h"
+ #include "network/mtp/threads.h"
+@@ -475,6 +478,10 @@
+ 
+ 	u32 headersize = BASE_HEADER_SIZE + 7;
+ 	if (p.size() < headersize) {
++#if defined(__ORBIS__)
++		ps4_network_diagnostics::counters.split_invalid.fetch_add(
++				1, std::memory_order_relaxed);
++#endif
+ 		errorstream << "Invalid data size for split packet" << std::endl;
+ 		return SharedBuffer<u8>();
+ 	}
+@@ -484,11 +491,19 @@
+ 	u16 chunk_num = readU16(&p.data[BASE_HEADER_SIZE+5]);
+ 
+ 	if (type != PACKET_TYPE_SPLIT) {
++#if defined(__ORBIS__)
++		ps4_network_diagnostics::counters.split_invalid.fetch_add(
++				1, std::memory_order_relaxed);
++#endif
+ 		errorstream << "IncomingSplitBuffer::insert(): type is not split"
+ 			<< std::endl;
+ 		return SharedBuffer<u8>();
+ 	}
+ 	if (chunk_num >= chunk_count) {
++#if defined(__ORBIS__)
++		ps4_network_diagnostics::counters.split_invalid.fetch_add(
++				1, std::memory_order_relaxed);
++#endif
+ 		errorstream << "IncomingSplitBuffer::insert(): chunk_num=" << chunk_num
+ 				<< " >= chunk_count=" << chunk_count << std::endl;
+ 		return SharedBuffer<u8>();
+@@ -504,6 +519,10 @@
+ 	}
+ 
+ 	if (chunk_count != sp->chunk_count) {
++#if defined(__ORBIS__)
++		ps4_network_diagnostics::counters.split_invalid.fetch_add(
++				1, std::memory_order_relaxed);
++#endif
+ 		errorstream << "IncomingSplitBuffer::insert(): chunk_count="
+ 				<< chunk_count << " != sp->chunk_count=" << sp->chunk_count
+ 				<< std::endl;
+@@ -519,6 +538,10 @@
+ 	SharedBuffer<u8> chunkdata(chunkdatasize);
+ 	memcpy(*chunkdata, &(p.data[headersize]), chunkdatasize);
+ 
++#if defined(__ORBIS__)
++	ps4_network_diagnostics::counters.split_chunks.fetch_add(
++		1, std::memory_order_relaxed);
++#endif
+ 	if (!sp->insert(chunk_num, chunkdata))
+ 		return SharedBuffer<u8>();
+ 
+@@ -527,6 +550,10 @@
+ 		return SharedBuffer<u8>();
+ 
+ 	SharedBuffer<u8> fulldata = sp->reassemble();
++#if defined(__ORBIS__)
++	ps4_network_diagnostics::counters.split_complete.fetch_add(
++		1, std::memory_order_relaxed);
++#endif
+ 
+ 	// Remove sp from buffer
+ 	m_buf.erase(seqnum);
+@@ -1711,6 +1738,10 @@
+ void Connection::sendAck(session_t peer_id, u8 channelnum, u16 seqnum)
+ {
+ 	assert(channelnum < CHANNEL_COUNT); // Pre-condition
++#if defined(__ORBIS__)
++	ps4_network_diagnostics::counters.ack_queued.fetch_add(
++		1, std::memory_order_relaxed);
++#endif
+ 
+ 	LOG(dout_con<<getDesc()
+ 			<<" Queuing ACK command to peer_id: " << peer_id <<
+--- a/src/network/clientpackethandler.cpp
++++ b/src/network/clientpackethandler.cpp
+@@ -24,6 +24,9 @@
+ #include "client/sound.h"
+ #include "client/localplayer.h"
+ #include "network/clientopcodes.h"
++#if defined(__ORBIS__)
++#include "network/mtp/ps4_network_diagnostics.h"
++#endif
+ #include "network/connection.h"
+ #include "network/networkpacket.h"
+ #include "script/scripting_client.h"
+@@ -687,6 +690,10 @@
+ 
+ void Client::handleCommand_Media(NetworkPacket* pkt)
+ {
++#if defined(__ORBIS__)
++	ps4_network_diagnostics::counters.media_packets.fetch_add(
++		1, std::memory_order_relaxed);
++#endif
+ 	u16 num_bunches;
+ 	u16 bunch_i;
+ 	u32 num_files;

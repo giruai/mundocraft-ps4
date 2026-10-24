@@ -1,0 +1,113 @@
+--- a/src/httpfetch.cpp
++++ b/src/httpfetch.cpp
+@@ -19,6 +19,13 @@
+ #include "version.h"
+ #include "settings.h"
+ 
++#if defined(__ORBIS__)
++extern "C" void ps4_http_diag_stage(const char *, unsigned long long);
++#define PS4_HTTP_STAGE(stage, bytes) ps4_http_diag_stage(stage, static_cast<unsigned long long>(bytes))
++#else
++#define PS4_HTTP_STAGE(stage, bytes) ((void)0)
++#endif
++
+ static std::mutex g_httpfetch_mutex;
+ struct HTTPFetchCallerResults {
+ 	std::queue<HTTPFetchResult> results;
+@@ -53,15 +60,20 @@
+ 	if (caller < HTTPFETCH_CID_START) {
+ 		// Reserved callers (e.g. server announcements) do not have an
+ 		// allocated lifetime and retain the existing result-queue behavior.
++		PS4_HTTP_STAGE("http-deliver-before", fetch_result.data.size());
+ 		g_httpfetch_results[caller].results.emplace(fetch_result);
++		PS4_HTTP_STAGE("http-deliver-after", fetch_result.data.size());
+ 		return;
+ 	}
+ 
+ 	// Do not recreate a queue after caller_free has retired its ID. The
+ 	// CurlFetch thread may still finish a request while DNS is blocking it.
+ 	auto it = g_httpfetch_results.find(caller);
+-	if (it != g_httpfetch_results.end() && it->second.active)
++	if (it != g_httpfetch_results.end() && it->second.active) {
++		PS4_HTTP_STAGE("http-deliver-before", fetch_result.data.size());
+ 		it->second.results.emplace(fetch_result);
++		PS4_HTTP_STAGE("http-deliver-after", fetch_result.data.size());
++	}
+ }
+ 
+ static void httpfetch_request_clear(u64 caller);
+@@ -160,8 +172,10 @@
+ 		return false;
+ 
+ 	// Pop first result
++	PS4_HTTP_STAGE("http-result-before", it->second.results.front().data.size());
+ 	fetch_result = std::move(it->second.results.front());
+ 	it->second.results.pop();
++	PS4_HTTP_STAGE("http-result-after", fetch_result.data.size());
+ 	return true;
+ }
+ 
+@@ -178,7 +192,10 @@
+ 	assert(userdata);
+ 	auto *dest = reinterpret_cast<std::string*>(userdata);
+ 	size_t count = size * nmemb;
++	const bool first = dest->empty();
++	if (first) PS4_HTTP_STAGE("http-write-before", count);
+ 	dest->append(ptr, count);
++	if (first) PS4_HTTP_STAGE("http-write-after", dest->size());
+ 	return count;
+ }
+ 
+@@ -275,7 +292,9 @@
+ 	request(request_),
+ 	result(request_)
+ {
++	PS4_HTTP_STAGE("http-create-before", 0);
+ 	curl = pool->alloc();
++	PS4_HTTP_STAGE("http-create-after", 0);
+ 	if (!curl)
+ 		return;
+ 
+@@ -412,10 +431,12 @@
+ 
+ 	curl_easy_setopt(curl, CURLOPT_SSL_VERIFYPEER,
+ 		g_settings->getBool("curl_verify_cert") ? 1L : 0L);
++	PS4_HTTP_STAGE("http-configured", 0);
+ }
+ 
+ CURLcode HTTPFetchOngoing::start(CURLM *multi_)
+ {
++	PS4_HTTP_STAGE("http-start", 0);
+ 	if (!curl)
+ 		return CURLE_FAILED_INIT;
+ 
+@@ -438,6 +459,7 @@
+ 
+ const HTTPFetchResult * HTTPFetchOngoing::complete(CURLcode res)
+ {
++	PS4_HTTP_STAGE("http-complete-before", result.data.size());
+ 	result.succeeded = (res == CURLE_OK);
+ 	result.timeout = (res == CURLE_OPERATION_TIMEDOUT);
+ 
+@@ -468,11 +490,13 @@
+ 		}
+ 	}
+ 
++	PS4_HTTP_STAGE("http-complete-after", result.data.size());
+ 	return &result;
+ }
+ 
+ HTTPFetchOngoing::~HTTPFetchOngoing()
+ {
++	PS4_HTTP_STAGE("http-destroy-before", result.data.size());
+ 	if (multi) {
+ 		// Note: this can block if curl is stuck waiting for DNS, see
+ 		// <https://github.com/luanti-org/luanti/issues/16272>
+@@ -501,6 +525,7 @@
+ 
+ 	// Store the cURL handle for reuse
+ 	pool->free(curl);
++	PS4_HTTP_STAGE("http-destroy-after", result.data.size());
+ }
+ 
+ 

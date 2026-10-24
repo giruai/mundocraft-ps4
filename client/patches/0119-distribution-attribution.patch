@@ -1,0 +1,19 @@
+--- a/builtin/mainmenu/tab_about.lua
++++ b/builtin/mainmenu/tab_about.lua
+@@ -52,6 +52,16 @@
+ 			"<tag name=heading color=#ff0>",
+ 			"<tag name=gray color=#aaa>",
+ 		}
++
++		-- Distribution attribution; retain the complete upstream credits below.
++		table.insert_all(hypertext, {
++			"<heading>MundoCraft - Luanti / PS4</heading>\n",
++			"Unofficial modified PS4 port, powered by the Luanti engine.\n",
++			"Luanti is free software under LGPL-2.1-or-later.\n",
++			"Modified sources and full notices:\n",
++			"github.com/giruai/mundocraft-ps4/releases/tag/v0.3.19-alpha1\n",
++			"Bundled license texts: /app0/luanti/share/licenses/\n\n",
++		})
+ 
+ 		local credits = get_credits()
+ 

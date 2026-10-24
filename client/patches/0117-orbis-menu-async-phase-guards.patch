@@ -1,0 +1,120 @@
+--- a/src/script/cpp_api/s_async.cpp
++++ b/src/script/cpp_api/s_async.cpp
+@@ -25,6 +25,13 @@
+ #endif
+ #include "lua_api/l_base.h"
+ 
++#if defined(__ORBIS__)
++extern "C" void ps4_http_diag_stage(const char *, unsigned long long);
++#define PS4_ASYNC_STAGE(menu, stage) do { if (menu) ps4_http_diag_stage(stage, 0); } while (0)
++#else
++#define PS4_ASYNC_STAGE(menu, stage) do {} while (0)
++#endif
++
+ // if a job is waiting for this duration, an additional thread will be spawned
+ static constexpr int AUTOSCALE_DELAY_MS = 1000;
+ // if jobs are waiting for this duration, a warning is printed
+@@ -159,7 +166,9 @@
+ void AsyncEngine::putJobResult(LuaJobInfo &&result)
+ {
+ 	resultQueueMutex.lock();
++	PS4_ASYNC_STAGE(!server, "async-queue-before");
+ 	resultQueue.emplace_back(std::move(result));
++	PS4_ASYNC_STAGE(!server, "async-queue-after");
+ 	resultQueueMutex.unlock();
+ }
+ 
+@@ -180,6 +189,7 @@
+ 
+ 	MutexAutoLock autolock(resultQueueMutex);
+ 	while (!resultQueue.empty()) {
++		PS4_ASYNC_STAGE(!server, "async-main-result");
+ 		LuaJobInfo j = std::move(resultQueue.front());
+ 		resultQueue.pop_front();
+ 
+@@ -189,15 +199,19 @@
+ 		luaL_checktype(L, -1, LUA_TFUNCTION);
+ 
+ 		lua_pushinteger(L, j.id);
++		PS4_ASYNC_STAGE(!server, "async-main-push-before");
+ 		if (j.result_ext)
+ 			script_unpack(L, j.result_ext.get());
+ 		else
+ 			lua_pushlstring(L, j.result.data(), j.result.size());
+ 
++		PS4_ASYNC_STAGE(!server, "async-main-push-after");
+ 		// Call handler
+ 		const char *origin = j.mod_origin.empty() ? nullptr : j.mod_origin.c_str();
+ 		script->setOriginDirect(origin);
++		PS4_ASYNC_STAGE(!server, "async-main-callback-before");
+ 		int result = lua_pcall(L, 2, 0, error_handler);
++		PS4_ASYNC_STAGE(!server, "async-main-callback-after");
+ 		if (result)
+ 			script_error(L, result, origin, "<async>");
+ 	}
+@@ -404,6 +418,7 @@
+ 			}
+ 		} else {
+ 			// Fetch result
++			PS4_ASYNC_STAGE(!jobDispatcher->server, "async-worker-result-before");
+ 			if (use_ext) {
+ 				try {
+ 					j.result_ext.reset(script_pack(L, -1));
+@@ -418,6 +433,8 @@
+ 			}
+ 		}
+ 
++		if (result == 0)
++			PS4_ASYNC_STAGE(!jobDispatcher->server, "async-worker-result-after");
+ 		lua_pop(L, 1);  // Pop retval
+ 
+ 		// Put job result
+--- a/builtin/async/mainmenu.lua
++++ b/builtin/async/mainmenu.lua
+@@ -1,10 +1,20 @@
++local diag_count = 0
++local function async_diag(phase, bytes)
++	if diag_count >= 16 then return end
++	diag_count = diag_count + 1
++	core.log("action", "PS4_ASYNC phase=" .. phase .. " bytes=" .. (bytes or 0))
++end
++
+ core.log("info", "Initializing asynchronous environment")
+ 
+ 
+ function core.job_processor(func, serialized_param)
+ 	local param = core.deserialize(serialized_param)
+ 
+-	local retval = core.serialize(func(param))
++	local value = func(param)
++	async_diag("worker-serialize-before")
++	local retval = core.serialize(value)
++	async_diag("worker-serialize-after", #(retval or ""))
+ 
+ 	return retval or core.serialize(nil)
+ end
+--- a/builtin/mainmenu/async_event.lua
++++ b/builtin/mainmenu/async_event.lua
+@@ -1,11 +1,21 @@
++local diag_count = 0
++local function async_diag(phase, bytes)
++	if diag_count >= 16 then return end
++	diag_count = diag_count + 1
++	core.log("action", "PS4_ASYNC phase=" .. phase .. " bytes=" .. (bytes or 0))
++end
++
+ 
+ core.async_jobs = {}
+ 
+ local function handle_job(jobid, serialized_retval)
++	async_diag("menu-deserialize-before", #serialized_retval)
+ 	local retval = core.deserialize(serialized_retval)
++	async_diag("menu-deserialize-after")
+ 	assert(type(core.async_jobs[jobid]) == "function")
+-	core.async_jobs[jobid](retval)
++	local callback = core.async_jobs[jobid]
+ 	core.async_jobs[jobid] = nil
++	callback(retval)
+ end
+ 
+ core.async_event_handler = handle_job

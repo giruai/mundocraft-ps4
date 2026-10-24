@@ -1,0 +1,65 @@
+diff --git a/src/client/renderingengine.h b/src/client/renderingengine.h
+--- a/src/client/renderingengine.h
++++ b/src/client/renderingengine.h
+@@ -9,6 +9,9 @@
+ #include <memory>
+ #include <string>
+ #include "client/inputhandler.h"
++#if defined(__ORBIS__)
++#include "ps4_input.h"
++#endif
+ #include "debug.h"
+ #include "config.h"
+ #include "client/shader.h"
+@@ -136,7 +139,12 @@
+ 
+ 	bool run()
+ 	{
+-		return m_device->run();
++		bool running = m_device->run();
++#if defined(__ORBIS__)
++		if (running)
++			ps4_input::frame(m_device);
++#endif
++		return running;
+ 	}
+ 
+ 	// FIXME: this is still global when it shouldn't be
+diff --git a/src/client/renderingengine.cpp b/src/client/renderingengine.cpp
+--- a/src/client/renderingengine.cpp
++++ b/src/client/renderingengine.cpp
+@@ -227,6 +227,9 @@
+ 
+ 	g_settings->deregisterAllChangedCallbacks(this);
+ 
++#if defined(__ORBIS__)
++	ps4_input::shutdown(m_device);
++#endif
+ 	core.reset();
+ 	m_device->closeDevice();
+ 	m_device->drop();
+diff --git a/src/client/inputhandler.cpp b/src/client/inputhandler.cpp
+--- a/src/client/inputhandler.cpp
++++ b/src/client/inputhandler.cpp
+@@ -12,6 +12,9 @@
+ #include "hud_element.h"
+ #include "log_internal.h"
+ #include "client/renderingengine.h"
++#if defined(__ORBIS__)
++#include "ps4_input.h"
++#endif
+ 
+ static const std::array input_settings = {
+ 	"keyboard_camera_speed",
+@@ -260,6 +263,11 @@
+ 	else if (event.EventType == EET_TOUCH_INPUT_EVENT)
+ 		last_pointer_type = PointerType::Touch;
+ 
++	// Let the PS4 controller adapter consume menu input first.
++#if defined(__ORBIS__)
++	if (isMenuActive() && ps4_input::on_menu_event(event))
++		return true;
++#endif
+ 	// Let the menu handle events, if one is active.
+ 	if (isMenuActive()) {
+ 		if (g_touchcontrols)

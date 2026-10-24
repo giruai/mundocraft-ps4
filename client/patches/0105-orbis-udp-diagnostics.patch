@@ -1,0 +1,172 @@
+--- a/src/network/socket.cpp
++++ b/src/network/socket.cpp
+@@ -34,7 +34,28 @@
+ #endif
+ 
+ #if defined(__ORBIS__)
++#include <atomic>
+ #include <orbis/Net.h>
++
++// Bounded diagnostics for the first UDP operations on a PS4 client launch.
++// Do not print packet contents, addresses, or user-entered text.
++static std::atomic<unsigned> g_ps4_udp_socket_logs{0};
++static std::atomic<unsigned> g_ps4_udp_bind_logs{0};
++static std::atomic<unsigned> g_ps4_udp_send_logs{0};
++static std::atomic<unsigned> g_ps4_udp_poll_logs{0};
++static std::atomic<unsigned> g_ps4_udp_poll_error_logs{0};
++static std::atomic<unsigned> g_ps4_udp_receive_logs{0};
++
++static bool ps4_udp_diagnostic_slot(std::atomic<unsigned> &counter)
++{
++	unsigned count = counter.load(std::memory_order_relaxed);
++	while (count < 8) {
++		if (counter.compare_exchange_weak(count, count + 1,
++				std::memory_order_relaxed))
++			return true;
++	}
++	return false;
++}
+ #endif
+ 
+ static bool g_sockets_initialized = false;
+@@ -60,9 +81,11 @@
+ #elif defined(__ORBIS__)
+ 	// The POSIX socket entry points still need the PS4 network service.
+ 	int32_t result = sceNetInit();
++	infostream << "PS4_UDP net_init rc=" << result << std::endl;
+ 	if (result != 0)
+ 		throw SocketException("sceNetInit failed: " + std::to_string(result));
+ 	g_net_pool = sceNetPoolCreate("luanti", 512 * 1024, 0);
++	infostream << "PS4_UDP pool_create rc=" << g_net_pool << std::endl;
+ 	if (g_net_pool < 0) {
+ 		int32_t pool_error = g_net_pool;
+ 		sceNetTerm();
+@@ -115,6 +138,14 @@
+ 	// Use IPv6 if specified
+ 	m_addr_family = ipv6 ? AF_INET6 : AF_INET;
+ 	m_handle = socket(m_addr_family, SOCK_DGRAM, IPPROTO_UDP);
++#if defined(__ORBIS__)
++	const int socket_errno = LAST_SOCKET_ERR();
++	if (ps4_udp_diagnostic_slot(g_ps4_udp_socket_logs))
++		infostream << "PS4_UDP socket fd=" << m_handle
++			<< " family=" << m_addr_family
++			<< " errno=" << (m_handle < 0 ? socket_errno : 0) << std::endl;
++	errno = socket_errno;
++#endif
+ 
+ 	if (m_handle < 0) {
+ 		auto msg = std::string("Failed to create socket: ") +
+@@ -193,6 +224,16 @@
+ 		ret = bind(m_handle, (const struct sockaddr *) &address,
+ 			sizeof(struct sockaddr_in));
+ 	}
++#if defined(__ORBIS__)
++	const int bind_errno = LAST_SOCKET_ERR();
++	if (ps4_udp_diagnostic_slot(g_ps4_udp_bind_logs))
++		infostream << "PS4_UDP bind fd=" << m_handle
++			<< " family=" << m_addr_family
++			<< " port=" << addr.getPort()
++			<< " rc=" << ret
++			<< " errno=" << (ret < 0 ? bind_errno : 0) << std::endl;
++	errno = bind_errno;
++#endif
+ 
+ 	if (ret < 0) {
+ 		tracestream << (int)m_handle << ": Bind failed: "
+@@ -215,8 +256,17 @@
+ 		return;
+ 	}
+ 
+-	if (destination.getFamily() != m_addr_family)
++	if (destination.getFamily() != m_addr_family) {
++#if defined(__ORBIS__)
++		if (ps4_udp_diagnostic_slot(g_ps4_udp_send_logs))
++			infostream << "PS4_UDP send family_mismatch fd=" << m_handle
++				<< " socket_family=" << m_addr_family
++				<< " destination_family=" << destination.getFamily()
++				<< " port=" << destination.getPort()
++				<< " size=" << size << std::endl;
++#endif
+ 		throw SendFailedException("Address family mismatch");
++	}
+ 
+ 	int sent;
+ 	if (m_addr_family == AF_INET6) {
+@@ -242,6 +292,16 @@
+ 		sent = sendto(m_handle, (const char *)data, size, 0,
+ 				(struct sockaddr *)&address, sizeof(struct sockaddr_in));
+ 	}
++#if defined(__ORBIS__)
++	const int send_errno = LAST_SOCKET_ERR();
++	if (ps4_udp_diagnostic_slot(g_ps4_udp_send_logs))
++		infostream << "PS4_UDP send fd=" << m_handle
++			<< " family=" << m_addr_family
++			<< " port=" << destination.getPort()
++			<< " size=" << size << " rc=" << sent
++			<< " errno=" << (sent < 0 ? send_errno : 0) << std::endl;
++	errno = send_errno;
++#endif
+ 
+ 	if (sent != size)
+ 		throw SendFailedException("Failed to send packet");
+@@ -264,6 +324,17 @@
+ 
+ 		received = recvfrom(m_handle, (char *)data, size, 0,
+ 				(struct sockaddr *)&address, &address_len);
++#if defined(__ORBIS__)
++		const int receive_errno = LAST_SOCKET_ERR();
++		if (ps4_udp_diagnostic_slot(g_ps4_udp_receive_logs))
++			infostream << "PS4_UDP recv fd=" << m_handle
++				<< " family=" << m_addr_family
++				<< " size=" << size << " rc=" << received
++				<< " addrlen=" << address_len
++				<< " peer_family=" << address.sin6_family
++				<< " errno=" << (received < 0 ? receive_errno : 0) << std::endl;
++		errno = receive_errno;
++#endif
+ 
+ 		if (received < 0 || address_len < sizeof(address) ||
+ 				address.sin6_family != AF_INET6)
+@@ -281,6 +352,17 @@
+ 
+ 		received = recvfrom(m_handle, (char *)data, size, 0,
+ 				(struct sockaddr *)&address, &address_len);
++#if defined(__ORBIS__)
++		const int receive_errno = LAST_SOCKET_ERR();
++		if (ps4_udp_diagnostic_slot(g_ps4_udp_receive_logs))
++			infostream << "PS4_UDP recv fd=" << m_handle
++				<< " family=" << m_addr_family
++				<< " size=" << size << " rc=" << received
++				<< " addrlen=" << address_len
++				<< " peer_family=" << address.sin_family
++				<< " errno=" << (received < 0 ? receive_errno : 0) << std::endl;
++		errno = receive_errno;
++#endif
+ 
+ 		if (received < 0 || address_len < sizeof(address) ||
+ 				address.sin_family != AF_INET)
+@@ -314,9 +396,24 @@
+ 	struct pollfd pfd;
+ 	pfd.fd = m_handle;
+ 	pfd.events = POLLIN;
++#if defined(__ORBIS__)
++	pfd.revents = 0;
++#endif
+ 
+ 	int result = poll(&pfd, 1, timeout_ms);
+ #endif
++#if defined(__ORBIS__)
++	const int poll_errno = LAST_SOCKET_ERR();
++	const bool poll_sampled = ps4_udp_diagnostic_slot(g_ps4_udp_poll_logs);
++	if (poll_sampled || (result < 0 &&
++			ps4_udp_diagnostic_slot(g_ps4_udp_poll_error_logs)))
++		infostream << "PS4_UDP poll fd=" << m_handle
++			<< " timeout_ms=" << timeout_ms
++			<< " rc=" << result
++			<< " revents=" << (result > 0 ? pfd.revents : 0)
++			<< " errno=" << (result < 0 ? poll_errno : 0) << std::endl;
++	errno = poll_errno;
++#endif
+ 
+ 	if (result == 0) {
+ 		return false; // No data
