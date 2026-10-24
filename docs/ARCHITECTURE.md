@@ -22,6 +22,6 @@ The [BUILDING.md](BUILDING.md) recipe compiles the native dependencies and clien
 
 ![Build flow](../assets/build-flow.svg)
 
-The current development build produces a PKG with Title ID `LUNT00001` and `APP_VER` `01.20`. The product's semantic version is `0.3.20-alpha1`; changing one does not automatically change the other. The latest published release remains `0.3.19-alpha1` (`APP_VER` `01.19`).
+The beta release uses Title ID `LUNT00001` and `APP_VER` `01.20`. The distribution version is `0.3.20-beta1`; it promotes the exact tested `0.3.20-alpha1` package without changing its bytes or internal labels. Product version, release channel and PS4 APP_VER are separate identifiers. See [the build record](BUILD_REPORT_0320.md).
 
 The diagrams explain the software structure. They are illustrations, not screenshots or evidence that this version ran on a PS4.
